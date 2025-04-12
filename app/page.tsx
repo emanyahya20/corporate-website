@@ -80,6 +80,52 @@ export default function Home() {
         <PodcastSection />
       </section>
 
+      {/* Awards Section */}
+      <div className="mt-16 text-center">
+        <h2 className="text-3xl font-semibold mb-8">
+          {" "}
+          Setting The Benchmark With Industry Awards
+        </h2>
+
+        <div className="flex justify-center flex-wrap items-center gap-2">
+          {/* Award Logo 1 */}
+          <div className="h-52 w-auto">
+            <img
+              src="/logo1.png"
+              alt="Award 1"
+              className="h-full w-auto object-contain max-w-[400px]"
+            />
+          </div>
+
+          {/* Award Logo 2 */}
+          <div className="h-52 w-auto">
+            <img
+              src="logo2.png"
+              alt="Award 2"
+              className="h-full w-auto object-contain max-w-[400px]"
+            />
+          </div>
+
+          {/* Award Logo 3 */}
+          <div className="h-52 w-auto">
+            <img
+              src="logo3.png"
+              alt="Award 3"
+              className="h-full w-auto object-contain max-w-[400px]"
+            />
+          </div>
+
+          {/* Award Logo 4 */}
+          <div className="h-52 w-auto">
+            <img
+              src="/logo4.png"
+              alt="Award 4"
+              className="h-full w-auto object-contain max-w-[400px]"
+            />
+          </div>
+        </div>
+      </div>
+
       {/* CTA Section */}
       <section className="py-32 bg-blue-50">
         <div className="container mx-auto px-4 md:px-6 max-w-5xl text-center">
