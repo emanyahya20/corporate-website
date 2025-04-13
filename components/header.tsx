@@ -104,19 +104,15 @@ export default function Header() {
                   className="h-10 w-auto"
                 />
               </Link>
-              <a
-                href="http://iTrustmore.com"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
+              <Link href="/about">
                 <Image
                   src="/footerlogo/25years.png"
-                  alt="Trustmore Logo"
+                  alt="25 Years of Trustmore"
                   width={180}
                   height={50}
-                  className="h-10 w-auto"
+                  className="h-10 w-auto hover:opacity-80 transition-opacity"
                 />
-              </a>
+              </Link>
             </div>
           </div>
 

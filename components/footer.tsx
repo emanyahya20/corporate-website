@@ -18,6 +18,7 @@ export default function Footer() {
             {/* Logo Stack */}
             <div className="flex flex-col gap-6 mb-8">
               <div className="flex items-center gap-6">
+                {/* Trustmore logo - non-clickable */}
                 <div className="h-12 w-auto">
                   <img
                     src="/footerlogo/trustmore.png"
@@ -25,6 +26,7 @@ export default function Footer() {
                     className="h-full w-auto object-contain max-w-[180px]"
                   />
                 </div>
+                {/* FT1 logo - non-clickable */}
                 <div className="h-10 w-auto">
                   <img
                     src="/footerlogo/ft1.png"
@@ -35,26 +37,23 @@ export default function Footer() {
               </div>
 
               <div className="flex items-center gap-2">
-                <a
-                  href="http://iTrustmore.com"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="h-10 w-auto block"
-                >
-                  <img
-                    src="/footerlogo/golden.png"
-                    alt="iTrustmore Logo"
-                    className="h-full w-auto object-contain max-w-[120px]"
-                  />
-                </a>
-
+                {/* Golden logo - non-clickable */}
                 <div className="h-10 w-auto">
                   <img
-                    src="/footerlogo/25years.png"
-                    alt="Another Logo"
+                    src="/footerlogo/golden.png"
+                    alt="Golden Logo"
                     className="h-full w-auto object-contain max-w-[120px]"
                   />
                 </div>
+
+                {/* 25 Years logo - clickable to about page */}
+                <Link href="/about" className="h-10 w-auto block">
+                  <img
+                    src="/footerlogo/25years.png"
+                    alt="25 Years of Trustmore"
+                    className="h-full w-auto object-contain max-w-[120px] hover:opacity-80 transition-opacity"
+                  />
+                </Link>
               </div>
             </div>
 
