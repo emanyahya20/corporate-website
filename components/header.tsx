@@ -1,20 +1,16 @@
-import { useState, useEffect, useRef } from "react";
+import { useState, useEffect } from "react";
 import Link from "next/link";
 import Image from "next/image";
 import { Button } from "@/components/ui/button";
 import { Menu, X } from "lucide-react";
-import { useRouter } from "next/router";
+import { usePathname } from "next/navigation";
 
 export default function Header() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
-  const [mounted, setMounted] = useState(false);
-  const [routerPath, setRouterPath] = useState<string | null>(null);
+  const pathname = usePathname();
 
   useEffect(() => {
-    setMounted(true);
-    setRouterPath(window.location.pathname);
-
     const handleScroll = () => {
       setScrolled(window.scrollY > 10);
     };
@@ -37,14 +33,12 @@ export default function Header() {
   ];
 
   const isTransparent =
-    transparentPages.some((page) => routerPath?.startsWith(page)) &&
-    !scrolled &&
-    mounted;
+    transparentPages.some((page) => pathname?.startsWith(page)) && !scrolled;
 
   return (
     <header
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-        isTransparent || !scrolled
+        isTransparent
           ? "bg-transparent"
           : "bg-white/90 backdrop-blur-md shadow-sm"
       }`}
@@ -62,7 +56,6 @@ export default function Header() {
                 className="h-10 w-auto"
               />
             </Link>
-
             <Image
               src="/footerlogo/ft2.png"
               alt="25 Years of Trustmore"
@@ -74,54 +67,24 @@ export default function Header() {
 
           {/* Desktop Navigation */}
           <nav className="hidden md:flex items-center space-x-8">
-            <Link
-              href="/"
-              className={`${
-                isTransparent ? "text-white" : "text-gray-700"
-              } text-lg font-medium`}
-            >
-              Home
-            </Link>
-            <Link
-              href="/about"
-              className={`${
-                isTransparent ? "text-white" : "text-gray-700"
-              } text-lg font-medium `}
-            >
-              About
-            </Link>
-            <Link
-              href="/payments"
-              className={`${
-                isTransparent ? "text-white" : "text-gray-700"
-              } text-lg font-medium `}
-            >
-              Payments
-            </Link>
-            <Link
-              href="/wealth-management"
-              className={`${
-                isTransparent ? "text-white" : "text-gray-700"
-              } text-lg font-medium `}
-            >
-              Wealth Management
-            </Link>
-            <Link
-              href="/experiences"
-              className={`${
-                isTransparent ? "text-white" : "text-gray-700"
-              } text-lg font-medium `}
-            >
-              Experiences
-            </Link>
-            <Link
-              href="/contact"
-              className={`${
-                isTransparent ? "text-white" : "text-gray-700"
-              } text-lg font-medium `}
-            >
-              Contact
-            </Link>
+            {[
+              { href: "/", label: "Home" },
+              { href: "/about", label: "About" },
+              { href: "/payments", label: "Payments" },
+              { href: "/wealth-management", label: "Wealth Management" },
+              { href: "/experiences", label: "Experiences" },
+              { href: "/contact", label: "Contact" },
+            ].map((item) => (
+              <Link
+                key={item.href}
+                href={item.href}
+                className={`${
+                  isTransparent ? "text-white" : "text-gray-700"
+                } text-lg font-medium`}
+              >
+                {item.label}
+              </Link>
+            ))}
           </nav>
 
           <div className="hidden md:flex items-center">
@@ -170,48 +133,23 @@ export default function Header() {
             </Button>
           </div>
           <div className="flex flex-col items-center space-y-4 bg-white p-6">
-            <Link
-              href="/"
-              className="text-gray-700 hover:text-blue-600 text-lg font-medium"
-              onClick={() => setMobileMenuOpen(false)}
-            >
-              Home
-            </Link>
-            <Link
-              href="/about"
-              className="text-gray-700 hover:text-blue-600 text-lg font-medium"
-              onClick={() => setMobileMenuOpen(false)}
-            >
-              About
-            </Link>
-            <Link
-              href="/payments"
-              className="text-gray-700 hover:text-blue-600 text-lg font-medium"
-              onClick={() => setMobileMenuOpen(false)}
-            >
-              Payments
-            </Link>
-            <Link
-              href="/wealth-management"
-              className="text-gray-700 hover:text-blue-600 text-lg font-medium"
-              onClick={() => setMobileMenuOpen(false)}
-            >
-              Wealth Management
-            </Link>
-            <Link
-              href="/experiences"
-              className="text-gray-700 hover:text-blue-600 text-lg font-medium"
-              onClick={() => setMobileMenuOpen(false)}
-            >
-              Experiences
-            </Link>
-            <Link
-              href="/contact"
-              className="text-gray-700 hover:text-blue-600 text-lg font-medium"
-              onClick={() => setMobileMenuOpen(false)}
-            >
-              Contact
-            </Link>
+            {[
+              { href: "/", label: "Home" },
+              { href: "/about", label: "About" },
+              { href: "/payments", label: "Payments" },
+              { href: "/wealth-management", label: "Wealth Management" },
+              { href: "/experiences", label: "Experiences" },
+              { href: "/contact", label: "Contact" },
+            ].map((item) => (
+              <Link
+                key={item.href}
+                href={item.href}
+                className="text-gray-700 hover:text-blue-600 text-lg font-medium"
+                onClick={() => setMobileMenuOpen(false)}
+              >
+                {item.label}
+              </Link>
+            ))}
           </div>
         </div>
       )}

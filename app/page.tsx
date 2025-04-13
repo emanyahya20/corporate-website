@@ -3,6 +3,7 @@ import MissionVision from "@/components/mission-vision";
 import CompanyProfile from "@/components/company-profile";
 import { BrandShowcase } from "@/components/BrandShowcase";
 import PodcastSection from "@/components/podcast-section";
+import HistoryTimeline from "@/components/HistoryTimeline";
 import Link from "next/link";
 import {
   ArrowRight,
@@ -100,6 +101,12 @@ export default function Home() {
             >
               Awards
             </a>
+            <a
+              href="#HistoryTimeline"
+              className="text-lg text-grey hover:text-black"
+            >
+              History Timeline
+            </a>
           </div>
         </div>
       </section>
@@ -142,8 +149,13 @@ export default function Home() {
         <PodcastSection />
       </section>
 
+      {/*  HistoryTimeline */}
+      <section id="HistoryTimeline">
+        <HistoryTimeline />
+      </section>
+
       {/* Awards Section */}
-      <div className="bg-white py-10 mt-10" id="awards-section">
+      <div className="bg-gray-100 py-10 mt-10" id="awards-section">
         <div className="text-center">
           <h2 className="text-2xl font-semibold mb-6">
             Setting The Benchmark With Industry Awards

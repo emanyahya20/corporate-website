@@ -31,6 +31,41 @@ export default function AboutPage() {
         </div>
       </section>
 
+      {/* Navigation for Leadership Sections */}
+      <section className="bg-white py-6">
+        <div className="container mx-auto px-4 md:px-6 max-w-5xl text-center">
+          <h2 className="text-2xl md:text-3xl font-semibold text-gray-800 mb-6">
+            Meet Our Team
+          </h2>
+          <div className="flex justify-center space-x-6 flex-wrap">
+            <a
+              href="#leadership"
+              className="text-lg text-grey hover:text-black"
+            >
+              Leadership
+            </a>
+            <a
+              href="#board-members"
+              className="text-lg text-grey hover:text-black"
+            >
+              Board Members
+            </a>
+            <a
+              href="#executive-team"
+              className="text-lg text-grey hover:text-black"
+            >
+              Executive Team
+            </a>
+            <a
+              href="#advisory-council"
+              className="text-lg text-grey hover:text-black"
+            >
+              Advisory Council
+            </a>
+          </div>
+        </div>
+      </section>
+
       {/* Leadership Team */}
       <section id="leadership" className="py-32 bg-gray-50">
         <div className="container mx-auto px-4 md:px-6 max-w-5xl">
@@ -39,11 +74,11 @@ export default function AboutPage() {
           </h2>
 
           {/* Ashwin Section */}
-          <div className="flex flex-col md:flex-row items-center gap-12 mb-24">
-            <div className="w-full md:w-1/3">
-              <div className="relative h-[400px] rounded-xl overflow-hidden">
+          <div className="flex flex-col md:flex-row items-start gap-12 mb-24">
+            <div className="w-full md:w-[40%]">
+              <div className="relative h-[500px] rounded-xl overflow-hidden">
                 <Image
-                  src="/ashwin.Jpeg"
+                  src="/ashwinc.jpg"
                   alt="Ashwin - Founder & CEO"
                   fill
                   className="object-cover grayscale hover:grayscale-0 transition-all duration-500"
@@ -51,89 +86,86 @@ export default function AboutPage() {
               </div>
             </div>
             <div className="w-full md:w-2/3">
-              <h3 className="text-3xl font-bold text-gray-800 mb-4">Ashwin</h3>
+              <h3 className="text-3xl font-bold text-gray-800 mb-4">
+                Ashwin Chawwla
+              </h3>
               <p className="text-blue-600 text-xl mb-6">Founder & CEO</p>
               <p className="text-gray-600 text-lg mb-4">
-                Visionary leader with over 25 years of experience in wealth
-                management and financial technology.
+                Ashwin Chawwla is the visionary Chairman and Founder of
+                Trustmore Group, a trusted name in private wealth, payments, and
+                bespoke experiences with a proud legacy spanning over 25 years.
               </p>
               <p className="text-gray-600 text-lg">
-                Ashwin founded Trustmore with a mission to redefine private
-                wealth through innovation and trust. His leadership has guided
-                the company's evolution into a comprehensive ecosystem serving
-                elite clients worldwide.
+                Starting his journey in 2001 with investment advisory services
+                for individuals and businesses, Ashwin built Trustmore on an
+                enduring foundation of trust, transparency, and
+                relationship-driven values. His vision is to reshape the private
+                wealth space by integrating innovation, reliability, and
+                integrity ensuring Trustmore’s clients not only grow their
+                wealth but protect their legacies for future generations. Ashwin
+                continues to lead Trustmore Group as a future-ready institution,
+                one that stays ahead by managing complex financial ecosystems
+                for wealthy families, entrepreneurs, and institutions worldwide
+                all while upholding the group’s core promise of “Trust,
+                Transparency, and Timeless Relationships”.
               </p>
             </div>
           </div>
 
           {/* Board Members Section */}
-          <div className="mb-24">
+          <div id="board-members" className="mb-24">
             <h3 className="text-3xl font-semibold text-gray-800 mb-12 text-center">
-              Board Members
+              Board Member
             </h3>
-
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
-              {/* Board Member 1 */}
-              <div className="flex flex-col md:flex-row gap-8">
-                <div className="w-full md:w-1/2">
-                  <div className="relative h-64 w-full rounded-xl overflow-hidden">
-                    <Image
-                      src="/boardmember1.png"
-                      alt="Board Member 1"
-                      fill
-                      className="object-contain scale-90"
-                    />
-                  </div>
+            <div className="flex justify-center gap-8 flex-wrap">
+              <div className="relative overflow-hidden rounded-lg w-80">
+                <div className="relative h-80">
+                  <Image
+                    src="/boardmember2.png"
+                    alt="Team Member"
+                    fill
+                    className="object-cover"
+                  />
                 </div>
-                <div className="w-full md:w-1/2">
-                  <h4 className="text-2xl font-bold text-gray-800 mb-2">
-                    Brijesh Thakkar
-                  </h4>
-                  <p className="text-blue-600 mb-4">Director</p>
-                  <p className="text-gray-600">
-                    Brief introduction about the board member. Their expertise,
-                    background, and contribution to the company. Keep this to
-                    2-3 sentences.
-                  </p>
+                <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/40 to-transparent flex items-end p-6">
+                  <div>
+                    <h3 className="text-white text-xl font-bold">
+                      Ashwin Chawwla
+                    </h3>
+                    <p className="text-blue-300">
+                      Chairman & Managing Director
+                    </p>
+                  </div>
                 </div>
               </div>
 
-              {/* Board Member 2 */}
-              <div className="flex flex-col md:flex-row gap-8">
-                <div className="w-full md:w-1/2">
-                  <div className="relative h-64 w-full rounded-xl overflow-hidden">
-                    <Image
-                      src="/boardmember2.png"
-                      alt="Board Member 2"
-                      fill
-                      className="object-contain scale-90"
-                    />
-                  </div>
+              <div className="relative overflow-hidden rounded-lg w-80">
+                <div className="relative h-80">
+                  <Image
+                    src="/boardmember1.png"
+                    alt="Team Member"
+                    fill
+                    className="object-contain scale-[0.97]" // zoomed out
+                  />
                 </div>
-                <div className="w-full md:w-1/2">
-                  <h4 className="text-2xl font-bold text-gray-800 mb-2">
-                    Ashwin Chawwla
-                  </h4>
-                  <p className="text-blue-600 mb-4">
-                    Chairman & managing Director
-                  </p>
-                  <p className="text-gray-600">
-                    Brief introduction about the board member. Their expertise,
-                    background, and contribution to the company. Keep this to
-                    2-3 sentences.
-                  </p>
+                <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/40 to-transparent flex items-end p-6">
+                  <div>
+                    <h3 className="text-white text-xl font-bold">
+                      Brijesh Thakkar
+                    </h3>
+                    <p className="text-blue-300">Director</p>
+                  </div>
                 </div>
               </div>
             </div>
           </div>
 
-          {/* Executive Team Section - Ant Group Style */}
-          <div>
+          {/* Executive Team Section */}
+          <div id="executive-team">
             <h3 className="text-3xl font-semibold text-gray-800 mb-12 text-center">
               Executive Team
             </h3>
             <div className="flex justify-center gap-8 flex-wrap">
-              {/* Team Member 1 */}
               <div className="relative overflow-hidden rounded-lg w-80">
                 <div className="relative h-80">
                   <Image
@@ -155,7 +187,6 @@ export default function AboutPage() {
                 </div>
               </div>
 
-              {/* Team Member 2 */}
               <div className="relative overflow-hidden rounded-lg w-80">
                 <div className="relative h-80">
                   <Image
@@ -165,6 +196,7 @@ export default function AboutPage() {
                     className="object-cover"
                   />
                 </div>
+
                 <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/40 to-transparent flex items-end p-6">
                   <div>
                     <h3 className="text-white text-xl font-bold">
@@ -180,16 +212,15 @@ export default function AboutPage() {
           </div>
 
           {/* Advisory Council Section */}
-          <div className="mt-24">
+          <div id="advisory-council" className="mt-24">
             <h3 className="text-3xl font-semibold text-gray-800 mb-12 text-center">
               Advisory Council
             </h3>
             <div className="flex justify-center">
-              {/* Advisor Member */}
               <div className="relative overflow-hidden rounded-lg w-80">
                 <div className="relative h-80">
                   <Image
-                    src="/advisor.jpeg" // replace with your actual image path
+                    src="/advisor.jpeg"
                     alt="Advisor Member"
                     fill
                     className="object-cover"
