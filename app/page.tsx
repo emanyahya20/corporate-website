@@ -26,7 +26,7 @@ export default function Home() {
   return (
     <div className="flex flex-col min-h-screen">
       {/* Hero Video Banner */}
-      <section className="relative w-full h-screen flex items-center justify-center overflow-hidden">
+      <section className="relative w-full h-screen overflow-hidden">
         <video
           className="absolute inset-0 w-full h-full object-cover"
           autoPlay
@@ -35,31 +35,35 @@ export default function Home() {
           playsInline
           poster="/placeholder.svg?height=1080&width=1920"
         >
-          <source src="/homepage.mp4" type="video/mp4" />
+          <source src="/videos/homepage.mp4" type="video/mp4" />
           Your browser does not support the video tag.
         </video>
-        <div className="container mx-auto px-4 sm:px-6 lg:px-8 h-full flex items-center relative z-10">
-          <div className="w-full max-w-4xl mx-auto lg:mx-0">
-            <div className="text-center lg:text-left px-4 sm:px-0">
-              <h1 className="text-4xl sm:text-5xl md:text-6xl font-semibold text-white mb-3 sm:mb-4 leading-tight [text-shadow:_0_2px_4px_rgba(0,0,0,0.5)]">
-                Trusted Private Wealth Management
-              </h1>
-              <p className="text-xl md:text-2xl text-white/90 mb-10">
-                Where Vision Meets Legacy
-              </p>
-              <div className="flex flex-col sm:flex-row gap-3 justify-center lg:justify-start">
-                <Link href="/contact" className="w-full sm:w-auto">
-                  <Button
-                    size="lg"
-                    variant="outline"
-                    className="w-full sm:w-auto bg-white/10 hover:bg-white/20 text-white border-white/30 rounded-lg px-4 sm:px-6 md:px-8 backdrop-blur-sm text-sm sm:text-base [text-shadow:_0_1px_1px_rgba(0,0,0,0.3)]"
-                  >
-                    Discover Our Services{" "}
-                    <ArrowRight className="ml-2 h-4 w-4" />
-                  </Button>
-                </Link>
-              </div>
-            </div>
+
+        {/* Centered Text Content */}
+        <div className="absolute inset-0 flex items-center justify-center z-10 px-4 sm:px-6 lg:px-8 text-center">
+          <div className="max-w-3xl">
+            <h1 className="text-4xl sm:text-5xl md:text-6xl font-semibold text-white mb-4 leading-tight [text-shadow:_0_2px_4px_rgba(0,0,0,0.5)]">
+              Welcome to Trustmore Group
+            </h1>
+            <p className="text-xl md:text-2xl text-white/90 mb-10">
+              Connecting the World’s Money Flows with Trust, Transparency, and
+              Technology. Trustmore. Do More.
+            </p>
+            {/* Play Button */}
+            <a
+              href="https://youtu.be/FOvvUkejbIg?si=B4yeO0atrRfpna8e"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center justify-center rounded-full border border-white/30 bg-white/10 hover:bg-white/20 backdrop-blur-sm px-6 py-3 transition duration-300"
+            >
+              <svg
+                className="w-6 h-6 text-white"
+                fill="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path d="M8 5v14l11-7z" />
+              </svg>
+            </a>
           </div>
         </div>
       </section>

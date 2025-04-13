@@ -14,19 +14,24 @@ export default function CompanyProfile() {
 
         <div className="max-w-3xl mx-auto">
           <p className="text-base text-gray-700 mb-4">
-            Trustmore traces its roots back to a vision established in 1998 to
-            create trust between wealth managers and clients. Over the years,
-            Trustmore has grown to become one of the world's leading private
-            wealth management platforms.
+            Born in India, rooted in trust, and powered by technology. Trustmore
+            Group stands as a symbol of financial transparency and progressive
+            leadership in a connected world. With 25 years of unwavering
+            commitment, we’ve built a trusted platform for individuals,
+            businesses, and institutions to move money, manage wealth, and
+            access world-class experiences with confidence.
           </p>
           <p className="text-base text-gray-700">
-            Through technological innovation, we support our partners in
-            providing inclusive, convenient digital life and digital financial
-            services to consumers and SMEs. In addition, we have been
-            introducing new technologies and products to support the digital
-            transformation of industries and facilitate collaboration. Working
-            together with global partners, we enable merchants and consumers to
-            make and receive payments and build wealth around the world.
+            From our headquarters in India and our strategic presence in Dubai,
+            Trustmore Group connects diverse economies, empowering clients with
+            seamless capital solutions, global investment opportunities, and
+            life-enhancing services. Our trusted brands Escrowpay, IPRIVE, and
+            ViaJets embody our philosophy of precision, transparency, and
+            enduring value. As a proud Indian-born global institution, we carry
+            forward our nation’s spirit of resilience, enterprise, and global
+            ambition. Trustmore Group remains dedicated to fostering financial
+            freedom, safeguarding wealth, and redefining what’s possible for the
+            next generation of wealth creators. Trust More. Do More.
           </p>
         </div>
       </div>

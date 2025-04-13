@@ -32,7 +32,7 @@ export default function PodcastSection() {
                 playsInline
                 poster="/placeholder.svg?height=1080&width=1920"
               >
-                <source src="/podcast1.mp4" type="video/mp4" />
+                <source src="/videos/podcast1.mp4" type="video/mp4" />
                 Your browser does not support the video tag.
               </video>
               <div className="absolute inset-0 bg-black/30 hover:bg-black/50 transition-opacity duration-300" />

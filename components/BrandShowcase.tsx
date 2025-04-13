@@ -8,7 +8,7 @@ export function BrandShowcase() {
       id: "payments",
       title: "Digital Payment",
       description:
-        "We are committed to the creation and development of a digital payment open platform. We developed Quick Pay, barcode payment, smile-to-pay and QR code payment solutions through computers, mobile phones, and IoT smart devices to serve the digital payment needs across a vast array of use cases, including commercial operations, public services, and transportation.",
+        "Escrowpay is India’s first and largest digital escrow services platform, built to enable secure, transparent, and efficient transactions for businesses of all sizes.We digitise trust by holding funds safely until both parties meet their agreed conditions. Our platform streamlines complex transactions from equity deals to vendor payments and ESOP liquidity events. With API integrations and a seamless user interface, Escrowpay integrates easily into any business workflow. Trusted by over 100,000+ businesses, we help reduce risk, cost, and disputes in business dealings. Escrowpay is where Digital Trust Meets Business Efficiency.",
       image: "/escrowpay1.png",
       link: "https://escrowpay.co.in",
       imageOnLeft: true,
@@ -17,7 +17,7 @@ export function BrandShowcase() {
       id: "wealth",
       title: "Digital Wealth Management",
       description:
-        "We are committed to facilitating the digital transformation of wealth management services, assisting businesses in reducing costs, enhancing efficiency and growing sustainably. Through introducing digital products, application programming interfaces (APIs) and platform resources, Trustmore collaborates with financial institutions to support millions of clients worldwide.",
+        "IPRIVE is a global private wealth advisory platform, dedicated to serving high-net-worth individuals, families, and corporations with discretion and expertise. We curate exclusive investment opportunities across global real estate, private equity, alternative assets, and bespoke financial instruments. Our services extend to high-value insurance solutions, family office structuring, and global mobility through residency and citizenship programs.Every IPRIVE relationship is built on absolute trust, confidentiality, and tailored financial strategies. With a presence in India and Dubai, we bridge wealth, opportunity, and legacy planning across jurisdictions. IPRIVE, Where Global Wealth Meets Timeless Vision.",
       image: "/iprive1.png",
       link: "https://iprivewealth.com",
       imageOnLeft: false,
@@ -26,7 +26,7 @@ export function BrandShowcase() {
       id: "experiences",
       title: "Luxury Experiences",
       description:
-        "We are committed to providing exclusive travel and unforgettable moments curated for the discerning elite. From private island takeovers to red-carpet access at global events, we curate rare, invitation-only experiences that transcend luxury and become legacy.",
+        "LuxeJoys curates exclusive luxury experiences for the world’s most discerning clients. From private jet charters to bespoke vacation retreats, we specialize in creating unparalleled journeys. Our offerings extend to access to elite events, tailored concierge services, and unforgettable adventures. With a focus on exceeding expectations, we turn dreams into realities for high-net-worth individuals. Operating globally, LuxeJoys connects you to the finest luxury experiences wherever you are. LuxeJoys, Luxury Redefined. Experiences Elevated.",
       image: "/luxejoy1.png",
       link: "https://luxejoys.com",
       imageOnLeft: true,
