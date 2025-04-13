@@ -5,6 +5,36 @@ import Zoom from "react-medium-image-zoom";
 import "react-medium-image-zoom/dist/styles.css";
 
 export default function CompanyProfile() {
+  return (
+    <section className="py-20 bg-white">
+      <div className="container mx-auto px-4 md:px-6 max-w-5xl">
+        <h2 className="text-3xl font-semibold text-center mb-8">
+          Company Profile
+        </h2>
+
+        <div className="max-w-3xl mx-auto">
+          <p className="text-base text-gray-700 mb-4">
+            Trustmore traces its roots back to a vision established in 1998 to
+            create trust between wealth managers and clients. Over the years,
+            Trustmore has grown to become one of the world's leading private
+            wealth management platforms.
+          </p>
+          <p className="text-base text-gray-700">
+            Through technological innovation, we support our partners in
+            providing inclusive, convenient digital life and digital financial
+            services to consumers and SMEs. In addition, we have been
+            introducing new technologies and products to support the digital
+            transformation of industries and facilitate collaboration. Working
+            together with global partners, we enable merchants and consumers to
+            make and receive payments and build wealth around the world.
+          </p>
+        </div>
+      </div>
+    </section>
+  );
+}
+
+export function BrandShowcase() {
   const brands = [
     {
       id: "payments",
@@ -36,31 +66,10 @@ export default function CompanyProfile() {
   ];
 
   return (
-    <section className="py-20 bg-white">
+    <section className="py-20 bg-gray-50">
       <div className="container mx-auto px-4 md:px-6 max-w-5xl">
-        <h2 className="text-3xl font-semibold text-center mb-8">
-          Company profile
-        </h2>
+        <h2 className="text-3xl font-semibold text-center mb-16">Our Brands</h2>
 
-        <div className="max-w-3xl mx-auto mb-16">
-          <p className="text-base text-gray-700 mb-4">
-            Trustmore traces its roots back to a vision established in 1998 to
-            create trust between wealth managers and clients. Over the years,
-            Trustmore has grown to become one of the world's leading private
-            wealth management platforms.
-          </p>
-          <p className="text-base text-gray-700">
-            Through technological innovation, we support our partners in
-            providing inclusive, convenient digital life and digital financial
-            services to consumers and SMEs. In addition, we have been
-            introducing new technologies and products to support the digital
-            transformation of industries and facilitate collaboration. Working
-            together with global partners, we enable merchants and consumers to
-            make and receive payments and build wealth around the world.
-          </p>
-        </div>
-
-        {/* Brand sections */}
         <div className="space-y-16">
           {brands.map((brand) => (
             <div
@@ -76,7 +85,7 @@ export default function CompanyProfile() {
                       alt={brand.title}
                       layout="fill"
                       objectFit="cover"
-                      className="rounded-xl" // Apply rounded corners
+                      className="rounded-xl"
                     />
                   </Zoom>
                 </div>

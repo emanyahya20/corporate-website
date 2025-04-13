@@ -2,53 +2,31 @@ import { useState, useEffect, useRef } from "react";
 import Link from "next/link";
 import Image from "next/image";
 import { Button } from "@/components/ui/button";
-import { Menu, X, ChevronDown } from "lucide-react";
-import { useRouter } from "next/router"; // Import useRouter
+import { Menu, X } from "lucide-react";
+import { useRouter } from "next/router";
 
 export default function Header() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
   const [mounted, setMounted] = useState(false);
-  const [aboutDropdownOpen, setAboutDropdownOpen] = useState(false);
-  const aboutDropdownRef = useRef<HTMLDivElement>(null);
   const [routerPath, setRouterPath] = useState<string | null>(null);
 
   useEffect(() => {
     setMounted(true);
-
-    // Store the current route after mounting
     setRouterPath(window.location.pathname);
 
     const handleScroll = () => {
-      if (window.scrollY > 10) {
-        setScrolled(true);
-      } else {
-        setScrolled(false);
-      }
+      setScrolled(window.scrollY > 10);
     };
 
     window.addEventListener("scroll", handleScroll);
-    handleScroll(); // Trigger once to check initial position
-
-    // Close dropdown when clicking outside
-    const handleClickOutside = (event: MouseEvent) => {
-      if (
-        aboutDropdownRef.current &&
-        !aboutDropdownRef.current.contains(event.target as Node)
-      ) {
-        setAboutDropdownOpen(false);
-      }
-    };
-
-    document.addEventListener("mousedown", handleClickOutside);
+    handleScroll();
 
     return () => {
       window.removeEventListener("scroll", handleScroll);
-      document.removeEventListener("mousedown", handleClickOutside);
     };
   }, []);
 
-  // Define the pages where the header should be transparent
   const transparentPages = [
     "/",
     "/payments",
@@ -58,15 +36,8 @@ export default function Header() {
     "/contact",
   ];
 
-  // Check if the current route is one of the transparent pages
   const isTransparent =
-    transparentPages.some((page) => {
-      // Check if the current page matches the base path (e.g., "/experiences")
-      if (routerPath && routerPath.startsWith(page)) {
-        return true;
-      }
-      return false;
-    }) &&
+    transparentPages.some((page) => routerPath?.startsWith(page)) &&
     !scrolled &&
     mounted;
 
@@ -92,28 +63,13 @@ export default function Header() {
               />
             </Link>
 
-            <div className="flex items-center space-x-2">
-              {" "}
-              {/* Reduced space between second and third image */}
-              <Link href="/">
-                <Image
-                  src="/footerlogo/golden.png"
-                  alt="Logo"
-                  width={180}
-                  height={50}
-                  className="h-10 w-auto"
-                />
-              </Link>
-              <Link href="/about">
-                <Image
-                  src="/footerlogo/25years.png"
-                  alt="25 Years of Trustmore"
-                  width={180}
-                  height={50}
-                  className="h-10 w-auto hover:opacity-80 transition-opacity"
-                />
-              </Link>
-            </div>
+            <Image
+              src="/footerlogo/ft2.png"
+              alt="25 Years of Trustmore"
+              width={180}
+              height={50}
+              className="h-10 w-auto"
+            />
           </div>
 
           {/* Desktop Navigation */}
@@ -122,15 +78,23 @@ export default function Header() {
               href="/"
               className={`${
                 isTransparent ? "text-white" : "text-gray-700"
-              } text-lg font-medium hover:text-blue-600`}
+              } text-lg font-medium`}
             >
               Home
+            </Link>
+            <Link
+              href="/about"
+              className={`${
+                isTransparent ? "text-white" : "text-gray-700"
+              } text-lg font-medium `}
+            >
+              About
             </Link>
             <Link
               href="/payments"
               className={`${
                 isTransparent ? "text-white" : "text-gray-700"
-              } text-lg font-medium hover:text-blue-600`}
+              } text-lg font-medium `}
             >
               Payments
             </Link>
@@ -138,7 +102,7 @@ export default function Header() {
               href="/wealth-management"
               className={`${
                 isTransparent ? "text-white" : "text-gray-700"
-              } text-lg font-medium hover:text-blue-600`}
+              } text-lg font-medium `}
             >
               Wealth Management
             </Link>
@@ -146,103 +110,15 @@ export default function Header() {
               href="/experiences"
               className={`${
                 isTransparent ? "text-white" : "text-gray-700"
-              } text-lg font-medium hover:text-blue-600`}
+              } text-lg font-medium `}
             >
               Experiences
             </Link>
-
-            {/* About Dropdown */}
-            <div className="relative" ref={aboutDropdownRef}>
-              <div className="flex items-center">
-                <Link
-                  href="/about"
-                  className={`${
-                    isTransparent ? "text-white" : "text-gray-700"
-                  } text-lg font-medium hover:text-blue-600`}
-                >
-                  About
-                </Link>
-                <button
-                  onClick={(e) => {
-                    e.preventDefault();
-                    setAboutDropdownOpen(!aboutDropdownOpen);
-                  }}
-                  className={`ml-1 inline-flex items-center ${
-                    isTransparent ? "text-white" : "text-gray-700"
-                  } hover:text-blue-600`}
-                  aria-label="Toggle about menu"
-                >
-                  <ChevronDown className="h-4 w-4" />
-                </button>
-              </div>
-
-              {aboutDropdownOpen && (
-                <div className="absolute top-full left-0 mt-2 w-48 bg-white rounded-md shadow-lg py-1 z-50">
-                  <Link
-                    href="/about#mission"
-                    className="block px-4 py-2 text-sm text-gray-700 hover:bg-blue-50"
-                    onClick={() => setAboutDropdownOpen(false)}
-                  >
-                    Our Mission
-                  </Link>
-                  <Link
-                    href="/about#vision"
-                    className="block px-4 py-2 text-sm text-gray-700 hover:bg-blue-50"
-                    onClick={() => setAboutDropdownOpen(false)}
-                  >
-                    Our Vision
-                  </Link>
-                  <Link
-                    href="/about#brands"
-                    className="block px-4 py-2 text-sm text-gray-700 hover:bg-blue-50"
-                    onClick={() => setAboutDropdownOpen(false)}
-                  >
-                    Our Brands
-                  </Link>
-                  <Link
-                    href="/about#story"
-                    className="block px-4 py-2 text-sm text-gray-700 hover:bg-blue-50"
-                    onClick={() => setAboutDropdownOpen(false)}
-                  >
-                    Our Story
-                  </Link>
-                  <Link
-                    href="/about#services"
-                    className="block px-4 py-2 text-sm text-gray-700 hover:bg-blue-50"
-                    onClick={() => setAboutDropdownOpen(false)}
-                  >
-                    Services
-                  </Link>
-                  <Link
-                    href="/about#why-us"
-                    className="block px-4 py-2 text-sm text-gray-700 hover:bg-blue-50"
-                    onClick={() => setAboutDropdownOpen(false)}
-                  >
-                    Why Choose Us
-                  </Link>
-                  <Link
-                    href="/about#leadership"
-                    className="block px-4 py-2 text-sm text-gray-700 hover:bg-blue-50"
-                    onClick={() => setAboutDropdownOpen(false)}
-                  >
-                    Leadership
-                  </Link>
-                  <Link
-                    href="/about#awards"
-                    className="block px-4 py-2 text-sm text-gray-700 hover:bg-blue-50"
-                    onClick={() => setAboutDropdownOpen(false)}
-                  >
-                    Awards
-                  </Link>
-                </div>
-              )}
-            </div>
-
             <Link
               href="/contact"
               className={`${
                 isTransparent ? "text-white" : "text-gray-700"
-              } text-lg font-medium hover:text-blue-600`}
+              } text-lg font-medium `}
             >
               Contact
             </Link>
@@ -253,10 +129,10 @@ export default function Header() {
               className={`${
                 isTransparent
                   ? "bg-white text-gray-800 hover:bg-white/90"
-                  : "bg-blue-600 text-white hover:bg-blue-700"
-              } rounded-none`}
+                  : "bg-black text-white hover:bg-black/80"
+              } rounded-none transition-all duration-200 hover:shadow-md hover:scale-105`}
             >
-              Request Consultation
+              Get Started
             </Button>
           </div>
 
@@ -302,6 +178,13 @@ export default function Header() {
               Home
             </Link>
             <Link
+              href="/about"
+              className="text-gray-700 hover:text-blue-600 text-lg font-medium"
+              onClick={() => setMobileMenuOpen(false)}
+            >
+              About
+            </Link>
+            <Link
               href="/payments"
               className="text-gray-700 hover:text-blue-600 text-lg font-medium"
               onClick={() => setMobileMenuOpen(false)}
@@ -321,13 +204,6 @@ export default function Header() {
               onClick={() => setMobileMenuOpen(false)}
             >
               Experiences
-            </Link>
-            <Link
-              href="/about"
-              className="text-gray-700 hover:text-blue-600 text-lg font-medium"
-              onClick={() => setMobileMenuOpen(false)}
-            >
-              About
             </Link>
             <Link
               href="/contact"

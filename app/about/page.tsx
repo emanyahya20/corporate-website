@@ -21,7 +21,7 @@ export default function AboutPage() {
         <div className="absolute inset-0 bg-black/30 z-10" />
         <div className="container mx-auto px-4 md:px-6 max-w-5xl relative z-20 text-center">
           <div className="max-w-4xl mx-auto">
-            <h1 className="text-4xl md:text-6xl font-bold text-white mb-6 leading-tight">
+            <h1 className="text-4xl sm:text-5xl md:text-6xl font-semibold text-white mb-3 sm:mb-4 leading-tight [text-shadow:_0_2px_4px_rgba(0,0,0,0.5)]">
               About Trustmore
             </h1>
             <p className="text-lg md:text-2xl text-white/90 mb-10">
@@ -43,7 +43,7 @@ export default function AboutPage() {
             <div className="w-full md:w-1/3">
               <div className="relative h-[400px] rounded-xl overflow-hidden">
                 <Image
-                  src="/ashwin-bw.jpg"
+                  src="/ashwin.Jpeg"
                   alt="Ashwin - Founder & CEO"
                   fill
                   className="object-cover grayscale hover:grayscale-0 transition-all duration-500"
@@ -75,21 +75,21 @@ export default function AboutPage() {
             <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
               {/* Board Member 1 */}
               <div className="flex flex-col md:flex-row gap-8">
-                <div className="w-full md:w-1/3">
-                  <div className="relative h-64 rounded-xl overflow-hidden">
+                <div className="w-full md:w-1/2">
+                  <div className="relative h-64 w-full rounded-xl overflow-hidden">
                     <Image
-                      src="/board-member1.jpg"
+                      src="/boardmember1.png"
                       alt="Board Member 1"
                       fill
-                      className="object-cover grayscale hover:grayscale-0 transition-all duration-500"
+                      className="object-contain scale-90"
                     />
                   </div>
                 </div>
-                <div className="w-full md:w-2/3">
+                <div className="w-full md:w-1/2">
                   <h4 className="text-2xl font-bold text-gray-800 mb-2">
-                    Board Member Name
+                    Brijesh Thakkar
                   </h4>
-                  <p className="text-blue-600 mb-4">Position/Role</p>
+                  <p className="text-blue-600 mb-4">Director</p>
                   <p className="text-gray-600">
                     Brief introduction about the board member. Their expertise,
                     background, and contribution to the company. Keep this to
@@ -100,21 +100,23 @@ export default function AboutPage() {
 
               {/* Board Member 2 */}
               <div className="flex flex-col md:flex-row gap-8">
-                <div className="w-full md:w-1/3">
-                  <div className="relative h-64 rounded-xl overflow-hidden">
+                <div className="w-full md:w-1/2">
+                  <div className="relative h-64 w-full rounded-xl overflow-hidden">
                     <Image
-                      src="/board-member2.jpg"
+                      src="/boardmember2.png"
                       alt="Board Member 2"
                       fill
-                      className="object-cover grayscale hover:grayscale-0 transition-all duration-500"
+                      className="object-contain scale-90"
                     />
                   </div>
                 </div>
-                <div className="w-full md:w-2/3">
+                <div className="w-full md:w-1/2">
                   <h4 className="text-2xl font-bold text-gray-800 mb-2">
-                    Board Member Name
+                    Ashwin Chawwla
                   </h4>
-                  <p className="text-blue-600 mb-4">Position/Role</p>
+                  <p className="text-blue-600 mb-4">
+                    Chairman & managing Director
+                  </p>
                   <p className="text-gray-600">
                     Brief introduction about the board member. Their expertise,
                     background, and contribution to the company. Keep this to
@@ -130,63 +132,75 @@ export default function AboutPage() {
             <h3 className="text-3xl font-semibold text-gray-800 mb-12 text-center">
               Executive Team
             </h3>
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+            <div className="flex justify-center gap-8 flex-wrap">
               {/* Team Member 1 */}
-              <div className="group relative overflow-hidden rounded-lg">
+              <div className="relative overflow-hidden rounded-lg w-80">
                 <div className="relative h-80">
                   <Image
-                    src="/team-member1.jpg"
+                    src="/ExecutiveDirector.png"
                     alt="Team Member"
                     fill
-                    className="object-cover grayscale group-hover:grayscale-0 transition-all duration-500"
+                    className="object-cover"
                   />
                 </div>
                 <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/40 to-transparent flex items-end p-6">
                   <div>
                     <h3 className="text-white text-xl font-bold">
-                      Leadership Member
+                      Sanjoy Paul
                     </h3>
-                    <p className="text-blue-300">Chief Technology Officer</p>
+                    <p className="text-blue-300">
+                      Executive Director - TCG Group
+                    </p>
                   </div>
                 </div>
               </div>
 
               {/* Team Member 2 */}
-              <div className="group relative overflow-hidden rounded-lg">
+              <div className="relative overflow-hidden rounded-lg w-80">
                 <div className="relative h-80">
                   <Image
-                    src="/team-member2.jpg"
+                    src="/ExecutiveDirector2.jpeg"
                     alt="Team Member"
                     fill
-                    className="object-cover grayscale group-hover:grayscale-0 transition-all duration-500"
+                    className="object-cover"
                   />
                 </div>
                 <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/40 to-transparent flex items-end p-6">
                   <div>
                     <h3 className="text-white text-xl font-bold">
-                      Leadership Member
+                      Saurabh Chawla
                     </h3>
-                    <p className="text-blue-300">Chief Operations Officer</p>
+                    <p className="text-blue-300">
+                      Executive Director - GMR Group
+                    </p>
                   </div>
                 </div>
               </div>
+            </div>
+          </div>
 
-              {/* Team Member 3 */}
-              <div className="group relative overflow-hidden rounded-lg">
+          {/* Advisory Council Section */}
+          <div className="mt-24">
+            <h3 className="text-3xl font-semibold text-gray-800 mb-12 text-center">
+              Advisory Council
+            </h3>
+            <div className="flex justify-center">
+              {/* Advisor Member */}
+              <div className="relative overflow-hidden rounded-lg w-80">
                 <div className="relative h-80">
                   <Image
-                    src="/team-member3.jpg"
-                    alt="Team Member"
+                    src="/advisor.jpeg" // replace with your actual image path
+                    alt="Advisor Member"
                     fill
-                    className="object-cover grayscale group-hover:grayscale-0 transition-all duration-500"
+                    className="object-cover"
                   />
                 </div>
                 <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/40 to-transparent flex items-end p-6">
                   <div>
                     <h3 className="text-white text-xl font-bold">
-                      Leadership Member
+                      Subhrangshu Neogi
                     </h3>
-                    <p className="text-blue-300">Chief Investment Officer</p>
+                    <p className="text-blue-300">Strategic Advisor</p>
                   </div>
                 </div>
               </div>
