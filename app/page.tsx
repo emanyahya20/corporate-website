@@ -106,44 +106,63 @@ export default function Home() {
           <h2 className="text-2xl md:text-3xl font-semibold text-gray-800 mb-6">
             Explore Our Sections
           </h2>
-          <div className="flex justify-center space-x-6">
-            <a
-              href="#mission-vision"
-              className="text-lg text-grey hover:text-black"
-            >
-              Mission & Vision
-            </a>
-            <a
-              href="#company-profile"
-              className="text-lg text-grey hover:text-black"
-            >
-              Company Profile
-            </a>
-            <a
-              href="#brand-showcase"
-              className="text-lg text-grey hover:text-black"
-            >
-              Explore Our Brands
-            </a>
-            <a
-              href="#podcast-section"
-              className="text-lg text-grey hover:text-black"
-            >
-              Podcast Section
-            </a>
-            <a
-              href="#awards-section"
-              className="text-lg text-grey hover:text-black"
-            >
-              Awards
-            </a>
-            <a
-              href="#HistoryTimeline"
-              className="text-lg text-grey hover:text-black"
-            >
-              History Timeline
-            </a>
+          <div className="flex overflow-x-auto pb-3 hide-scrollbar">
+            <div className="flex space-x-4 md:space-x-6 mx-auto">
+              <a
+                href="#mission-vision"
+                className="text-sm md:text-lg text-grey hover:text-black whitespace-nowrap px-1"
+              >
+                Mission & Vision
+              </a>
+              <a
+                href="#company-profile"
+                className="text-sm md:text-lg text-grey hover:text-black whitespace-nowrap px-1"
+              >
+                Company Profile
+              </a>
+              <a
+                href="#brand-showcase"
+                className="text-sm md:text-lg text-grey hover:text-black whitespace-nowrap px-1"
+              >
+                Explore Our Brands
+              </a>
+              <a
+                href="#podcast-section"
+                className="text-sm md:text-lg text-grey hover:text-black whitespace-nowrap px-1"
+              >
+                Podcast Section
+              </a>
+              <a
+                href="#awards-section"
+                className="text-sm md:text-lg text-grey hover:text-black whitespace-nowrap px-1"
+              >
+                Awards
+              </a>
+              <a
+                href="#HistoryTimeline"
+                className="text-sm md:text-lg text-grey hover:text-black whitespace-nowrap px-1"
+              >
+                History Timeline
+              </a>
+              <a
+                href="#trust-circle"
+                className="text-sm md:text-lg text-grey hover:text-black whitespace-nowrap px-1"
+              >
+                Trust Circle
+              </a>
+            </div>
           </div>
+
+          {/* Add this style to hide scrollbar but keep functionality */}
+          <style jsx>{`
+            .hide-scrollbar {
+              -ms-overflow-style: none; /* IE and Edge */
+              scrollbar-width: none; /* Firefox */
+            }
+            .hide-scrollbar::-webkit-scrollbar {
+              display: none; /* Chrome, Safari and Opera */
+            }
+          `}</style>
         </div>
       </section>
 
@@ -229,7 +248,7 @@ export default function Home() {
         </div>
       </div>
       {/*  HistoryTimeline */}
-      <section id="trustcircle">
+      <section id="trust-circle">
         <Trustcircle />
       </section>
     </div>

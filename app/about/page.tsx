@@ -217,7 +217,7 @@ export default function AboutPage() {
           {/* Ashwin Section */}
           <div className="flex flex-col md:flex-row items-start gap-8 md:gap-12 mb-16 md:mb-24">
             <div className="w-full md:w-[40%]">
-              <div className="relative h-[300px] md:h-[500px] rounded-xl overflow-hidden">
+              <div className="relative w-full h-[400px] md:h-[500px] rounded-xl overflow-hidden">
                 <Image
                   src="/ashwinc.jpg"
                   alt="Ashwin - Founder & CEO"
@@ -260,9 +260,9 @@ export default function AboutPage() {
             <h3 className="text-2xl md:text-3xl font-semibold text-gray-800 mb-8 md:mb-12 text-center">
               Board Members
             </h3>
-            <div className="flex justify-center gap-4 md:gap-8 flex-wrap">
-              <div className="relative overflow-hidden rounded-lg w-full sm:w-64 md:w-80 group">
-                <div className="relative h-80">
+            <div className="flex justify-center gap-6 md:gap-8 flex-wrap">
+              <div className="relative overflow-hidden rounded-lg w-full sm:w-64 md:w-80 group mb-6 sm:mb-0">
+                <div className="relative w-full h-[400px] sm:h-80">
                   <Image
                     src="/boardmember2.png"
                     alt="Ashwin Chawwla"
@@ -282,13 +282,13 @@ export default function AboutPage() {
                 </div>
               </div>
 
-              <div className="relative overflow-hidden rounded-lg w-full sm:w-64 md:w-80 group mt-4 sm:mt-0">
-                <div className="relative h-80">
+              <div className="relative overflow-hidden rounded-lg w-full sm:w-64 md:w-80 group">
+                <div className="relative w-full h-[400px] sm:h-80">
                   <Image
                     src="/boardmember1.png"
                     alt="Brijesh Thakkar"
                     fill
-                    className="object-contain scale-[0.97] grayscale group-hover:grayscale-0 transition-all duration-500"
+                    className="object-contain grayscale group-hover:grayscale-0 transition-all duration-500"
                   />
                 </div>
                 <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/40 to-transparent flex items-end p-6">
@@ -302,7 +302,6 @@ export default function AboutPage() {
               </div>
             </div>
           </div>
-
           {/* Executive Team Section - Mobile Responsive Carousel */}
           <div id="executive-team" className="mb-16 md:mb-24">
             <h3 className="text-2xl md:text-3xl font-semibold text-gray-800 mb-8 md:mb-12 text-center">
