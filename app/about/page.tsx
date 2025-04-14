@@ -1,7 +1,148 @@
+"use client";
+
 import Image from "next/image";
 import { Button } from "@/components/ui/button";
+import { useState, useRef, useEffect } from "react";
+import { ChevronLeft, ChevronRight } from "lucide-react";
 
 export default function AboutPage() {
+  const executiveScrollRef = useRef(null);
+  const [currentPage, setCurrentPage] = useState(0);
+  const [totalPages, setTotalPages] = useState(0);
+  const [cardsPerPage, setCardsPerPage] = useState(3);
+
+  // Executive team data
+  const executiveTeam = [
+    {
+      name: "Gajendra Arya",
+      position: "Chief Technology Officer",
+      image: "/m1.png",
+    },
+    {
+      name: "Mohit Sahgal",
+      position: "Chief of Staff",
+      image: "/m2.png",
+    },
+    {
+      name: "Vinod kanojia",
+      position: "Payment Processing and Operations",
+      image: "/m3.png",
+    },
+    {
+      name: "Madhvi Mehandiratta",
+      position: "Payment Processing and Operations",
+      image: "/m4.png",
+    },
+    {
+      name: "Prag Bansal",
+      position: "Growth",
+      image: "/m5.png",
+    },
+    {
+      name: "Priyam Arya",
+      position: "Product",
+      image: "/m6.png",
+    },
+    {
+      name: "Asha Yadav",
+      position: "Finance and Accounts",
+      image: "/m7.png",
+    },
+  ];
+
+  // Advisory council data
+  const advisoryCouncil = [
+    {
+      name: "Subhrangshu Neogi",
+      position: "Strategic Advisor",
+      image: "/advisor.jpeg",
+    },
+    {
+      name: "Sanjoy Paul",
+      position: "Executive Director - TCG Group",
+      image: "/ExecutiveDirector.png",
+    },
+    {
+      name: "Saurabh Chawla",
+      position: "Executive Director - GMR Group",
+      image: "/ExecutiveDirector2.jpeg",
+    },
+  ];
+
+  useEffect(() => {
+    // Calculate how many pages we need based on cardsPerPage
+    setTotalPages(Math.ceil(executiveTeam.length / cardsPerPage));
+
+    const handleResize = () => {
+      // Adjust cardsPerPage based on screen width if needed
+      const width = window.innerWidth;
+      if (width < 768) {
+        setCardsPerPage(1);
+      } else if (width < 1024) {
+        setCardsPerPage(2);
+      } else {
+        setCardsPerPage(3);
+      }
+    };
+
+    // Initial call
+    handleResize();
+
+    // Set up resize listener
+    window.addEventListener("resize", handleResize);
+    return () => {
+      window.removeEventListener("resize", handleResize);
+    };
+  }, [executiveTeam.length]);
+
+  const goToPage = (pageIndex) => {
+    if (executiveScrollRef.current) {
+      // Ensure pageIndex is within bounds
+      const boundedPageIndex = Math.max(0, Math.min(pageIndex, totalPages - 1));
+      setCurrentPage(boundedPageIndex);
+
+      const containerWidth = executiveScrollRef.current.offsetWidth;
+      executiveScrollRef.current.scrollTo({
+        left: boundedPageIndex * containerWidth,
+        behavior: "smooth",
+      });
+    }
+  };
+
+  const nextPage = () => {
+    goToPage(currentPage + 1);
+  };
+
+  const prevPage = () => {
+    goToPage(currentPage - 1);
+  };
+
+  // Team member card component
+  const MemberCard = ({ name, position, image }) => (
+    <div className="relative overflow-hidden rounded-lg w-64 group flex-shrink-0 mx-4">
+      <div className="relative h-64">
+        <Image
+          src={image}
+          alt={name}
+          fill
+          className="object-cover grayscale group-hover:grayscale-0 transition-all duration-500"
+        />
+      </div>
+      <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/40 to-transparent flex items-end p-4">
+        <div>
+          <h3 className="text-white text-lg font-bold">{name}</h3>
+          <p className="text-blue-300 text-sm">{position}</p>
+        </div>
+      </div>
+    </div>
+  );
+
+  // Helper to chunk the executive team into pages
+  const getTeamByPage = (page) => {
+    const start = page * cardsPerPage;
+    return executiveTeam.slice(start, start + cardsPerPage);
+  };
+
   return (
     <div className="flex flex-col min-h-screen">
       {/* Hero Video Banner */}
@@ -67,9 +208,9 @@ export default function AboutPage() {
       </section>
 
       {/* Leadership Team */}
-      <section id="leadership" className="py-32 bg-gray-50">
+      <section id="leadership" className="py-16 bg-gray-50">
         <div className="container mx-auto px-4 md:px-6 max-w-5xl">
-          <h2 className="text-4xl md:text-5xl font-semibold text-gray-800 mb-16 text-center">
+          <h2 className="text-4xl md:text-3xl font-semibold text-gray-800 mb-16 text-center">
             Leadership
           </h2>
 
@@ -101,13 +242,13 @@ export default function AboutPage() {
                 enduring foundation of trust, transparency, and
                 relationship-driven values. His vision is to reshape the private
                 wealth space by integrating innovation, reliability, and
-                integrity ensuring Trustmore’s clients not only grow their
+                integrity ensuring Trustmore's clients not only grow their
                 wealth but protect their legacies for future generations. Ashwin
                 continues to lead Trustmore Group as a future-ready institution,
                 one that stays ahead by managing complex financial ecosystems
                 for wealthy families, entrepreneurs, and institutions worldwide
-                all while upholding the group’s core promise of “Trust,
-                Transparency, and Timeless Relationships”.
+                all while upholding the group's core promise of "Trust,
+                Transparency, and Timeless Relationships".
               </p>
             </div>
           </div>
@@ -160,80 +301,74 @@ export default function AboutPage() {
             </div>
           </div>
 
-          {/* Executive Team Section */}
-          <div id="executive-team">
+          {/* Executive Team Section - Fixed Carousel with Page Navigation */}
+          <div id="executive-team" className="mb-24">
             <h3 className="text-3xl font-semibold text-gray-800 mb-12 text-center">
               Executive Team
             </h3>
-            <div className="flex justify-center gap-8 flex-wrap">
-              <div className="relative overflow-hidden rounded-lg w-80 group">
-                <div className="relative h-80">
-                  <Image
-                    src="/ExecutiveDirector.png"
-                    alt="Sanjoy Paul"
-                    fill
-                    className="object-cover grayscale group-hover:grayscale-0 transition-all duration-500"
-                  />
-                </div>
-                <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/40 to-transparent flex items-end p-6">
-                  <div>
-                    <h3 className="text-white text-xl font-bold">
-                      Sanjoy Paul
-                    </h3>
-                    <p className="text-blue-300">
-                      Executive Director - TCG Group
-                    </p>
-                  </div>
-                </div>
-              </div>
 
-              <div className="relative overflow-hidden rounded-lg w-80 group">
-                <div className="relative h-80">
-                  <Image
-                    src="/ExecutiveDirector2.jpeg"
-                    alt="Saurabh Chawla"
-                    fill
-                    className="object-cover grayscale group-hover:grayscale-0 transition-all duration-500"
-                  />
-                </div>
-                <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/40 to-transparent flex items-end p-6">
-                  <div>
-                    <h3 className="text-white text-xl font-bold">
-                      Saurabh Chawla
-                    </h3>
-                    <p className="text-blue-300">
-                      Executive Director - GMR Group
-                    </p>
-                  </div>
+            <div className="relative">
+              {/* Navigation buttons positioned outside the cards */}
+              <button
+                onClick={prevPage}
+                disabled={currentPage === 0}
+                className={`absolute left-0 top-1/2 -translate-y-1/2 z-10 bg-white/80 hover:bg-white p-2 rounded-full shadow-md -ml-10 
+                  ${
+                    currentPage === 0
+                      ? "opacity-50 cursor-not-allowed"
+                      : "cursor-pointer"
+                  }`}
+                aria-label="Previous page"
+              >
+                <ChevronLeft size={24} />
+              </button>
+
+              <button
+                onClick={nextPage}
+                disabled={currentPage >= totalPages - 1}
+                className={`absolute right-0 top-1/2 -translate-y-1/2 z-10 bg-white/80 hover:bg-white p-2 rounded-full shadow-md -mr-10 
+                  ${
+                    currentPage >= totalPages - 1
+                      ? "opacity-50 cursor-not-allowed"
+                      : "cursor-pointer"
+                  }`}
+                aria-label="Next page"
+              >
+                <ChevronRight size={24} />
+              </button>
+
+              {/* Carousel container */}
+              <div className="overflow-hidden">
+                <div
+                  ref={executiveScrollRef}
+                  className="flex transition-all duration-500"
+                  style={{ transform: `translateX(-${currentPage * 100}%)` }}
+                >
+                  {Array.from({ length: totalPages }).map((_, pageIndex) => (
+                    <div
+                      key={pageIndex}
+                      className="w-full flex-shrink-0 flex justify-center gap-8 px-4"
+                    >
+                      {getTeamByPage(pageIndex).map((member, index) => (
+                        <MemberCard key={`${pageIndex}-${index}`} {...member} />
+                      ))}
+                    </div>
+                  ))}
                 </div>
               </div>
             </div>
           </div>
 
-          {/* Advisory Council Section */}
+          {/* Advisory Council Section - Updated to show all 3 */}
           <div id="advisory-council" className="mt-24">
             <h3 className="text-3xl font-semibold text-gray-800 mb-12 text-center">
               Advisory Council
             </h3>
-            <div className="flex justify-center">
-              <div className="relative overflow-hidden rounded-lg w-80 group">
-                <div className="relative h-80">
-                  <Image
-                    src="/advisor.jpeg"
-                    alt="Subhrangshu Neogi"
-                    fill
-                    className="object-cover grayscale group-hover:grayscale-0 transition-all duration-500"
-                  />
-                </div>
-                <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/40 to-transparent flex items-end p-6">
-                  <div>
-                    <h3 className="text-white text-xl font-bold">
-                      Subhrangshu Neogi
-                    </h3>
-                    <p className="text-blue-300">Strategic Advisor</p>
-                  </div>
-                </div>
-              </div>
+
+            <div className="flex justify-center flex-wrap gap-8">
+              {advisoryCouncil.map((advisor, index) => (
+                <MemberCard key={index} {...advisor} />
+              ))}
             </div>
           </div>
         </div>

@@ -48,24 +48,24 @@ export default function Home() {
 
         {/* Centered Text Content */}
         <div className="absolute inset-0 flex items-center justify-center z-10 px-4 sm:px-6 lg:px-8 text-center">
-          <div className="max-w-3xl">
+          <div className="max-w-2xl">
             <h1 className="text-4xl sm:text-5xl md:text-6xl font-semibold text-white mb-4 leading-tight [text-shadow:_0_2px_4px_rgba(0,0,0,0.5)]">
               Welcome to Trustmore Group
             </h1>
             <p className="text-xl md:text-2xl text-white/90 mb-0">
-              Connecting the World’s Money Flows with Trust, Transparency, and
-              Technology. Trustmore. Do More.
+              Connecting the World's Money Flows with Trust, Transparency, and
+              Technology.
             </p>
             <p className="text-xl md:text-2xl text-white/90 mt-0 mb-3">
               Trustmore. Do More.
             </p>
 
-            {/* Play Button */}
+            {/* Play Button - Made thinner */}
             <button
               onClick={() => setIsModalOpen(true)}
-              className="inline-flex items-center justify-center rounded-full border border-white/30 bg-white/10 hover:bg-white/20 backdrop-blur-sm px-6 py-3 transition duration-300"
+              className="inline-flex items-center justify-center rounded-full border border-white/30 bg-white/10 hover:bg-white/20 backdrop-blur-sm px-4 py-2 transition duration-300"
             >
-              <Play className="w-6 h-6 text-white" />
+              <Play className="w-5 h-5 text-white" />
             </button>
           </div>
         </div>

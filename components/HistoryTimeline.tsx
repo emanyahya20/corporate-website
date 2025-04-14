@@ -50,7 +50,7 @@ const historyData: HistoryItem[] = [
     year: 2015,
     date: "2015.01",
     image: "/history7.png",
-    text: "Trustmore is incorporated. Participates in PM Modi’s trade delegation to Germany. Wins CII Innovation Awards recognition.",
+    text: "Trustmore is incorporated. Participates in PM Modi's trade delegation to Germany. Wins CII Innovation Awards recognition.",
   },
   {
     year: 2016,
@@ -98,7 +98,7 @@ const historyData: HistoryItem[] = [
     year: 2023,
     date: "2023.02",
     image: "/history15.png",
-    text: "IFSCA recognises Trustmore as India’s first digital escrow payments provider for cross border transactions. ",
+    text: "IFSCA recognises Trustmore as India's first digital escrow payments provider for cross border transactions. ",
   },
   {
     year: 2024,
@@ -120,6 +120,7 @@ export default function HistoryTimeline() {
   const [visibleStartIndex, setVisibleStartIndex] = useState(0);
   const [selectedYear, setSelectedYear] = useState(selectedYears[0]);
   const [expandedIndex, setExpandedIndex] = useState<number | null>(null);
+  const containerRef = useRef<HTMLDivElement>(null);
 
   const visibleYears = selectedYears.slice(
     visibleStartIndex,
@@ -142,68 +143,75 @@ export default function HistoryTimeline() {
   };
 
   return (
-    <section className="py-16 bg-white">
-      <div className="text-center mb-10">
+    <section className="py-10 bg-white">
+      <div className="text-center mb-6">
         <h2 className="text-3xl font-bold">Our History</h2>
         <p className="text-gray-500">Explore major events by year</p>
       </div>
 
       {/* Cards Layout */}
-      <div className="container mx-auto px-4">
-        <div className="grid gap-6 grid-cols-1 sm:grid-cols-2 md:grid-cols-3">
-          {visibleItems.map((item, index) => (
-            <div
-              key={index}
-              className="bg-gray-100 border rounded-lg p-4 shadow-sm w-[348px] h-[370px] mx-auto flex flex-col items-center"
-            >
-              <div className="w-full h-[200px] flex justify-center items-center mb-2">
-                <img
-                  src={item.image}
-                  alt={item.date}
-                  className="object-contain h-full w-full max-h-[200px]"
-                />
-              </div>
-              <p className="text-xs text-gray-500 mb-1 text-center">
-                {item.date}
-              </p>
-
-              <p
-                className={`text-sm text-gray-700 text-center whitespace-pre-line ${
-                  expandedIndex === index ? "" : "line-clamp-3"
-                }`}
+      <div
+        className="container mx-auto px-4 overflow-hidden"
+        ref={containerRef}
+      >
+        <div className="flex justify-center">
+          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 transition-all duration-500 ease-in-out">
+            {visibleItems.map((item, index) => (
+              <div
+                key={item.year}
+                className="bg-gray-100 border rounded-lg p-4 shadow-sm w-[340px] h-[360px] mx-1 flex flex-col items-center"
               >
-                {item.text}
-              </p>
+                <div className="w-full h-[180px] flex justify-center items-center mb-2">
+                  <img
+                    src={item.image}
+                    alt={item.date}
+                    className="object-contain h-full w-full max-h-[180px]"
+                  />
+                </div>
+                <p className="text-xs text-gray-500 mb-1 text-center">
+                  {item.date}
+                </p>
 
-              {item.text.length > 100 && (
-                <button
-                  onClick={() =>
-                    setExpandedIndex((prev) => (prev === index ? null : index))
-                  }
-                  className="text-blue-600 text-xs mt-1 hover:underline"
+                <p
+                  className={`text-sm text-gray-700 text-center whitespace-pre-line ${
+                    expandedIndex === index ? "" : "line-clamp-3"
+                  }`}
                 >
-                  {expandedIndex === index ? "Read less" : "Read more"}
-                </button>
-              )}
-            </div>
-          ))}
+                  {item.text}
+                </p>
 
-          {/* Placeholder cards to maintain layout consistency */}
-          {Array.from({ length: 3 - visibleItems.length }).map((_, index) => (
-            <div
-              key={`placeholder-${index}`}
-              className="invisible bg-white border rounded-lg p-4 shadow-sm w-[348px] h-[370px] mx-auto"
-            ></div>
-          ))}
+                {item.text.length > 100 && (
+                  <button
+                    onClick={() =>
+                      setExpandedIndex((prev) =>
+                        prev === index ? null : index
+                      )
+                    }
+                    className="text-blue-600 text-xs mt-1 hover:underline"
+                  >
+                    {expandedIndex === index ? "Read less" : "Read more"}
+                  </button>
+                )}
+              </div>
+            ))}
+
+            {/* Placeholder cards to maintain layout consistency */}
+            {Array.from({ length: 3 - visibleItems.length }).map((_, index) => (
+              <div
+                key={`placeholder-${index}`}
+                className="invisible bg-white border rounded-lg p-4 shadow-sm w-[340px] h-[360px] mx-1"
+              ></div>
+            ))}
+          </div>
         </div>
       </div>
 
       {/* Year Pagination */}
-      <div className="mt-10 flex items-center justify-center gap-4 px-4">
+      <div className="mt-4 flex items-center justify-center gap-4 px-4">
         <button
           onClick={scrollLeft}
           disabled={visibleStartIndex === 0}
-          className="p-2 rounded-full bg-gray-200 hover:bg-gray-300 disabled:opacity-30"
+          className="p-2 rounded-full bg-gray-200 hover:bg-gray-300 disabled:opacity-30 transition-colors"
         >
           ←
         </button>
@@ -227,7 +235,7 @@ export default function HistoryTimeline() {
         <button
           onClick={scrollRight}
           disabled={visibleStartIndex + 3 >= selectedYears.length}
-          className="p-2 rounded-full bg-gray-200 hover:bg-gray-300 disabled:opacity-30"
+          className="p-2 rounded-full bg-gray-200 hover:bg-gray-300 disabled:opacity-30 transition-colors"
         >
           →
         </button>

@@ -27,21 +27,25 @@ export default function Header() {
     "/",
     "/payments",
     "/wealth-management",
+    "/trustcircle",
+    "/luxejoy",
     "/about",
     "/contact",
-    "/careers", // Optional: Add if you want header to be transparent on /careers too
+    "/careers",
   ];
 
   const isTransparent =
     transparentPages.some((page) => pathname?.startsWith(page)) && !scrolled;
 
-  // Updated navigation links
+  // Updated navigation links with TrustCircle and LuxeJoy
   const navLinks = [
     { href: "/", label: "Home" },
     { href: "/about", label: "About" },
     { href: "/payments", label: "Payments" },
-    { href: "/wealth-management", label: "Wealth Management" },
-    { href: "/careers", label: "Careers" }, // Replaced "Experiences" with "Careers"
+    { href: "/wealth-management", label: "Wealth" },
+    { href: "/luxejoy", label: "LuxeJoy" },
+    { href: "/trustcircle", label: "Trust Circle" },
+    { href: "/careers", label: "Careers" },
     { href: "/contact", label: "Contact" },
   ];
 
@@ -76,14 +80,14 @@ export default function Header() {
           </div>
 
           {/* Desktop Navigation */}
-          <nav className="hidden md:flex items-center space-x-8">
+          <nav className="hidden md:flex items-center space-x-5">
             {navLinks.map((item) => (
               <Link
                 key={item.href}
                 href={item.href}
                 className={`${
                   isTransparent ? "text-white" : "text-gray-700"
-                } text-lg font-medium`}
+                } text-base font-medium`}
               >
                 {item.label}
               </Link>
@@ -96,7 +100,7 @@ export default function Header() {
                 isTransparent
                   ? "bg-white text-gray-800 hover:bg-white/90"
                   : "bg-black text-white hover:bg-black/80"
-              } rounded-full transition-all duration-200 hover:shadow-md hover:scale-105`}
+              } rounded-full text-base px-5 py-2 transition-all duration-200 hover:shadow-md hover:scale-105`}
             >
               Get Started
             </Button>
