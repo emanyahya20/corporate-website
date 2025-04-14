@@ -93,7 +93,7 @@ export default function Header() {
                 isTransparent
                   ? "bg-white text-gray-800 hover:bg-white/90"
                   : "bg-black text-white hover:bg-black/80"
-              } rounded-none transition-all duration-200 hover:shadow-md hover:scale-105`}
+              } rounded-full transition-all duration-200 hover:shadow-md hover:scale-105`}
             >
               Get Started
             </Button>

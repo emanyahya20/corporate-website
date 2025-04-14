@@ -167,28 +167,28 @@ export default function Home() {
           <div className="flex justify-center flex-wrap items-center gap-4">
             <div className="h-28 w-auto">
               <img
-                src="/logo1.png"
+                src="/award1.png"
                 alt="Award 1"
                 className="h-full w-auto object-contain max-w-[200px]"
               />
             </div>
             <div className="h-28 w-auto">
               <img
-                src="/logo2.png"
+                src="/award2.png"
                 alt="Award 2"
                 className="h-full w-auto object-contain max-w-[200px]"
               />
             </div>
             <div className="h-28 w-auto">
               <img
-                src="/logo3.png"
+                src="/award3.png"
                 alt="Award 3"
                 className="h-full w-auto object-contain max-w-[200px]"
               />
             </div>
             <div className="h-28 w-auto">
               <img
-                src="/logo4.png"
+                src="/award4.png"
                 alt="Award 4"
                 className="h-full w-auto object-contain max-w-[200px]"
               />

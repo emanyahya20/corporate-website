@@ -95,7 +95,7 @@ export default function Footer() {
                   href="https://www.linkedin.com/company/trustmoretech/"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="text-gray-600 hover:text-blue-600"
+                  className="text-gray-600 hover:text-black"
                   aria-label="LinkedIn"
                 >
                   <Linkedin className="h-5 w-5" />
@@ -104,7 +104,7 @@ export default function Footer() {
                   href="https://x.com/i/flow/login?redirect_after_login=%2Ftrustmorehq"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="text-gray-600 hover:text-blue-600"
+                  className="text-gray-600 hover:text-black"
                   aria-label="X (Twitter)"
                 >
                   <Twitter className="h-5 w-5" />
@@ -113,7 +113,7 @@ export default function Footer() {
                   href="https://www.facebook.com/Trustmorehq?mibextid=ZbWK4v1648226618021!5m2!1sen!2sin"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="text-gray-600 hover:text-blue-600"
+                  className="text-gray-600 hover:text-black"
                   aria-label="Facebook"
                 >
                   <Facebook className="h-5 w-5" />
@@ -122,7 +122,7 @@ export default function Footer() {
                   href="https://www.instagram.com/trustmoregroup/"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="text-gray-600 hover:text-blue-600"
+                  className="text-gray-600 hover:text-black"
                   aria-label="Instagram"
                 >
                   <Instagram className="h-5 w-5" />
@@ -131,7 +131,7 @@ export default function Footer() {
                   href="https://www.youtube.com/channel/UCcwBLC05uEbmuFPkNCcDOuw"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="text-gray-600 hover:text-blue-600"
+                  className="text-gray-600 hover:text-black"
                   aria-label="YouTube"
                 >
                   <Youtube className="h-5 w-5" />
@@ -148,10 +148,10 @@ export default function Footer() {
             <ul className="space-y-3">
               {[
                 { href: "/", label: "Home" },
+                { href: "/about", label: "About" }, // About is now placed after Home
                 { href: "/payments", label: "Payments" },
                 { href: "/wealth-management", label: "Wealth Management" },
                 { href: "/experiences", label: "Experiences" },
-                { href: "/about", label: "About" },
                 { href: "/privacy-policy", label: "Privacy Policy" },
                 { href: "/terms-of-service", label: "Terms of Service" },
               ].map(({ href, label }) => (
@@ -160,8 +160,8 @@ export default function Footer() {
                     href={href}
                     className={`font-medium ${
                       pathname === href
-                        ? "text-blue-600"
-                        : "text-gray-700 hover:text-blue-600"
+                        ? "text-black" // No blue color when active
+                        : "text-gray-700 "
                     }`}
                   >
                     {label}
@@ -182,7 +182,7 @@ export default function Footer() {
                   href="https://www.escrowpay.co.in"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="hover:text-blue-600"
+                  className="hover:text-black"
                 >
                   Escrowpay
                 </a>
@@ -192,7 +192,7 @@ export default function Footer() {
                   href="https://www.iprivewealth.com"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="hover:text-blue-600"
+                  className="hover:text-black"
                 >
                   IPRIVEWEALTH
                 </a>
@@ -202,7 +202,7 @@ export default function Footer() {
                   href="https://www.luxejoys.com"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="hover:text-blue-600"
+                  className="hover:text-black"
                 >
                   LUXEJOYS
                 </a>

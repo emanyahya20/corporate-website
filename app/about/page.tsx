@@ -115,16 +115,16 @@ export default function AboutPage() {
           {/* Board Members Section */}
           <div id="board-members" className="mb-24">
             <h3 className="text-3xl font-semibold text-gray-800 mb-12 text-center">
-              Board Member
+              Board Members
             </h3>
             <div className="flex justify-center gap-8 flex-wrap">
-              <div className="relative overflow-hidden rounded-lg w-80">
+              <div className="relative overflow-hidden rounded-lg w-80 group">
                 <div className="relative h-80">
                   <Image
                     src="/boardmember2.png"
-                    alt="Team Member"
+                    alt="Ashwin Chawwla"
                     fill
-                    className="object-cover"
+                    className="object-cover grayscale group-hover:grayscale-0 transition-all duration-500"
                   />
                 </div>
                 <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/40 to-transparent flex items-end p-6">
@@ -139,13 +139,13 @@ export default function AboutPage() {
                 </div>
               </div>
 
-              <div className="relative overflow-hidden rounded-lg w-80">
+              <div className="relative overflow-hidden rounded-lg w-80 group">
                 <div className="relative h-80">
                   <Image
                     src="/boardmember1.png"
-                    alt="Team Member"
+                    alt="Brijesh Thakkar"
                     fill
-                    className="object-contain scale-[0.97]" // zoomed out
+                    className="object-contain scale-[0.97] grayscale group-hover:grayscale-0 transition-all duration-500"
                   />
                 </div>
                 <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/40 to-transparent flex items-end p-6">
@@ -166,13 +166,13 @@ export default function AboutPage() {
               Executive Team
             </h3>
             <div className="flex justify-center gap-8 flex-wrap">
-              <div className="relative overflow-hidden rounded-lg w-80">
+              <div className="relative overflow-hidden rounded-lg w-80 group">
                 <div className="relative h-80">
                   <Image
                     src="/ExecutiveDirector.png"
-                    alt="Team Member"
+                    alt="Sanjoy Paul"
                     fill
-                    className="object-cover"
+                    className="object-cover grayscale group-hover:grayscale-0 transition-all duration-500"
                   />
                 </div>
                 <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/40 to-transparent flex items-end p-6">
@@ -187,16 +187,15 @@ export default function AboutPage() {
                 </div>
               </div>
 
-              <div className="relative overflow-hidden rounded-lg w-80">
+              <div className="relative overflow-hidden rounded-lg w-80 group">
                 <div className="relative h-80">
                   <Image
                     src="/ExecutiveDirector2.jpeg"
-                    alt="Team Member"
+                    alt="Saurabh Chawla"
                     fill
-                    className="object-cover"
+                    className="object-cover grayscale group-hover:grayscale-0 transition-all duration-500"
                   />
                 </div>
-
                 <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/40 to-transparent flex items-end p-6">
                   <div>
                     <h3 className="text-white text-xl font-bold">
@@ -217,13 +216,13 @@ export default function AboutPage() {
               Advisory Council
             </h3>
             <div className="flex justify-center">
-              <div className="relative overflow-hidden rounded-lg w-80">
+              <div className="relative overflow-hidden rounded-lg w-80 group">
                 <div className="relative h-80">
                   <Image
                     src="/advisor.jpeg"
-                    alt="Advisor Member"
+                    alt="Subhrangshu Neogi"
                     fill
-                    className="object-cover"
+                    className="object-cover grayscale group-hover:grayscale-0 transition-all duration-500"
                   />
                 </div>
                 <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/40 to-transparent flex items-end p-6">
