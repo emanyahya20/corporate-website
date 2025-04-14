@@ -5,6 +5,7 @@ import CompanyProfile from "@/components/company-profile";
 import { BrandShowcase } from "@/components/BrandShowcase";
 import PodcastSection from "@/components/podcast-section";
 import HistoryTimeline from "@/components/HistoryTimeline";
+import Trustcircle from "@/components/Trustcircle";
 import Link from "next/link";
 import { useState } from "react";
 import {
@@ -23,6 +24,7 @@ import {
   Shield as LucideShield,
   User as LucideUser,
 } from "lucide-react";
+import TrustCircle from "@/components/trust-circle";
 
 export default function Home() {
   // State to control modal visibility
@@ -226,6 +228,10 @@ export default function Home() {
           </div>
         </div>
       </div>
+      {/*  HistoryTimeline */}
+      <section id="trustcircle">
+        <Trustcircle />
+      </section>
     </div>
   );
 }
