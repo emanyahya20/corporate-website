@@ -22,7 +22,7 @@ export default function PodcastSection() {
               href={spotifyPodcastLink}
               target="_blank"
               rel="noopener noreferrer"
-              className="block relative w-full h-full rounded-lg shadow-md overflow-hidden"
+              className="block relative w-full h-full rounded-lg overflow-hidden"
             >
               <video
                 className="absolute inset-0 w-full h-full object-cover"
@@ -35,7 +35,6 @@ export default function PodcastSection() {
                 <source src="/videos/podcast1.mp4" type="video/mp4" />
                 Your browser does not support the video tag.
               </video>
-              <div className="absolute inset-0 bg-black/30 hover:bg-black/50 transition-opacity duration-300" />
             </a>
           </div>
 

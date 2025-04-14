@@ -90,7 +90,6 @@ export default function PaymentPage() {
                 >
                   <source src="/videos/podcast1.mp4" type="video/mp4" />
                 </video>
-                <div className="absolute inset-0 bg-black/30 hover:bg-black/50 transition-opacity duration-300" />
               </a>
             </div>
 
@@ -173,7 +172,6 @@ export default function PaymentPage() {
                 >
                   <source src="/videos/podcast1.mp4" type="video/mp4" />
                 </video>
-                <div className="absolute inset-0 bg-black/30 hover:bg-black/50 transition-opacity duration-300" />
               </a>
             </div>
 
@@ -256,7 +254,6 @@ export default function PaymentPage() {
                 >
                   <source src="/videos/podcast1.mp4" type="video/mp4" />
                 </video>
-                <div className="absolute inset-0 bg-black/30 hover:bg-black/50 transition-opacity duration-300" />
               </a>
             </div>
 
