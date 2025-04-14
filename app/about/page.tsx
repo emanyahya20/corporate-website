@@ -217,12 +217,14 @@ export default function AboutPage() {
           {/* Ashwin Section */}
           <div className="flex flex-col md:flex-row items-start gap-8 md:gap-12 mb-16 md:mb-24">
             <div className="w-full md:w-[40%]">
-              <div className="relative w-full h-[400px] md:h-[500px] rounded-xl overflow-hidden">
+              <div className="relative w-full h-[450px] md:h-[500px] rounded-xl overflow-hidden">
                 <Image
                   src="/ashwinc.jpg"
                   alt="Ashwin - Founder & CEO"
                   fill
-                  className="object-cover grayscale hover:grayscale-0 transition-all duration-500"
+                  sizes="(max-width: 768px) 100vw, 40vw"
+                  priority
+                  className="object-cover object-top grayscale hover:grayscale-0 transition-all duration-500"
                 />
               </div>
             </div>
@@ -254,7 +256,6 @@ export default function AboutPage() {
               </p>
             </div>
           </div>
-
           {/* Board Members Section */}
           <div id="board-members" className="mb-16 md:mb-24">
             <h3 className="text-2xl md:text-3xl font-semibold text-gray-800 mb-8 md:mb-12 text-center">
