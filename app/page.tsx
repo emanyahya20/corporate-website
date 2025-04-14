@@ -1,3 +1,4 @@
+"use client";
 import { Button } from "@/components/ui/button";
 import MissionVision from "@/components/mission-vision";
 import CompanyProfile from "@/components/company-profile";
@@ -5,6 +6,7 @@ import { BrandShowcase } from "@/components/BrandShowcase";
 import PodcastSection from "@/components/podcast-section";
 import HistoryTimeline from "@/components/HistoryTimeline";
 import Link from "next/link";
+import { useState } from "react";
 import {
   ArrowRight,
   Shield,
@@ -23,6 +25,9 @@ import {
 } from "lucide-react";
 
 export default function Home() {
+  // State to control modal visibility
+  const [isModalOpen, setIsModalOpen] = useState(false);
+
   return (
     <div className="flex flex-col min-h-screen">
       {/* Hero Video Banner */}
@@ -45,28 +50,53 @@ export default function Home() {
             <h1 className="text-4xl sm:text-5xl md:text-6xl font-semibold text-white mb-4 leading-tight [text-shadow:_0_2px_4px_rgba(0,0,0,0.5)]">
               Welcome to Trustmore Group
             </h1>
-            <p className="text-xl md:text-2xl text-white/90 mb-10">
+            <p className="text-xl md:text-2xl text-white/90 mb-0">
               Connecting the World’s Money Flows with Trust, Transparency, and
               Technology. Trustmore. Do More.
             </p>
+            <p className="text-xl md:text-2xl text-white/90 mt-0 mb-3">
+              Trustmore. Do More.
+            </p>
+
             {/* Play Button */}
-            <a
-              href="https://youtu.be/FOvvUkejbIg?si=B4yeO0atrRfpna8e"
-              target="_blank"
-              rel="noopener noreferrer"
+            <button
+              onClick={() => setIsModalOpen(true)}
               className="inline-flex items-center justify-center rounded-full border border-white/30 bg-white/10 hover:bg-white/20 backdrop-blur-sm px-6 py-3 transition duration-300"
             >
-              <svg
-                className="w-6 h-6 text-white"
-                fill="currentColor"
-                viewBox="0 0 24 24"
-              >
-                <path d="M8 5v14l11-7z" />
-              </svg>
-            </a>
+              <Play className="w-6 h-6 text-white" />
+            </button>
           </div>
         </div>
       </section>
+
+      {/* Modal for YouTube Video */}
+      {isModalOpen && (
+        <div className="fixed inset-0 z-50 flex items-center justify-center bg-black bg-opacity-70 backdrop-blur-sm p-4">
+          <div className="relative w-full max-w-4xl mx-auto">
+            {/* Close button */}
+            <button
+              onClick={() => setIsModalOpen(false)}
+              className="absolute -top-10 right-0 text-white text-2xl hover:text-gray-300 z-10"
+            >
+              &times;
+            </button>
+
+            {/* YouTube iframe container with proper aspect ratio */}
+            <div className="relative pt-[56.25%]">
+              {" "}
+              {/* 16:9 aspect ratio */}
+              <iframe
+                className="absolute top-0 left-0 w-full h-full"
+                src="https://www.youtube.com/embed/FOvvUkejbIg?autoplay=1"
+                title="Trustmore Video"
+                frameBorder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                allowFullScreen
+              ></iframe>
+            </div>
+          </div>
+        </div>
+      )}
 
       {/* Section for Navigation Links */}
       <section className="bg-white py-6">

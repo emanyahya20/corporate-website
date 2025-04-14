@@ -27,13 +27,23 @@ export default function Header() {
     "/",
     "/payments",
     "/wealth-management",
-    "/experiences",
     "/about",
     "/contact",
+    "/careers", // Optional: Add if you want header to be transparent on /careers too
   ];
 
   const isTransparent =
     transparentPages.some((page) => pathname?.startsWith(page)) && !scrolled;
+
+  // Updated navigation links
+  const navLinks = [
+    { href: "/", label: "Home" },
+    { href: "/about", label: "About" },
+    { href: "/payments", label: "Payments" },
+    { href: "/wealth-management", label: "Wealth Management" },
+    { href: "/careers", label: "Careers" }, // Replaced "Experiences" with "Careers"
+    { href: "/contact", label: "Contact" },
+  ];
 
   return (
     <header
@@ -67,14 +77,7 @@ export default function Header() {
 
           {/* Desktop Navigation */}
           <nav className="hidden md:flex items-center space-x-8">
-            {[
-              { href: "/", label: "Home" },
-              { href: "/about", label: "About" },
-              { href: "/payments", label: "Payments" },
-              { href: "/wealth-management", label: "Wealth Management" },
-              { href: "/experiences", label: "Experiences" },
-              { href: "/contact", label: "Contact" },
-            ].map((item) => (
+            {navLinks.map((item) => (
               <Link
                 key={item.href}
                 href={item.href}
@@ -133,14 +136,7 @@ export default function Header() {
             </Button>
           </div>
           <div className="flex flex-col items-center space-y-4 bg-white p-6">
-            {[
-              { href: "/", label: "Home" },
-              { href: "/about", label: "About" },
-              { href: "/payments", label: "Payments" },
-              { href: "/wealth-management", label: "Wealth Management" },
-              { href: "/experiences", label: "Experiences" },
-              { href: "/contact", label: "Contact" },
-            ].map((item) => (
+            {navLinks.map((item) => (
               <Link
                 key={item.href}
                 href={item.href}
