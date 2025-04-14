@@ -11,13 +11,13 @@ export default function Footer() {
 
   return (
     <footer className="bg-white text-gray-800 border-t border-gray-200">
-      <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-16">
-        <div className="grid grid-cols-1 md:grid-cols-4 gap-12">
+      <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-10">
+        <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
           {/* Company Info */}
           <div>
-            {/* Logo Stack */}
-            <div className="flex flex-col gap-6 mb-8">
-              <div className="flex items-center gap-6">
+            {/* Logo Stack - Made more compact */}
+            <div className="flex flex-col gap-3 mb-4">
+              <div className="flex items-center gap-4">
                 {/* Trustmore logo - non-clickable */}
                 <div className="h-12 w-auto">
                   <img
@@ -57,40 +57,48 @@ export default function Footer() {
               </div>
             </div>
 
-            {/* Office Addresses */}
-            <div className="mb-8">
-              <h4 className="text-sm font-bold text-gray-900 mb-3">
+            {/* Company Description - Reduced margin */}
+            <div className="mb-4">
+              <p className="text-xs text-gray-700 leading-tight">
+                Trustmore Group is a global, technology-led financial
+                powerhouse, managing wealth, payments, and exclusive
+                experiences. Built on a foundation of trust, transparency, and
+                innovation since 2001. Trustmore empowers you to do more, grow
+                more, and live more.
+              </p>
+            </div>
+
+            {/* Office Addresses - Made more compact */}
+            <div>
+              <h4 className="text-xs font-bold text-gray-900 mb-1">
                 Head Office Address
               </h4>
-              <p className="text-gray-700 text-sm">
-                <strong>India:</strong>
-                <br />
-                One World Center, Lower Parel
-                <br />
-                Mumbai, India
-              </p>
-              <p className="text-gray-700 text-sm mt-2">
-                <strong>UAE:</strong>
-                <br />
-                Level 41, Emirates Towers
-                <br />
-                Sheikh Zayed Road, Dubai
-              </p>
+              <div className="flex flex-wrap gap-4">
+                <p className="text-gray-700 text-xs">
+                  <strong>India:</strong> One World Center, Lower Parel, Mumbai
+                </p>
+                <p className="text-gray-700 text-xs">
+                  <strong>UAE:</strong> Level 41, Emirates Towers, Sheikh Zayed
+                  Road, Dubai
+                </p>
+              </div>
             </div>
           </div>
 
           {/* Contact Us Section (Before Quick Links) */}
           <div>
-            <h3 className="text-lg font-bold text-gray-900 mb-6">Contact Us</h3>
-            <p className="text-gray-800 font-semibold text-sm">
+            <h3 className="text-base font-bold text-gray-900 mb-3">
+              Contact Us
+            </h3>
+            <p className="text-gray-800 font-semibold text-xs mb-3">
               Hotline: +919810336644
             </p>
             {/* Social Media */}
-            <div className="mt-6">
-              <h4 className="text-sm font-bold text-gray-900 mb-3">
+            <div>
+              <h4 className="text-xs font-bold text-gray-900 mb-1">
                 Follow Us
               </h4>
-              <div className="flex space-x-4">
+              <div className="flex space-x-3">
                 <a
                   href="https://www.linkedin.com/company/trustmoretech/"
                   target="_blank"
@@ -141,14 +149,14 @@ export default function Footer() {
           </div>
 
           {/* Quick Links Section */}
-          <div className="md:ml-8">
-            <h3 className="text-lg font-bold text-gray-900 mb-6">
+          <div className="md:ml-4">
+            <h3 className="text-base font-bold text-gray-900 mb-2">
               Quick Links
             </h3>
-            <ul className="space-y-3">
+            <ul className="space-y-1">
               {[
                 { href: "/", label: "Home" },
-                { href: "/about", label: "About" }, // About is now placed after Home
+                { href: "/about", label: "About" },
                 { href: "/payments", label: "Payments" },
                 { href: "/wealth-management", label: "Wealth Management" },
                 { href: "/experiences", label: "Experiences" },
@@ -158,10 +166,8 @@ export default function Footer() {
                 <li key={href}>
                   <Link
                     href={href}
-                    className={`font-medium ${
-                      pathname === href
-                        ? "text-black" // No blue color when active
-                        : "text-gray-700 "
+                    className={`font-medium text-sm ${
+                      pathname === href ? "text-black" : "text-gray-700"
                     }`}
                   >
                     {label}
@@ -172,17 +178,17 @@ export default function Footer() {
           </div>
 
           {/* Affiliated Platforms Section */}
-          <div className="md:ml-8">
-            <h3 className="text-lg font-bold text-gray-900 mb-6">
+          <div className="md:ml-4">
+            <h3 className="text-base font-bold text-gray-900 mb-2">
               Affiliated Platforms
             </h3>
-            <ul className="space-y-3 text-gray-700 font-medium">
+            <ul className="space-y-1 text-gray-700 font-medium">
               <li>
                 <a
                   href="https://www.escrowpay.co.in"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="hover:text-black"
+                  className="hover:text-black text-sm"
                 >
                   Escrowpay
                 </a>
@@ -192,7 +198,7 @@ export default function Footer() {
                   href="https://www.iprivewealth.com"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="hover:text-black"
+                  className="hover:text-black text-sm"
                 >
                   IPRIVEWEALTH
                 </a>
@@ -202,7 +208,7 @@ export default function Footer() {
                   href="https://www.luxejoys.com"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="hover:text-black"
+                  className="hover:text-black text-sm"
                 >
                   LUXEJOYS
                 </a>
@@ -211,21 +217,18 @@ export default function Footer() {
           </div>
         </div>
 
-        {/* Legal Note */}
-        <div className="mt-6 p-4 bg-gray-50 rounded-lg mx-auto text-center">
+        {/* Legal Note - Made more compact */}
+        <div className="mt-4 p-2 bg-gray-50 rounded-lg mx-auto text-center">
           <p className="text-xs text-gray-600">
             Your Trustmore digital services are provided through licensed
             financial institutions. We follow necessary security standards and
-            best practices.
-            <span className="block">
-              Trustmore itself is not a bank and doesn't hold or claim to hold a
-              banking license.
-            </span>
+            best practices. Trustmore itself is not a bank and doesn't hold or
+            claim to hold a banking license.
           </p>
         </div>
 
-        {/* Copyright */}
-        <div className="border-t border-gray-200 mt-12 pt-8 text-center text-gray-500 text-sm">
+        {/* Copyright - Reduced padding */}
+        <div className="border-t border-gray-200 mt-6 pt-4 text-center text-gray-500 text-xs">
           <p>
             © {new Date().getFullYear()} Trustmore Technologies Private Limited.
             All rights reserved.
