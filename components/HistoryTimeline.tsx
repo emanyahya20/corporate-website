@@ -155,17 +155,17 @@ export default function HistoryTimeline() {
         ref={containerRef}
       >
         <div className="flex justify-center">
-          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 transition-all duration-500 ease-in-out">
+          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
             {visibleItems.map((item, index) => (
               <div
                 key={item.year}
-                className="bg-gray-100 border rounded-lg p-4 shadow-sm w-[340px] h-[360px] mx-1 flex flex-col items-center"
+                className="bg-gray-100 border rounded-lg p-4 shadow-sm w-full max-w-xs h-auto min-h-[360px] mx-auto flex flex-col items-center"
               >
-                <div className="w-full h-[180px] flex justify-center items-center mb-2">
+                <div className="w-full h-40 flex justify-center items-center mb-2">
                   <img
                     src={item.image}
                     alt={item.date}
-                    className="object-contain h-full w-full max-h-[180px]"
+                    className="object-contain h-full w-full"
                   />
                 </div>
                 <p className="text-xs text-gray-500 mb-1 text-center">
@@ -187,27 +187,19 @@ export default function HistoryTimeline() {
                         prev === index ? null : index
                       )
                     }
-                    className="text-blue-600 text-xs mt-1 hover:underline"
+                    className="text-blue-600 text-xs mt-2 hover:underline"
                   >
                     {expandedIndex === index ? "Read less" : "Read more"}
                   </button>
                 )}
               </div>
             ))}
-
-            {/* Placeholder cards to maintain layout consistency */}
-            {Array.from({ length: 3 - visibleItems.length }).map((_, index) => (
-              <div
-                key={`placeholder-${index}`}
-                className="invisible bg-white border rounded-lg p-4 shadow-sm w-[340px] h-[360px] mx-1"
-              ></div>
-            ))}
           </div>
         </div>
       </div>
 
       {/* Year Pagination */}
-      <div className="mt-4 flex items-center justify-center gap-4 px-4">
+      <div className="mt-8 flex items-center justify-center gap-2 px-4 flex-wrap">
         <button
           onClick={scrollLeft}
           disabled={visibleStartIndex === 0}
@@ -216,12 +208,12 @@ export default function HistoryTimeline() {
           ←
         </button>
 
-        <div className="flex gap-2">
+        <div className="flex gap-2 flex-wrap justify-center">
           {visibleYears.map((year) => (
             <button
               key={year}
               onClick={() => setSelectedYear(year)}
-              className={`px-4 py-2 rounded-full text-sm font-medium transition-colors duration-200 border ${
+              className={`px-3 py-1 rounded-full text-sm font-medium transition-colors duration-200 border ${
                 selectedYear === year
                   ? "bg-black text-white border-white"
                   : "bg-black text-white border-white"
