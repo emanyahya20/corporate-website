@@ -66,7 +66,7 @@ export default function ContactPage() {
         <div className="container mx-auto px-4 md:px-6 max-w-5xl">
           <div className="grid md:grid-cols-2 gap-12">
             <div>
-              <h2 className="text-4xl font-semibold text-gray-800 mb-12">
+              <h2 className="text-3xl font-semibold text-gray-800 mb-12">
                 Get in Touch
               </h2>
 
@@ -173,7 +173,7 @@ export default function ContactPage() {
             </div>
 
             <div>
-              <h2 className="text-4xl font-semibold text-gray-800 mb-12">
+              <h2 className="text-3xl font-semibold text-gray-800 mb-12">
                 Our Offices
               </h2>
 
@@ -229,7 +229,7 @@ export default function ContactPage() {
       {/* CTA Section */}
       <section className="py-32 bg-gray-100">
         <div className="container mx-auto px-4 md:px-6 max-w-5xl text-center">
-          <h2 className="text-4xl md:text-5xl font-bold text-gray-800 mb-8">
+          <h2 className="text-3xl md:text-4xl font-semibold text-gray-800 mb-8">
             Ready to Connect?
           </h2>
           <p className="text-xl text-gray-700 mb-12 max-w-3xl mx-auto">
