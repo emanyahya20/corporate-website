@@ -37,7 +37,7 @@ export function BrandShowcase() {
     <section className="py-20 bg-gray-100">
       <div className="container mx-auto px-4 md:px-6 max-w-5xl">
         {/* New title */}
-        <h2 className="text-3xl font-semibold text-center mb-16">
+        <h2 className="text-3xl font-semibold text-gray-800 text-center mb-16">
           Explore Our Brands
         </h2>
 
@@ -63,7 +63,9 @@ export function BrandShowcase() {
 
               {/* Content */}
               <div className={`${brand.imageOnLeft ? "order-2" : "order-1"}`}>
-                <h3 className="text-2xl font-semibold mb-4">{brand.title}</h3>
+                <h3 className="text-2xl font-semibold text-gray-800 mb-4">
+                  {brand.title}
+                </h3>
                 <p className="text-base text-gray-700 mb-6">
                   {brand.description}
                 </p>

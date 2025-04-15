@@ -168,7 +168,7 @@ export default function KnowledgeCenterPage() {
           {/* Featured Content Carousel - For Important Articles */}
           <div className="mb-12">
             <h2 className="text-2xl font-semibold mb-6 flex items-center gap-2">
-              <Target className="text-black" size={22} />
+              <Target className="text-gray-800" size={22} />
               Featured Content
             </h2>
 
@@ -227,7 +227,7 @@ export default function KnowledgeCenterPage() {
           {/* Article Grid - Compact Design for Many Articles */}
           <div className="mb-16">
             <h2 className="text-2xl font-semibold mb-6 flex items-center gap-2">
-              <Brain className="text-black" size={22} />
+              <Brain className="text-gray-800" size={22} />
               Latest Research & Publications
             </h2>
 
@@ -298,7 +298,7 @@ export default function KnowledgeCenterPage() {
           {/* Media & Press Coverage - Now Matching the Research Layout */}
           <div className="mb-16">
             <h2 className="text-2xl font-semibold mb-6 flex items-center gap-2">
-              <Users className="text-black" size={22} />
+              <Users className="text-gray-800" size={22} />
               Media & Press Coverage
             </h2>
 
@@ -357,7 +357,7 @@ export default function KnowledgeCenterPage() {
                       <span className="text-xs text-gray-500">
                         Press Coverage
                       </span>
-                      <button className="text-black text-xs font-medium hover:underline flex items-center gap-1">
+                      <button className="text-gray-800 text-xs font-medium hover:underline flex items-center gap-1">
                         Read Article <ChevronRight size={14} />
                       </button>
                     </div>
@@ -379,7 +379,7 @@ export default function KnowledgeCenterPage() {
       {/* CTA Section - Simplified */}
       <section className="py-10 bg-gray-100 text-black">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8 text-center max-w-3xl">
-          <h2 className="text-2xl font-semibold mb-4">
+          <h2 className="text-2xl font-semibold text-gray-800 mb-4">
             Request Custom Research
           </h2>
           <p className="text-base mb-6">

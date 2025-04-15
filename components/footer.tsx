@@ -159,7 +159,10 @@ export default function Footer() {
                 { href: "/about", label: "About" },
                 { href: "/payments", label: "Payments" },
                 { href: "/wealth-management", label: "Wealth Management" },
-                { href: "/experiences", label: "Experiences" },
+                { href: "/luxejoy", label: "Luxejoy" },
+                { href: "/trustcircle", label: "Trust Circle" },
+                { href: "/careers", label: "Careers" },
+                { href: "/knowledge-center", label: "Knowledge Center" },
                 { href: "/privacy-policy", label: "Privacy Policy" },
                 { href: "/terms-of-service", label: "Terms of Service" },
               ].map(({ href, label }) => (

@@ -37,7 +37,6 @@ export default function Header() {
   const isTransparent =
     transparentPages.some((page) => pathname?.startsWith(page)) && !scrolled;
 
-  // Updated navigation links with TrustCircle and LuxeJoy
   const navLinks = [
     { href: "/", label: "Home" },
     { href: "/about", label: "About" },
@@ -46,6 +45,7 @@ export default function Header() {
     { href: "/luxejoy", label: "LuxeJoy" },
     { href: "/trustcircle", label: "Trust Circle" },
     { href: "/careers", label: "Careers" },
+    { href: "/knowledge-center", label: "Knowledge Center" },
     { href: "/contact", label: "Contact" },
   ];
 
@@ -87,20 +87,21 @@ export default function Header() {
                 href={item.href}
                 className={`${
                   isTransparent ? "text-white" : "text-gray-700"
-                } text-base font-medium`}
+                } text-sm font-medium`}
               >
                 {item.label}
               </Link>
             ))}
           </nav>
 
+          {/* Get Started Button */}
           <div className="hidden md:flex items-center">
             <Button
               className={`${
                 isTransparent
                   ? "bg-white text-gray-800 hover:bg-white/90"
                   : "bg-black text-white hover:bg-black/80"
-              } rounded-full text-base px-5 py-2 transition-all duration-200 hover:shadow-md hover:scale-105`}
+              } rounded-full text-sm px-4 py-2 transition-all duration-200 hover:shadow-md hover:scale-105`}
             >
               Get Started
             </Button>
@@ -144,7 +145,7 @@ export default function Header() {
               <Link
                 key={item.href}
                 href={item.href}
-                className="text-gray-700 hover:text-blue-600 text-lg font-medium"
+                className="text-gray-700 hover:text-blue-600 text-base font-medium"
                 onClick={() => setMobileMenuOpen(false)}
               >
                 {item.label}

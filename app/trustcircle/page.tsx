@@ -4,26 +4,25 @@ import { Button } from "@/components/ui/button";
 import Link from "next/link";
 import {
   CheckCircle,
-  Zap as LucideZap,
-  BarChart3 as LucideChart,
-  DollarSign as LucideDollar,
-  Shield as LucideShield,
-  User as LucideUser,
-} from "lucide-react";
-import {
-  Users,
-  Globe,
+  Zap,
+  BarChart3,
   DollarSign,
   Shield,
+  User,
+  Users,
+  Globe,
   Briefcase,
   ArrowRight,
   ChevronRight,
+  Star,
+  Clock,
+  ArrowUpRight,
 } from "lucide-react";
 
 export default function TrustCirclePage() {
   return (
     <div className="flex flex-col min-h-screen">
-      {/* Hero Video Banner */}
+      {/* Hero Video Banner - UNCHANGED FROM ORIGINAL */}
       <section className="relative w-full h-screen overflow-hidden">
         <video
           className="absolute inset-0 w-full h-full object-cover"
@@ -50,206 +49,248 @@ export default function TrustCirclePage() {
         </div>
       </section>
 
-      {/* Benefits section with cards - White background */}
-      <section className="bg-white py-16 px-4 sm:px-6 lg:px-8">
-        <div className="max-w-7xl mx-auto">
-          <h2 className="text-3xl font-bold text-gray-800 text-center mb-12">
-            Our Services
-          </h2>
-          <div className="grid md:grid-cols-2 gap-10">
-            <div className="bg-white p-8 rounded-xl shadow-md hover:shadow-lg transition border border-gray-100">
-              <h3 className="text-2xl font-bold text-gray-800 mb-6 border-b pb-4">
-                Why Join Trust Circle?
-              </h3>
-              <ul className="space-y-6">
-                <li className="flex items-start gap-4">
-                  <div className="bg-gray-100 p-2 rounded-lg">
-                    <Users className="w-6 h-6 " />
-                  </div>
-                  <div>
-                    <strong className="text-lg text-gray-800 block mb-1">
-                      Your Network, Your Financial Asset
-                    </strong>
-                    <p className="text-gray-600">
-                      Turn introductions into income by connecting businesses
-                      and HNIs to global services.
-                    </p>
-                  </div>
-                </li>
-                <li className="flex items-start gap-4">
-                  <div className="bg-gray-100 p-2 rounded-lg">
-                    <Globe className="w-6 h-6 " />
-                  </div>
-                  <div>
-                    <strong className="text-lg text-gray-800 block mb-1">
-                      Global Reach, Seamless Tech
-                    </strong>
-                    <p className="text-gray-600">
-                      Access premium services in Payments, Wealth, and Luxury —
-                      anytime, anywhere.
-                    </p>
-                  </div>
-                </li>
-                <li className="flex items-start gap-4">
-                  <div className="bg-gray-100 p-2 rounded-lg">
-                    <DollarSign className="w-6 h-6 " />
-                  </div>
-                  <div>
-                    <strong className="text-lg text-gray-800 block mb-1">
-                      Success-Based Earnings
-                    </strong>
-                    <p className="text-gray-600">
-                      Earn unlimited commissions on every successful referral.
-                    </p>
-                  </div>
-                </li>
-                <li className="flex items-start gap-4">
-                  <div className="bg-gray-100 p-2 rounded-lg">
-                    <Shield className="w-6 h-6 " />
-                  </div>
-                  <div>
-                    <strong className="text-lg text-gray-800 block mb-1">
-                      Reliable Income in Uncertain Times
-                    </strong>
-                    <p className="text-gray-600">
-                      Build a stable income stream when it's needed most.
-                    </p>
-                  </div>
-                </li>
-                <li className="flex items-start gap-4">
-                  <div className="bg-gray-100 p-2 rounded-lg">
-                    <Briefcase className="w-6 h-6 " />
-                  </div>
-                  <div>
-                    <strong className="text-lg text-gray-800 block mb-1">
-                      Professional Marketing Support
-                    </strong>
-                    <p className="text-gray-600">
-                      Get brochures, presentations, and digital assets to grow
-                      confidently.
-                    </p>
-                  </div>
-                </li>
-              </ul>
+      {/* Our Services Section */}
+      <section className="py-16 bg-gray-50">
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-12">
+            <h2 className="text-3xl font-semibold text-gray-800 mb-4">
+              Why Join Trust Circle?
+            </h2>
+            <p className="text-lg text-gray-600 max-w-3xl mx-auto">
+              Discover how becoming a member of Trust Circle unlocks unique
+              financial opportunities and professional tools.
+            </p>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-6xl mx-auto">
+            {/* Benefit 1 */}
+            <div className="bg-white rounded-xl shadow-sm p-6 border border-gray-100 hover:shadow-md transition-shadow">
+              <div className="flex items-start gap-4">
+                <div className="bg-gray-100 rounded-full w-10 h-10 flex items-center justify-center flex-shrink-0">
+                  <Users className="w-5 h-5 text-gray-900" />
+                </div>
+                <div>
+                  <h3 className="text-lg font-semibold text-gray-800 mb-2">
+                    Your Network, Your Financial Asset
+                  </h3>
+                  <p className="text-gray-600 text-sm">
+                    Turn introductions into income by connecting businesses and
+                    HNIs to global services.
+                  </p>
+                </div>
+              </div>
             </div>
 
-            <div className="bg-white p-8 rounded-xl shadow-md hover:shadow-lg transition border border-gray-100">
-              <h3 className="text-2xl font-bold text-gray-800 mb-6 border-b pb-4">
-                What's Included in ₹59,000/Year
-              </h3>
-              <ul className="space-y-5">
-                <li className="flex items-center gap-3 p-3 rounded-lg hover:bg-gray-50 transition">
-                  <CheckCircle className="w-6 h-6 text-black" />
-                  <span className="text-gray-700">
-                    Account setup, secure login, and KYC
-                  </span>
-                </li>
-                <li className="flex items-center gap-3 p-3 rounded-lg hover:bg-gray-50 transition">
-                  <CheckCircle className="w-6 h-6 text-black" />
-                  <span className="text-gray-700">
-                    Access to Trustmore Knowledge Centre
-                  </span>
-                </li>
-                <li className="flex items-center gap-3 p-3 rounded-lg hover:bg-gray-50 transition">
-                  <CheckCircle className="w-6 h-6 text-black" />
-                  <span className="text-gray-700">
-                    Monthly 1-hour strategy calls with advisors
-                  </span>
-                </li>
-                <li className="flex items-center gap-3 p-3 rounded-lg hover:bg-gray-50 transition">
-                  <CheckCircle className="w-6 h-6 text-black" />
-                  <span className="text-gray-700">
-                    Social growth and distributor rights
-                  </span>
-                </li>
-                <li className="flex items-center gap-3 p-3 rounded-lg hover:bg-gray-50 transition">
-                  <CheckCircle className="w-6 h-6 text-black" />
-                  <span className="text-gray-700">
-                    Priority invitations to events and webinars
-                  </span>
-                </li>
-                <li className="flex items-center gap-3 p-3 rounded-lg hover:bg-gray-50 transition">
-                  <CheckCircle className="w-6 h-6 text-black" />
-                  <span className="text-gray-700">
-                    Ready-to-use sales and marketing assets
-                  </span>
-                </li>
-              </ul>
+            {/* Benefit 2 */}
+            <div className="bg-white rounded-xl shadow-sm p-6 border border-gray-100 hover:shadow-md transition-shadow">
+              <div className="flex items-start gap-4">
+                <div className="bg-gray-100 rounded-full w-10 h-10 flex items-center justify-center flex-shrink-0">
+                  <Globe className="w-5 h-5 text-gray-900" />
+                </div>
+                <div>
+                  <h3 className="text-lg font-semibold text-gray-800 mb-2">
+                    Global Reach, Seamless Tech
+                  </h3>
+                  <p className="text-gray-600 text-sm">
+                    Access premium services in Payments, Wealth, and Luxury —
+                    anytime, anywhere.
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            {/* Benefit 3 */}
+            <div className="bg-white rounded-xl shadow-sm p-6 border border-gray-100 hover:shadow-md transition-shadow">
+              <div className="flex items-start gap-4">
+                <div className="bg-gray-100 rounded-full w-10 h-10 flex items-center justify-center flex-shrink-0">
+                  <DollarSign className="w-5 h-5 text-gray-900" />
+                </div>
+                <div>
+                  <h3 className="text-lg font-semibold text-gray-800 mb-2">
+                    Success-Based Earnings
+                  </h3>
+                  <p className="text-gray-600 text-sm">
+                    Earn unlimited commissions on every successful referral.
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            {/* Benefit 4 */}
+            <div className="bg-white rounded-xl shadow-sm p-6 border border-gray-100 hover:shadow-md transition-shadow">
+              <div className="flex flex-col md:flex-row justify-center gap-6">
+                <div className="bg-gray-100 rounded-full w-10 h-10 flex items-center justify-center flex-shrink-0">
+                  <Shield className="w-5 h-5 text-gray-900" />
+                </div>
+                <div>
+                  <h3 className="text-lg font-semibold text-gray-800 mb-2">
+                    Reliable Income in Uncertain Times
+                  </h3>
+                  <p className="text-gray-600 text-sm">
+                    Build a stable income stream when it's needed most.
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            {/* Benefit 5 */}
+            <div className="bg-white rounded-xl shadow-sm p-6 border border-gray-100 hover:shadow-md transition-shadow">
+              <div className="flex flex-col md:flex-row justify-center gap-6">
+                <div className="bg-gray-100 rounded-full w-10 h-10 flex items-center justify-center flex-shrink-0">
+                  <Briefcase className="w-5 h-5 text-gray-900" />
+                </div>
+                <div>
+                  <h3 className="text-lg font-semibold text-gray-800 mb-2">
+                    Professional Marketing Support
+                  </h3>
+                  <p className="text-gray-600 text-sm">
+                    Get brochures, presentations, and digital assets to grow
+                    confidently.
+                  </p>
+                </div>
+              </div>
             </div>
           </div>
         </div>
       </section>
 
-      {/* Who Should Join/Who Can You Refer section - Gray background */}
-      <section className="bg-gray-50 py-16 px-4 sm:px-6 lg:px-8">
-        <div className="max-w-7xl mx-auto">
-          <h2 className="text-3xl font-bold text-gray-800 text-center mb-12">
-            Membership Details
-          </h2>
-          <div className="grid md:grid-cols-2 gap-8">
-            <div className="bg-white p-6 rounded-lg border-l-4 border-black shadow-md">
-              <h3 className="text-xl font-bold text-gray-800 mb-4">
+      {/* Membership Pricing Section */}
+      <section className="py-16 bg-white">
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-2xl">
+          <div className="bg-white p-6 rounded-xl shadow-sm hover:shadow-md transition border border-gray-100">
+            <h3 className="text-2xl font-bold text-gray-800 mb-5 text-center">
+              What’s Included in ₹59,000/Year
+            </h3>
+
+            <div className="bg-black text-white p-3 rounded-lg mb-5">
+              <div className="flex items-center justify-between">
+                <div className="flex items-center gap-2">
+                  <Clock className="w-4 h-4 text-white" />
+                  <span className="font-medium">Annual Membership</span>
+                </div>
+                <span className="text-xl font-bold">₹59,000</span>
+              </div>
+            </div>
+
+            <ul className="space-y-3 mb-6">
+              {[
+                "Account setup, secure login, and KYC",
+                "Access to Trustmore Knowledge Centre",
+                "Monthly 1-hour strategy calls with advisors",
+                "Social growth and distributor rights",
+                "Priority invitations to events and webinars",
+                "Ready-to-use sales and marketing assets",
+              ].map((item, i) => (
+                <li key={i} className="flex items-center gap-2">
+                  <CheckCircle className="w-4 h-4 text-gray-600" />
+                  <span className="text-gray-700 text-sm">{item}</span>
+                </li>
+              ))}
+            </ul>
+
+            <div className="flex justify-center w-full">
+              <Button className="bg-black text-white px-8 py-3 rounded-xl hover:bg-black hover:text-white transition active:scale-95 focus:outline-none focus:ring-2 focus:ring-black/30 shadow-lg hover:shadow-xl flex items-center justify-center gap-2 text-base font-medium">
+                Become a Member <ArrowRight className="w-4 h-4" />
+              </Button>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Improved Membership Details with separate sections */}
+      <section className="bg-gradient-to-b from-gray-50 to-gray-100 py-16 px-4 sm:px-6 lg:px-8">
+        <div className="max-w-5xl mx-auto">
+          <div className="text-center mb-12">
+            <h2 className="text-3xl font-bold text-gray-800 mb-3">
+              Membership Details
+            </h2>
+            <div className="w-24 h-1 bg-black mx-auto mb-4"></div>
+            <p className="text-gray-600 max-w-2xl mx-auto">
+              Join our exclusive network and leverage your connections for
+              mutual growth
+            </p>
+          </div>
+
+          {/* Who Should Join Section */}
+          <div className="mb-16">
+            <div className="bg-black text-white py-3 px-5 rounded-t-lg max-w-xs mx-auto text-center mb-8">
+              <h3 className="text-xl font-bold flex items-center justify-center">
+                <Users className="w-5 h-5 mr-2" />
                 Who Should Join?
               </h3>
-              <ul className="space-y-2">
-                {[
-                  "Independent financial advisors",
-                  "Corporate consultants & intermediaries",
-                  "Real estate & luxury asset brokers",
-                  "Wealth managers & private bankers",
-                  "HNWIs with strong networks",
-                  "Retired professionals & CXOs",
-                ].map((item, i) => (
-                  <li key={i} className="flex items-center gap-2">
-                    <ChevronRight className="w-4 h-4 text-black" />
-                    <span className="text-gray-700">{item}</span>
-                  </li>
-                ))}
-              </ul>
             </div>
 
-            <div className="bg-white p-6 rounded-lg border-l-4 border-black shadow-md">
-              <h3 className="text-xl font-bold text-gray-800 mb-4">
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+              {[
+                "Independent financial advisors",
+                "Corporate consultants & intermediaries",
+                "Real estate & luxury asset brokers",
+                "Wealth managers & private bankers",
+                "HNWIs with strong networks",
+                "Retired professionals & CXOs",
+              ].map((item, i) => (
+                <div
+                  key={i}
+                  className="bg-white p-4 rounded-lg shadow hover:shadow-md transition flex items-center gap-3"
+                >
+                  <div className="bg-gray-100 p-1.5 rounded-full">
+                    <ChevronRight className="w-4 h-4 text-black" />
+                  </div>
+                  <span className="text-gray-700">{item}</span>
+                </div>
+              ))}
+            </div>
+          </div>
+
+          {/* Who Can You Refer Section */}
+          <div>
+            <div className="bg-black text-white py-3 px-5 rounded-t-lg max-w-xs mx-auto text-center mb-8">
+              <h3 className="text-xl font-bold flex items-center justify-center">
+                <Users className="w-5 h-5 mr-2" />
                 Who Can You Refer?
               </h3>
-              <ul className="space-y-2">
-                {[
-                  "Business owners & startups",
-                  "Global investors & developers",
-                  "High-net-worth families",
-                  "Venture capitalists & angels",
-                  "Clients seeking luxury or escrow services",
-                  "Professionals seeking global wealth",
-                ].map((item, i) => (
-                  <li key={i} className="flex items-center gap-2">
+            </div>
+
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+              {[
+                "Business owners & startups",
+                "Global investors & developers",
+                "High-net-worth families",
+                "Venture capitalists & angels",
+                "Clients seeking luxury or escrow services",
+                "Professionals seeking global wealth",
+              ].map((item, i) => (
+                <div
+                  key={i}
+                  className="bg-white p-4 rounded-lg shadow hover:shadow-md transition flex items-center gap-3"
+                >
+                  <div className="bg-gray-100 p-1.5 rounded-full">
                     <ChevronRight className="w-4 h-4 text-black" />
-                    <span className="text-gray-700">{item}</span>
-                  </li>
-                ))}
-              </ul>
+                  </div>
+                  <span className="text-gray-700">{item}</span>
+                </div>
+              ))}
             </div>
           </div>
         </div>
       </section>
 
-      {/* CTA section - White background */}
-      <section className="bg-white py-16 px-4 sm:px-6 lg:px-8">
-        <div className="max-w-4xl mx-auto text-center">
-          <div className="bg-gray-100 p-10 rounded-2xl shadow-lg">
-            <h3 className="text-3xl font-bold text-gray-800 mb-3">
-              Turn Connections Into Global Earnings
-            </h3>
-            <p className="text-lg mb-8 text-gray-700">
-              Refer & Earn. Grow Your Network. Build Resilience.
-            </p>
-            <div className="flex flex-col sm:flex-row justify-center gap-4">
-              <button className="bg-black text-white px-8 py-3 rounded-lg hover:bg-gray-800 transition shadow-lg hover:shadow-xl flex items-center justify-center gap-2">
-                Join Trust Circle <ArrowRight className="w-4 h-4" />
-              </button>
-              <button className="border-2 border-black text-black px-8 py-3 rounded-lg hover:bg-gray-200 transition flex items-center justify-center gap-2">
-                Learn More <ChevronRight className="w-4 h-4" />
-              </button>
-            </div>
+      {/* Sleek CTA Section */}
+      <section className="bg-gray-100 py-14 px-4 sm:px-6 lg:px-8">
+        <div className="max-w-3xl mx-auto text-center">
+          <h3 className="text-2xl font-bold text-gray-800 mb-5">
+            Turn Connections Into Global Earnings
+          </h3>
+          <p className="text-lg mb-6 text-gray-700">
+            Refer & Earn. Grow Your Network. Build Resilience.
+          </p>
+          <div className="flex flex-col sm:flex-row justify-center gap-2">
+            <button className="bg-black text-white px-8 py-3 rounded-xl hover:bg-black hover:text-white transition active:scale-95 focus:outline-none focus:ring-2 focus:ring-black/30 shadow-lg hover:shadow-xl flex items-center gap-2">
+              Join Trust Circle Now
+            </button>
+            <button className="bg-white text-black px-6 py-3 rounded-xl border-2 border-black hover:bg-gray-200 transition active:scale-95 focus:outline-none focus:ring-0 text-base font-semibold shadow-sm">
+              Learn More
+            </button>
           </div>
         </div>
       </section>

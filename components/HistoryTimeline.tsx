@@ -1,6 +1,7 @@
 "use client";
 
-import { useState, useEffect, useRef } from "react";
+import { useState, useRef } from "react";
+import { ChevronLeft, ChevronRight } from "lucide-react";
 
 type HistoryItem = {
   year: number;
@@ -114,123 +115,193 @@ const historyData: HistoryItem[] = [
   },
 ];
 
-const selectedYears = historyData.map((item) => item.year);
-
-export default function HistoryTimeline() {
-  const [visibleStartIndex, setVisibleStartIndex] = useState(0);
-  const [selectedYear, setSelectedYear] = useState(selectedYears[0]);
-  const [expandedIndex, setExpandedIndex] = useState<number | null>(null);
-  const containerRef = useRef<HTMLDivElement>(null);
-
-  const visibleYears = selectedYears.slice(
-    visibleStartIndex,
-    visibleStartIndex + 3
+export default function ExactAntGroupStyleTimeline() {
+  const [currentYearIndex, setCurrentYearIndex] = useState(
+    historyData.length - 1
   );
-  const visibleItems = historyData.filter((item) =>
-    visibleYears.includes(item.year)
-  );
+  const [currentItemIndex, setCurrentItemIndex] = useState(0);
+  const scrollRef = useRef<HTMLDivElement>(null);
 
-  const scrollLeft = () => {
-    if (visibleStartIndex >= 3) {
-      setVisibleStartIndex((prev) => prev - 3);
+  // Group history items by year
+  const historyByYear = historyData.reduce((acc, item) => {
+    if (!acc[item.year]) {
+      acc[item.year] = [];
+    }
+    acc[item.year].push(item);
+    return acc;
+  }, {} as Record<number, HistoryItem[]>);
+
+  // Get unique years
+  const years = Object.keys(historyByYear)
+    .map(Number)
+    .sort((a, b) => a - b);
+  const currentYear = years[currentYearIndex];
+  const currentYearItems = historyByYear[currentYear] || [];
+
+  const handlePrevYear = () => {
+    if (currentYearIndex > 0) {
+      setCurrentYearIndex(currentYearIndex - 1);
+      setCurrentItemIndex(0);
     }
   };
 
-  const scrollRight = () => {
-    if (visibleStartIndex + 3 < selectedYears.length) {
-      setVisibleStartIndex((prev) => prev + 3);
+  const handleNextYear = () => {
+    if (currentYearIndex < years.length - 1) {
+      setCurrentYearIndex(currentYearIndex + 1);
+      setCurrentItemIndex(0);
     }
   };
+
+  const handlePrevItem = () => {
+    if (currentItemIndex > 0) {
+      setCurrentItemIndex(currentItemIndex - 1);
+    } else if (currentYearIndex > 0) {
+      // Go to previous year, last item
+      const prevYear = years[currentYearIndex - 1];
+      const prevYearItems = historyByYear[prevYear];
+      setCurrentYearIndex(currentYearIndex - 1);
+      setCurrentItemIndex(prevYearItems.length - 1);
+    }
+  };
+
+  const handleNextItem = () => {
+    if (currentItemIndex < currentYearItems.length - 1) {
+      setCurrentItemIndex(currentItemIndex + 1);
+    } else if (currentYearIndex < years.length - 1) {
+      // Go to next year, first item
+      setCurrentYearIndex(currentYearIndex + 1);
+      setCurrentItemIndex(0);
+    }
+  };
+
+  const handleYearClick = (yearIndex: number) => {
+    setCurrentYearIndex(yearIndex);
+    setCurrentItemIndex(0);
+  };
+
+  const currentItem = currentYearItems[currentItemIndex];
+
+  // Calculate visible years (for responsive view)
+  const getVisibleYears = () => {
+    const visibleCount = 11; // Show max 11 years at once
+    const halfVisible = Math.floor(visibleCount / 2);
+
+    let startIdx = Math.max(0, currentYearIndex - halfVisible);
+    const endIdx = Math.min(years.length - 1, startIdx + visibleCount - 1);
+
+    // Adjust start if we don't have enough years after current
+    startIdx = Math.max(0, endIdx - visibleCount + 1);
+
+    return years.slice(startIdx, endIdx + 1);
+  };
+
+  const visibleYears = getVisibleYears();
 
   return (
-    <section className="py-10 bg-white">
-      <div className="text-center mb-6">
-        <h2 className="text-3xl font-bold">Our History</h2>
-        <p className="text-gray-500">Explore major events by year</p>
-      </div>
+    <section className="py-12 bg-white">
+      <div className="container mx-auto px-4">
+        <div className="text-center mb-12">
+          <h2 className="text-3xl font-semibold text-gray-800">Our History</h2>
+        </div>
 
-      {/* Cards Layout */}
-      <div
-        className="container mx-auto px-4 overflow-hidden"
-        ref={containerRef}
-      >
-        <div className="flex justify-center">
-          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
-            {visibleItems.map((item, index) => (
-              <div
-                key={item.year}
-                className="bg-gray-100 border rounded-lg p-4 shadow-sm w-full max-w-xs h-auto min-h-[360px] mx-auto flex flex-col items-center"
-              >
-                <div className="w-full h-40 flex justify-center items-center mb-2">
-                  <img
-                    src={item.image}
-                    alt={item.date}
-                    className="object-contain h-full w-full"
-                  />
+        {/* Main Content */}
+        <div className="relative mb-16">
+          {/* Navigation Buttons */}
+          <button
+            onClick={handlePrevItem}
+            className="absolute left-0 top-1/2 -translate-y-1/2 z-10 w-12 h-12 rounded-full bg-white shadow-md border border-gray-200 flex items-center justify-center hover:bg-gray-50"
+            aria-label="Previous item"
+          >
+            <ChevronLeft className="w-6 h-6 text-black" />
+          </button>
+
+          <button
+            onClick={handleNextItem}
+            className="absolute right-0 top-1/2 -translate-y-1/2 z-10 w-12 h-12 rounded-full bg-white shadow-md border border-gray-200 flex items-center justify-center hover:bg-gray-50"
+            aria-label="Next item"
+          >
+            <ChevronRight className="w-6 h-6 text-black" />
+          </button>
+
+          {/* Content Slider */}
+          <div className="max-w-6xl mx-auto px-16">
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+              {/* Current Item */}
+              <div className="col-span-3 flex flex-col md:flex-row items-start gap-8">
+                {/* Image */}
+                <div className="w-full md:w-1/3">
+                  <div className="aspect-video rounded-lg overflow-hidden shadow-md">
+                    <img
+                      src={currentItem.image}
+                      alt={`${currentItem.date} event`}
+                      className="w-full h-full object-cover"
+                    />
+                  </div>
                 </div>
-                <p className="text-xs text-gray-500 mb-1 text-center">
-                  {item.date}
-                </p>
 
-                <p
-                  className={`text-sm text-gray-700 text-center whitespace-pre-line ${
-                    expandedIndex === index ? "" : "line-clamp-3"
-                  }`}
-                >
-                  {item.text}
-                </p>
-
-                {item.text.length > 100 && (
-                  <button
-                    onClick={() =>
-                      setExpandedIndex((prev) =>
-                        prev === index ? null : index
-                      )
-                    }
-                    className="text-blue-600 text-xs mt-2 hover:underline"
-                  >
-                    {expandedIndex === index ? "Read less" : "Read more"}
-                  </button>
-                )}
+                {/* Content */}
+                <div className="w-full md:w-2/3">
+                  <p className="text-gray-500 mb-2">{currentItem.date}</p>
+                  <p className="text-gray-800 leading-relaxed">
+                    {currentItem.text}
+                  </p>
+                </div>
               </div>
-            ))}
+            </div>
           </div>
         </div>
-      </div>
 
-      {/* Year Pagination */}
-      <div className="mt-8 flex items-center justify-center gap-2 px-4 flex-wrap">
-        <button
-          onClick={scrollLeft}
-          disabled={visibleStartIndex === 0}
-          className="p-2 rounded-full bg-gray-200 hover:bg-gray-300 disabled:opacity-30 transition-colors"
-        >
-          ←
-        </button>
+        {/* Year Navigation - Exactly like Ant Group */}
+        <div className="flex items-center justify-center">
+          <button
+            onClick={handlePrevYear}
+            className="flex items-center justify-center p-2 text-gray-400 hover:text-gray-600"
+            aria-label="Previous year"
+            disabled={currentYearIndex === 0}
+          >
+            <ChevronLeft className="w-5 h-5" />
+          </button>
 
-        <div className="flex gap-2 flex-wrap justify-center">
-          {visibleYears.map((year) => (
-            <button
-              key={year}
-              onClick={() => setSelectedYear(year)}
-              className={`px-3 py-1 rounded-full text-sm font-medium transition-colors duration-200 border ${
-                selectedYear === year
-                  ? "bg-black text-white border-white"
-                  : "bg-black text-white border-white"
-              }`}
-            >
-              {year}
-            </button>
-          ))}
+          <div
+            ref={scrollRef}
+            className="flex items-center overflow-x-auto scrollbar-hide mx-4 space-x-8"
+          >
+            {visibleYears.map((year) => {
+              const yearIndex = years.indexOf(year);
+              const isActive = yearIndex === currentYearIndex;
+
+              return (
+                <div
+                  key={`year-${year}`}
+                  className="flex flex-col items-center"
+                >
+                  {isActive && (
+                    <div className="w-2 h-2 bg-black rounded-full mb-2"></div>
+                  )}
+                  <button
+                    onClick={() => handleYearClick(yearIndex)}
+                    className={`px-2 py-1 transition-all ${
+                      isActive
+                        ? "text-black font-medium"
+                        : "text-gray-500 hover:text-gray-800"
+                    }`}
+                  >
+                    {year}
+                  </button>
+                </div>
+              );
+            })}
+          </div>
+
+          <button
+            onClick={handleNextYear}
+            className="flex items-center justify-center p-2 text-gray-400 hover:text-gray-600"
+            aria-label="Next year"
+            disabled={currentYearIndex === years.length - 1}
+          >
+            <ChevronRight className="w-5 h-5" />
+          </button>
         </div>
-
-        <button
-          onClick={scrollRight}
-          disabled={visibleStartIndex + 3 >= selectedYears.length}
-          className="p-2 rounded-full bg-gray-200 hover:bg-gray-300 disabled:opacity-30 transition-colors"
-        >
-          →
-        </button>
       </div>
     </section>
   );
