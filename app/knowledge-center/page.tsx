@@ -47,7 +47,7 @@ export default function KnowledgeCenterPage() {
             <h1 className="text-3xl sm:text-4xl md:text-5xl font-semibold text-white mb-4 leading-tight [text-shadow:_0_2px_4px_rgba(0,0,0,0.5)]">
               Trustmore Knowledge Center
             </h1>
-            <p className="text-lg md:text-xl text-white/90 mb-6 [text-shadow:_0_1px_2px_rgba(0,0,0,0.4)]">
+            <p className="text-xl md:text-2xl text-white/90 mb-10">
               Intelligence that Inspires Growth
             </p>
           </div>
