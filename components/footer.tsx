@@ -18,13 +18,15 @@ export default function Footer() {
             {/* Logo Stack - Made more compact */}
             <div className="flex flex-col gap-3 mb-4">
               <div className="flex items-center gap-4">
-                {/* Trustmore logo - non-clickable */}
+                {/* Trustmore logo clickable */}
                 <div className="h-12 w-auto">
-                  <img
-                    src="/footerlogo/trustmore.png"
-                    alt="Trustmore Logo"
-                    className="h-full w-auto object-contain max-w-[180px]"
-                  />
+                  <Link href="/">
+                    <img
+                      src="/footerlogo/trustmore.png"
+                      alt="Trustmore Logo"
+                      className="h-full w-auto object-contain max-w-[180px]"
+                    />
+                  </Link>
                 </div>
                 {/* FT1 logo - non-clickable */}
                 <div className="h-10 w-auto">
@@ -40,20 +42,11 @@ export default function Footer() {
                 {/* Golden logo - non-clickable */}
                 <div className="h-10 w-auto">
                   <img
-                    src="/footerlogo/golden.png"
+                    src="/footerlogo/ft2.png"
                     alt="Golden Logo"
                     className="h-full w-auto object-contain max-w-[120px]"
                   />
                 </div>
-
-                {/* 25 Years logo - clickable to about page */}
-                <Link href="/about" className="h-10 w-auto block">
-                  <img
-                    src="/footerlogo/25years.png"
-                    alt="25 Years of Trustmore"
-                    className="h-full w-auto object-contain max-w-[120px] hover:opacity-80 transition-opacity"
-                  />
-                </Link>
               </div>
             </div>
 
