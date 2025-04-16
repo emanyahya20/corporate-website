@@ -144,12 +144,6 @@ export default function Home() {
               >
                 History Timeline
               </a>
-              <a
-                href="#trust-circle"
-                className="text-sm md:text-lg text-grey hover:text-black whitespace-nowrap px-1"
-              >
-                Trust Circle
-              </a>
             </div>
           </div>
 
@@ -247,10 +241,6 @@ export default function Home() {
           </div>
         </div>
       </div>
-      {/*  HistoryTimeline */}
-      <section id="trust-circle">
-        <Trustcircle />
-      </section>
     </div>
   );
 }
