@@ -116,9 +116,8 @@ const historyData: HistoryItem[] = [
 ];
 
 export default function ExactAntGroupStyleTimeline() {
-  const [currentYearIndex, setCurrentYearIndex] = useState(
-    historyData.length - 1
-  );
+  // Changed the initial state to 0 (first item) instead of historyData.length - 1 (last item)
+  const [currentYearIndex, setCurrentYearIndex] = useState(0);
   const [currentItemIndex, setCurrentItemIndex] = useState(0);
   const scrollRef = useRef<HTMLDivElement>(null);
 
