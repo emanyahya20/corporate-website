@@ -44,7 +44,7 @@ export default function ContactPage() {
         <div className="container mx-auto px-4 sm:px-6 lg:px-8 h-full flex items-center relative z-10">
           <div className="w-full max-w-4xl mx-auto lg:mx-0">
             <div className="text-center lg:text-left px-4 sm:px-0">
-              <h1 className="text-4xl sm:text-5xl md:text-6xl font-semibold text-white mb-3 sm:mb-4 leading-tight [text-shadow:_0_2px_4px_rgba(0,0,0,0.5)]">
+              <h1 className="text-3xl sm:text-5xl md:text-5xl font-semibold text-white mb-3 sm:mb-4 leading-tight [text-shadow:_0_2px_4px_rgba(0,0,0,0.5)]">
                 <span className="block whitespace-normal">
                   Get in Touch with us
                 </span>

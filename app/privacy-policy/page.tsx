@@ -11,7 +11,7 @@ export default function TermsOfServicePage() {
           playsInline
           className="absolute inset-0 w-full h-full object-cover"
         >
-          <source src="#" type="video/mp4" />
+          <source src="/videos/pp.mp4" type="video/mp4" />
           Your browser does not support the video tag.
         </video>
 
@@ -23,7 +23,7 @@ export default function TermsOfServicePage() {
           <div className="w-full max-w-4xl mx-auto lg:mx-0">
             <div className="text-center lg:text-left px-4 sm:px-0">
               {/* Main heading */}
-              <h1 className="text-4xl sm:text-5xl md:text-6xl font-semibold text-white mb-3 sm:mb-4 leading-tight [text-shadow:_0_2px_4px_rgba(0,0,0,0.5)]">
+              <h1 className="text-3xl sm:text-5xl md:text-5xl font-semibold text-white mb-3 sm:mb-4 leading-tight [text-shadow:_0_2px_4px_rgba(0,0,0,0.5)]">
                 Privacy Policy
               </h1>
               <p className="text-lg sm:text-xl md:text-2xl text-white/90 mb-6 sm:mb-8 max-w-2xl mx-auto lg:mx-0 leading-relaxed [text-shadow:_0_1px_2px_rgba(0,0,0,0.4)]">

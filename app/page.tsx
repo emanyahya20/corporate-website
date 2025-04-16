@@ -49,7 +49,7 @@ export default function Home() {
         {/* Centered Text Content */}
         <div className="absolute inset-0 flex items-center justify-center z-10 px-4 sm:px-6 lg:px-8 text-center">
           <div className="max-w-2xl">
-            <h1 className="text-4xl sm:text-5xl md:text-6xl font-semibold text-white mb-4 leading-tight [text-shadow:_0_2px_4px_rgba(0,0,0,0.5)]">
+            <h1 className="text-3xl sm:text-5xl md:text-5xl font-semibold text-white mb-4 leading-tight [text-shadow:_0_2px_4px_rgba(0,0,0,0.5)]">
               Welcome to Trustmore Group
             </h1>
             <p className="text-xl md:text-2xl text-white/90 mb-0">

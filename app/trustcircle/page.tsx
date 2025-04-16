@@ -39,7 +39,7 @@ export default function TrustCirclePage() {
         {/* Text Overlay */}
         <div className="absolute inset-0 bg-black/30 flex items-center justify-center z-10 px-4 sm:px-6 lg:px-8 text-center">
           <div className="max-w-4xl">
-            <h1 className="text-3xl sm:text-4xl md:text-5xl font-semibold text-white mb-4 leading-tight [text-shadow:_0_2px_4px_rgba(0,0,0,0.5)]">
+            <h1 className="text-3xl sm:text-5xl md:text-5xl font-semibold text-white mb-4 leading-tight [text-shadow:_0_2px_4px_rgba(0,0,0,0.5)]">
               Trust Circle, Powered by Trustmore Group
             </h1>
             <p className="text-xl md:text-2xl text-white/90 mb-6 [text-shadow:_0_1px_2px_rgba(0,0,0,0.4)]">

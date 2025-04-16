@@ -162,7 +162,7 @@ export default function AboutPage() {
         <div className="absolute inset-0 bg-black/30 z-10" />
         <div className="container mx-auto px-4 md:px-6 max-w-5xl relative z-20 text-center">
           <div className="max-w-4xl mx-auto">
-            <h1 className="text-4xl sm:text-5xl md:text-6xl font-semibold text-white mb-3 sm:mb-4 leading-tight [text-shadow:_0_2px_4px_rgba(0,0,0,0.5)]">
+            <h1 className="text-3xl sm:text-5xl md:text-5xl font-semibold text-white mb-3 sm:mb-4 leading-tight [text-shadow:_0_2px_4px_rgba(0,0,0,0.5)]">
               About Trustmore
             </h1>
             <p className="text-lg md:text-2xl text-white/90 mb-10">
