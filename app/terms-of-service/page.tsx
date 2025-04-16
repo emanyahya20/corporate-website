@@ -1,35 +1,29 @@
 export default function TermsOfServicePage() {
   return (
     <div className="flex flex-col min-h-screen">
-      {/* Hero Section */}
-      <section className="relative h-screen md:h-[110vh] min-h-[500px] md:min-h-[700px] overflow-hidden">
-        {/* Video Background */}
+      {/* Hero Video Banner */}
+      <section className="relative w-full h-screen overflow-hidden">
         <video
-          autoPlay
-          loop
-          muted
-          playsInline
           className="absolute inset-0 w-full h-full object-cover"
+          autoPlay
+          muted
+          loop
+          playsInline
+          poster="/placeholder.svg?height=1080&width=1920"
         >
-          <source src="#" type="video/mp4" />
+          <source src="/videos/ts.mp4" type="video/mp4" />
           Your browser does not support the video tag.
         </video>
 
-        {/* Dark overlay */}
-        <div className="absolute inset-0 bg-black/40"></div>
-
-        {/* Content container */}
-        <div className="container mx-auto px-4 sm:px-6 lg:px-8 h-full flex items-center relative z-10">
-          <div className="w-full max-w-4xl mx-auto lg:mx-0">
-            <div className="text-center lg:text-left px-4 sm:px-0">
-              {/* Main heading */}
-              <h1 className="text-3xl sm:text-5xl md:text-5xl font-semibold text-white mb-3 sm:mb-4 leading-tight [text-shadow:_0_2px_4px_rgba(0,0,0,0.5)]">
-                Terms of Service
-              </h1>
-              <p className="text-lg sm:text-xl md:text-2xl text-white/90 mb-6 sm:mb-8 max-w-2xl mx-auto lg:mx-0 leading-relaxed [text-shadow:_0_1px_2px_rgba(0,0,0,0.4)]">
-                Please read these terms carefully before using our services
-              </p>
-            </div>
+        {/* Welcome Message */}
+        <div className="absolute inset-0 flex items-center justify-center z-10 px-4 sm:px-6 lg:px-8 text-center">
+          <div className="max-w-3xl">
+            <h1 className="text-3xl sm:text-5xl md:text-6xl font-semibold text-white mb-4 leading-tight [text-shadow:_0_2px_4px_rgba(0,0,0,0.5)]">
+              Terms of Service
+            </h1>
+            <p className="text-xl md:text-2xl text-white/90 mb-10">
+              Please read these terms carefully before using our services
+            </p>
           </div>
         </div>
       </section>
