@@ -144,6 +144,12 @@ export default function Home() {
               >
                 History Timeline
               </a>
+              <a
+                href="#trust-circle"
+                className="text-sm md:text-lg text-grey hover:text-black whitespace-nowrap px-1"
+              >
+                Trust Circle
+              </a>
             </div>
           </div>
 
@@ -238,9 +244,21 @@ export default function Home() {
                 className="h-full w-auto object-contain max-w-[200px]"
               />
             </div>
+            <div className="h-28 w-auto">
+              <img
+                src="/award5.png"
+                alt="Award 4"
+                className="h-full w-auto object-contain max-w-[200px]"
+              />
+            </div>
           </div>
         </div>
       </div>
+
+      <section id="trust-circle">
+        <Trustcircle />
+           
+      </section>
     </div>
   );
 }

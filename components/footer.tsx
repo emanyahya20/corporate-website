@@ -158,6 +158,7 @@ export default function Footer() {
                 { href: "/knowledge-center", label: "Knowledge Center" },
                 { href: "/privacy-policy", label: "Privacy Policy" },
                 { href: "/terms-of-service", label: "Terms of Service" },
+                { href: "/cookies", label: "Cookie Policy" },
               ].map(({ href, label }) => (
                 <li key={href}>
                   <Link
@@ -176,7 +177,7 @@ export default function Footer() {
           {/* Affiliated Platforms Section */}
           <div className="md:ml-4">
             <h3 className="text-base font-bold text-gray-900 mb-2">
-              Affiliated Platforms
+              Trustmore Group Sites
             </h3>
             <ul className="space-y-1 text-gray-700 font-medium">
               <li>
@@ -213,7 +214,102 @@ export default function Footer() {
           </div>
         </div>
 
-        {/* Legal Note - Made more compact */}
+        {/* Extended Legal Information */}
+        <div className="mt-8 pt-6 border-t border-gray-200 text-xs text-gray-600">
+          <div className="mb-4">
+            <p>
+              © 2025 Trustmore Group and its affiliates. All rights reserved.
+              Trustmore, Escrowpay, REVCO, SettleX, IPRIVE, ViaJets, and
+              LuxeJoys are trademarks or registered trademarks of Trustmore
+              Group. Registered office: Ground Floor, 7A, Standard Chartered
+              Tower, DLF Cyber City, DLF Phase 2, Sector 24, Gurugram, Haryana
+              122001, India.
+            </p>
+          </div>
+
+          <div className="mb-4">
+            <p>
+              Trustmore Group is committed to empowering visionary individuals,
+              families, and their enterprises to preserve, grow, and seamlessly
+              transfer their wealth. Our clients include global entrepreneurs,
+              corporate leaders, family offices, and high-net-worth investors.
+              We deliver tailored solutions—combining wealth management, fintech
+              innovation, and luxury lifestyle services.
+            </p>
+          </div>
+
+          <div className="mb-4">
+            <p>
+              Investments in alternative investment strategies is speculative,
+              often involves a greater degree of risk than traditional
+              investments including limited liquidity and limited transparency,
+              among other factors and should only be considered by sophisticated
+              investors with the financial capability to accept the loss of all
+              or part of the assets devoted to such strategies.
+            </p>
+          </div>
+
+          <div className="mb-4">
+            <p>
+              Borrowing with securities as collateral involves certain risks,
+              including the possibility that you may need to deposit additional
+              securities and/or cash in the account to meet a maintenance call,
+              and that securities in the account may be sold to meet the
+              maintenance call. Proper management of your account and a thorough
+              understanding of the conditions that may affect your investments
+              will assist you in effectively using the margin lending program.
+            </p>
+          </div>
+
+          <div className="mb-4 font-bold text-gray-800 bg-gray-100 p-3 text-center">
+            <p>
+              INVESTMENT AND INSURANCE PRODUCTS ARE: • NOT FDIC INSURED • NOT
+              INSURED BY ANY FEDERAL GOVERNMENT AGENCY • NOT A DEPOSIT OR OTHER
+              OBLIGATION OF, OR GUARANTEED BY, TRUSTMORE GROUP OR ANY OF ITS
+              AFFILIATES • SUBJECT TO INVESTMENT RISKS, INCLUDING POSSIBLE LOSS
+              OF THE PRINCIPAL AMOUNT INVESTED
+            </p>
+          </div>
+
+          <div className="mb-4">
+            <p>
+              Trustmore Group is the parent company of IPRIVE, Escrowpay, REVCO,
+              SettleX, ViaJets, and LuxeJoys, offering a comprehensive suite of
+              regulated and non-regulated financial, investment, and lifestyle
+              services through its global network of affiliates. Not all
+              products and services are available in all jurisdictions or
+              through all affiliated entities. Investment advisory and wealth
+              planning services may be offered through licensed entities, as
+              permitted by local regulations. Certain services are delivered
+              through select partners and affiliates, subject to jurisdictional
+              requirements. Trustmore Group and its affiliates do not provide
+              tax, legal, or accounting advice. Clients should consult their own
+              professional advisors before making financial decisions.
+            </p>
+          </div>
+
+          {/* Disclaimer */}
+          <div className="mt-6 mb-4">
+            <h4 className="font-bold mb-2">Disclaimer:</h4>
+            <p>
+              It is important to note that the capital value of, and income
+              from, any investment may go down as well as up and you may not get
+              back the full amount invested. For some investments this can also
+              happen as a result of exchange rate fluctuations as shares and
+              funds may have an exposure to overseas markets. The information
+              provided on this website is for informational purposes only and
+              does not constitute an offer, solicitation, or recommendation to
+              invest in any products or services. All investments involve risk,
+              including the potential loss of principal. Trustmore Group does
+              not provide tax, legal, or accounting advice. Please consult your
+              professional advisors before making financial decisions. Products
+              and services may be subject to regulatory restrictions and may not
+              be available in all jurisdictions.
+            </p>
+          </div>
+        </div>
+
+        {/* Legal Note */}
         <div className="mt-4 p-2 bg-gray-50 rounded-lg mx-auto text-center">
           <p className="text-xs text-gray-600">
             Your Trustmore digital services are provided through licensed
@@ -223,7 +319,7 @@ export default function Footer() {
           </p>
         </div>
 
-        {/* Copyright - Reduced padding */}
+        {/* Copyright */}
         <div className="border-t border-gray-200 mt-6 pt-4 text-center text-gray-500 text-xs">
           <p>
             © {new Date().getFullYear()} Trustmore Technologies Private Limited.
