@@ -144,6 +144,33 @@ export default function CookiesPage() {
               extensions or add-on settings.
             </p>
           </div>
+          <h3 className="text-2xl font-semibold mt-8 mb-4">
+            Contact Information
+          </h3>
+          <div className="address-block mb-8">
+            <p className="text-xl font-semibold text-black mb-4">
+              Trustmore Group
+            </p>
+            <p className="mb-2">Corporate Office:</p>
+            <address className="not-italic mb-4">
+              Ground Floor, 7A, Standard Chartered Tower,
+              <br />
+              DLF Cyber City, DLF Phase 2,
+              <br />
+              Sector 24, Gurugram,
+              <br />
+              Haryana 122001, India
+            </address>
+            <p>
+              Email:{" "}
+              <a
+                href="mailto:care@itrustmore.com"
+                className="text-blue-600 hover:underline"
+              >
+                care@itrustmore.com
+              </a>
+            </p>
+          </div>
         </div>
       </section>
     </div>

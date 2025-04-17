@@ -56,10 +56,10 @@ export default function TermsOfServicePage() {
               Policy and other related policies of the Company such as Terms of
               Services, Disclaimer etc. as mentioned on{" "}
               <a
-                href="https://www.escrowpayindia.com"
+                href="https://www.itrustmore.com"
                 className="text-blue-600 hover:underline"
               >
-                www.escrowpayindia.com
+                www.itrustmore.com
               </a>
               (hereinafter referred to as the "Website"). Personal information
               of the Users shall be processed subject to their consent, which
@@ -474,7 +474,7 @@ export default function TermsOfServicePage() {
             </p>
 
             <p className="text-blue-600 font-medium mb-8">
-              care@escrowpayindia.com
+              care@itrustmore.com
             </p>
           </div>
         </div>

@@ -49,17 +49,14 @@ export default function Home() {
         {/* Centered Text Content */}
         <div className="absolute inset-0 flex items-center justify-center z-10 px-4 sm:px-6 lg:px-8 text-center">
           <div className="max-w-2xl">
-            <h1 className="text-3xl sm:text-5xl md:text-5xl font-semibold text-white mb-4 leading-tight [text-shadow:_0_2px_4px_rgba(0,0,0,0.5)]">
-              Trustmore Group
-            </h1>
             <p className="text-xl md:text-2xl text-white/90 mb-0">
               Connecting the World's Money Flows with Trust, Transparency, and
               Technology.
             </p>
+
             <p className="text-xl md:text-2xl text-white/90 mt-0 mb-3">
               Trustmore. Do More.
             </p>
-
             {/* Play Button - Made thinner */}
             <button
               onClick={() => setIsModalOpen(true)}
@@ -124,7 +121,7 @@ export default function Home() {
                 href="#brand-showcase"
                 className="text-sm md:text-lg text-grey hover:text-black whitespace-nowrap px-1"
               >
-                Explore Our Brands
+                Our Brands
               </a>
               <a
                 href="#podcast-section"
@@ -231,7 +228,6 @@ export default function Home() {
 
       <section id="trust-circle">
         <Trustcircle />
-           
       </section>
     </div>
   );

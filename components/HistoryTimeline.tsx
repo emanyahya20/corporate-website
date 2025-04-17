@@ -115,92 +115,59 @@ const historyData: HistoryItem[] = [
   },
   {
     year: 2025,
-    date: "Years Strong",
+    date: "25 Years Strong",
     image: "/history17.png",
     text: "Trustmore celebrates 25 years of trust-led growth, serving thousands of clients globally, delivering market-leading ROIs, managing money flows worth billions, and expanding our global presence.",
   },
 ];
 
 export default function ExactAntGroupStyleTimeline() {
-  const [currentYearIndex, setCurrentYearIndex] = useState(0);
-  const [currentItemIndex, setCurrentItemIndex] = useState(0);
+  const [currentIndex, setCurrentIndex] = useState(0);
   const scrollRef = useRef<HTMLDivElement>(null);
 
-  // Group history items by year
-  const historyByYear = historyData.reduce((acc, item) => {
-    if (!acc[item.year]) {
-      acc[item.year] = [];
-    }
-    acc[item.year].push(item);
-    return acc;
-  }, {} as Record<number, HistoryItem[]>);
+  // Flatten the timeline - consider each history item separately
+  // This way we don't group by year anymore
+  const allTimelineItems = historyData.map((item, index) => ({
+    ...item,
+    id: index, // Add an ID for easier tracking
+  }));
 
-  // Get unique years
-  const years = Object.keys(historyByYear)
-    .map(Number)
-    .sort((a, b) => a - b);
-  const currentYear = years[currentYearIndex];
-  const currentYearItems = historyByYear[currentYear] || [];
-
-  const handlePrevYear = () => {
-    if (currentYearIndex > 0) {
-      setCurrentYearIndex(currentYearIndex - 1);
-      setCurrentItemIndex(0);
+  const handlePrev = () => {
+    if (currentIndex > 0) {
+      setCurrentIndex(currentIndex - 1);
     }
   };
 
-  const handleNextYear = () => {
-    if (currentYearIndex < years.length - 1) {
-      setCurrentYearIndex(currentYearIndex + 1);
-      setCurrentItemIndex(0);
+  const handleNext = () => {
+    if (currentIndex < allTimelineItems.length - 1) {
+      setCurrentIndex(currentIndex + 1);
     }
   };
 
-  const handlePrevItem = () => {
-    if (currentItemIndex > 0) {
-      setCurrentItemIndex(currentItemIndex - 1);
-    } else if (currentYearIndex > 0) {
-      // Go to previous year, last item
-      const prevYear = years[currentYearIndex - 1];
-      const prevYearItems = historyByYear[prevYear];
-      setCurrentYearIndex(currentYearIndex - 1);
-      setCurrentItemIndex(prevYearItems.length - 1);
-    }
+  const handleYearClick = (index: number) => {
+    setCurrentIndex(index);
   };
 
-  const handleNextItem = () => {
-    if (currentItemIndex < currentYearItems.length - 1) {
-      setCurrentItemIndex(currentItemIndex + 1);
-    } else if (currentYearIndex < years.length - 1) {
-      // Go to next year, first item
-      setCurrentYearIndex(currentYearIndex + 1);
-      setCurrentItemIndex(0);
-    }
-  };
-
-  const handleYearClick = (yearIndex: number) => {
-    setCurrentYearIndex(yearIndex);
-    setCurrentItemIndex(0);
-  };
-
-  const currentItem = currentYearItems[currentItemIndex];
-  const hasMultipleItems = currentYearItems.length > 1;
+  const currentItem = allTimelineItems[currentIndex];
 
   // Calculate visible years (for responsive view)
-  const getVisibleYears = () => {
-    const visibleCount = 11; // Show max 11 years at once
+  const getVisibleItems = () => {
+    const visibleCount = 11; // Show max 11 items at once
     const halfVisible = Math.floor(visibleCount / 2);
 
-    let startIdx = Math.max(0, currentYearIndex - halfVisible);
-    const endIdx = Math.min(years.length - 1, startIdx + visibleCount - 1);
+    let startIdx = Math.max(0, currentIndex - halfVisible);
+    const endIdx = Math.min(
+      allTimelineItems.length - 1,
+      startIdx + visibleCount - 1
+    );
 
     // Adjust start if we don't have enough years after current
     startIdx = Math.max(0, endIdx - visibleCount + 1);
 
-    return years.slice(startIdx, endIdx + 1);
+    return allTimelineItems.slice(startIdx, endIdx + 1);
   };
 
-  const visibleYears = getVisibleYears();
+  const visibleItems = getVisibleItems();
 
   return (
     <section className="py-12 bg-white">
@@ -213,17 +180,19 @@ export default function ExactAntGroupStyleTimeline() {
         <div className="relative mb-16">
           {/* Navigation Buttons */}
           <button
-            onClick={handlePrevItem}
+            onClick={handlePrev}
             className="absolute left-0 top-1/2 -translate-y-1/2 z-10 w-12 h-12 rounded-full bg-white shadow-md border border-gray-200 flex items-center justify-center hover:bg-gray-50"
             aria-label="Previous item"
+            disabled={currentIndex === 0}
           >
             <ChevronLeft className="w-6 h-6 text-black" />
           </button>
 
           <button
-            onClick={handleNextItem}
+            onClick={handleNext}
             className="absolute right-0 top-1/2 -translate-y-1/2 z-10 w-12 h-12 rounded-full bg-white shadow-md border border-gray-200 flex items-center justify-center hover:bg-gray-50"
             aria-label="Next item"
+            disabled={currentIndex === allTimelineItems.length - 1}
           >
             <ChevronRight className="w-6 h-6 text-black" />
           </button>
@@ -242,28 +211,6 @@ export default function ExactAntGroupStyleTimeline() {
                       className="w-full h-full object-cover"
                     />
                   </div>
-
-                  {/* Item indicator dots - only show if multiple items for the year */}
-                  {hasMultipleItems && (
-                    <div className="flex justify-center mt-4 space-x-2">
-                      {Array.from({ length: currentYearItems.length }).map(
-                        (_, idx) => (
-                          <button
-                            key={idx}
-                            onClick={() => setCurrentItemIndex(idx)}
-                            className={`w-2 h-2 rounded-full ${
-                              idx === currentItemIndex
-                                ? "bg-black"
-                                : "bg-gray-300"
-                            }`}
-                            aria-label={`View item ${
-                              idx + 1
-                            } for year ${currentYear}`}
-                          />
-                        )
-                      )}
-                    </div>
-                  )}
                 </div>
 
                 {/* Content */}
@@ -280,13 +227,13 @@ export default function ExactAntGroupStyleTimeline() {
           </div>
         </div>
 
-        {/* Year Navigation - Exactly like Ant Group */}
+        {/* Year Navigation - Showing each item separately */}
         <div className="flex items-center justify-center">
           <button
-            onClick={handlePrevYear}
+            onClick={handlePrev}
             className="flex items-center justify-center p-2 text-gray-400 hover:text-gray-600"
-            aria-label="Previous year"
-            disabled={currentYearIndex === 0}
+            aria-label="Previous"
+            disabled={currentIndex === 0}
           >
             <ChevronLeft className="w-5 h-5" />
           </button>
@@ -295,29 +242,32 @@ export default function ExactAntGroupStyleTimeline() {
             ref={scrollRef}
             className="flex items-center overflow-x-auto scrollbar-hide mx-4 space-x-8"
           >
-            {visibleYears.map((year) => {
-              const yearIndex = years.indexOf(year);
-              const isActive = yearIndex === currentYearIndex;
-              const hasMultiple = historyByYear[year].length > 1;
+            {visibleItems.map((item, idx) => {
+              const actualIndex =
+                currentIndex -
+                (visibleItems.length > 11
+                  ? 5
+                  : Math.floor(visibleItems.length / 2)) +
+                idx;
+              const isActive = actualIndex === currentIndex;
 
               return (
                 <div
-                  key={`year-${year}`}
+                  key={`year-${item.year}-${idx}`}
                   className="flex flex-col items-center"
                 >
                   {isActive && (
                     <div className="w-2 h-2 bg-black rounded-full mb-2"></div>
                   )}
                   <button
-                    onClick={() => handleYearClick(yearIndex)}
+                    onClick={() => handleYearClick(actualIndex)}
                     className={`px-2 py-1 transition-all ${
                       isActive
                         ? "text-black font-medium"
                         : "text-gray-500 hover:text-gray-800"
                     }`}
                   >
-                    {year}
-                    {hasMultiple ? "*" : ""}
+                    {item.year}
                   </button>
                 </div>
               );
@@ -325,10 +275,10 @@ export default function ExactAntGroupStyleTimeline() {
           </div>
 
           <button
-            onClick={handleNextYear}
+            onClick={handleNext}
             className="flex items-center justify-center p-2 text-gray-400 hover:text-gray-600"
-            aria-label="Next year"
-            disabled={currentYearIndex === years.length - 1}
+            aria-label="Next"
+            disabled={currentIndex === allTimelineItems.length - 1}
           >
             <ChevronRight className="w-5 h-5" />
           </button>

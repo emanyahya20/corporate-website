@@ -50,15 +50,17 @@ export default function TrustCirclePage() {
       </section>
 
       {/* Our Services Section */}
-      <section className="py-16 bg-gray-50">
-        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-          {/* Added Logo Here */}
-          <div className="flex justify-center mb-8">
-            <img
-              src="/footerlogo/tclogo.png"
-              alt="Trust Circle Logo"
-              className="h-32 w-auto"
-            />
+      <section className="bg-white text-gray-800 py-6 px-6 md:px-24">
+        <div className="max-w-6xl mx-auto space-y-4">
+          {/* Header with logo instead of text heading */}
+          <div className="text-center space-y-3">
+            <div className="flex justify-center mb-0">
+              <img
+                src="/footerlogo/tclogo.png"
+                alt="Trust Circle Logo"
+                className="h-96 w-auto"
+              />
+            </div>
           </div>
 
           <div className="text-center mb-12">

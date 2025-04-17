@@ -72,6 +72,41 @@ export default function InvestorsPage() {
         </div>
       </section>
 
+      {/* Awards Section */}
+      <div className="bg-gray-100 py-6 mt-6" id="awards-section">
+        <div className="text-center">
+          <h2 className="text-3xl font-semibold text-gray-800 mb-2">
+            Investors
+          </h2>
+          <div className="flex justify-center items-center flex-wrap">
+            {/* First three logos - stretched */}
+            {[6, 7, 8].map((awardNum) => (
+              <img
+                key={awardNum}
+                src={`/award${awardNum}.png`}
+                alt={`Award ${awardNum}`}
+                className="h-32 w-[180px] object-contain px-6"
+              />
+            ))}
+            {/* Middle logos - regular size */}
+            {[9, 10].map((awardNum) => (
+              <img
+                key={awardNum}
+                src={`/award${awardNum}.png`}
+                alt={`Award ${awardNum}`}
+                className="h-24 w-[150px] object-contain px-6"
+              />
+            ))}
+            {/* Last logo - stretched */}
+            <img
+              src="/award11.png"
+              alt="Award 11"
+              className="h-32 w-[180px] object-contain px-6"
+            />
+          </div>
+        </div>
+      </div>
+
       {/* Mission Statement Section */}
       <section className="py-12 bg-white">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">

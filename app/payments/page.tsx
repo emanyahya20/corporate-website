@@ -76,7 +76,7 @@ export default function PaymentPage() {
                     variant="outline"
                     className="w-full sm:w-auto bg-white/10 hover:bg-white/20 text-white border-white/30 rounded-lg px-4 sm:px-6 md:px-8 backdrop-blur-sm text-sm sm:text-base [text-shadow:_0_1px_1px_rgba(0,0,0,0.3)]"
                   >
-                    Get Started <ArrowRight className="ml-2 h-4 w-4" />
+                    Visit Escrowpay <ArrowRight className="ml-2 h-4 w-4" />
                   </Button>
                 </a>
               </div>

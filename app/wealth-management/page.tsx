@@ -73,6 +73,21 @@ export default function WealthManagementPage() {
           </div>
         </div>
       </section>
+
+      <section className="bg-white text-gray-800 py-0 px-6 md:px-24">
+        <div className="max-w-6xl mx-auto">
+          {/* Header with logo instead of text heading */}
+          <div className="text-center">
+            <div className="flex justify-center -mb-6">
+              <img
+                src="/footerlogo/iprive logo.png"
+                alt="Trust Circle Logo"
+                className="h-96 w-auto"
+              />
+            </div>
+          </div>
+        </div>
+      </section>
       {/* Highlights Section */}
       <section className="py-12 bg-white">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">

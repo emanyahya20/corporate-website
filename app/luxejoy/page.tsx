@@ -255,7 +255,7 @@ export default function LuxejoysPage() {
             </h2>
             <p className="text-gray-800 mb-6">
               Discreet consultations by appointment only. Global Offices: Dubai
-              | London | Monaco
+              | India
             </p>
             <Link href="/contact" passHref>
               <Button className="bg-black hover:bg-gray-800 text-white rounded-lg px-5 py-2 font-medium">

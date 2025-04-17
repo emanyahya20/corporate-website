@@ -4,7 +4,7 @@ import Link from "next/link";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { usePathname } from "next/navigation";
-import { Linkedin, Twitter, Facebook, Instagram, Youtube } from "lucide-react";
+import { Linkedin, X, Facebook, Instagram, Youtube } from "lucide-react";
 
 export default function Footer() {
   const pathname = usePathname();
@@ -43,8 +43,9 @@ export default function Footer() {
             </div>
 
             {/* Company Description - Keep this text */}
+
             <div className="mb-4">
-              <p className="text-xs text-gray-700 leading-tight">
+              <p className="text-xs text-gray-700 leading-tight text-justify">
                 Trustmore Group is a global, technology-led financial
                 powerhouse, managing wealth, payments, and exclusive
                 experiences. Built on a foundation of trust, transparency, and
@@ -52,14 +53,13 @@ export default function Footer() {
                 more, and live more.
               </p>
             </div>
-
             {/* Contact Us Section (after company description) */}
             <div>
               <h3 className="text-base font-bold text-gray-900 mb-3">
                 Contact Us
               </h3>
               <p className="text-gray-800 font-semibold text-xs mb-3">
-                Hotline: +919810336644
+                Phone: +91 98 10 33 66 44
               </p>
               {/* Social Media */}
               <div>
@@ -83,7 +83,7 @@ export default function Footer() {
                     className="text-gray-600 hover:text-black"
                     aria-label="X (Twitter)"
                   >
-                    <Twitter className="h-5 w-5" />
+                    <X className="h-5 w-5" />
                   </a>
                   <a
                     href="https://www.facebook.com/Trustmorehq?mibextid=ZbWK4v1648226618021!5m2!1sen!2sin"
@@ -163,6 +163,16 @@ export default function Footer() {
                   REVCO
                 </a>
               </li>
+              <li>
+                <a
+                  href="https://www.flyviajets.com"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="hover:text-black text-sm"
+                >
+                  VIAJETS
+                </a>
+              </li>
             </ul>
           </div>
 
@@ -178,7 +188,7 @@ export default function Footer() {
                 { href: "/payments", label: "Payments" },
                 { href: "/wealth-management", label: "Wealth Management" },
                 { href: "/luxejoy", label: "Luxejoy" },
-                { href: "/investors", label: "Investors" },
+                { href: "/investors", label: "Investor Relations" },
               ].map(({ href, label }) => (
                 <li key={href}>
                   <Link
@@ -197,7 +207,7 @@ export default function Footer() {
           {/* Quick Links Section (Second Half) */}
           <div className="md:ml-4">
             <h3 className="text-base font-bold text-gray-900 mb-2">
-              More Links
+              Helpful Links
             </h3>
             <ul className="space-y-1">
               {[
@@ -227,50 +237,6 @@ export default function Footer() {
         <div className="mt-8 pt-6 border-t border-gray-200 text-xs text-gray-600">
           <div className="mb-4">
             <p>
-              Trustmore Group is committed to empowering visionary individuals,
-              families, and their enterprises to preserve, grow, and seamlessly
-              transfer their wealth. Our clients include global entrepreneurs,
-              corporate leaders, family offices, and high-net-worth investors.
-              We deliver tailored solutions—combining wealth management, fintech
-              innovation, and luxury lifestyle services.
-            </p>
-          </div>
-
-          <div className="mb-4">
-            <p>
-              Investments in alternative investment strategies is speculative,
-              often involves a greater degree of risk than traditional
-              investments including limited liquidity and limited transparency,
-              among other factors and should only be considered by sophisticated
-              investors with the financial capability to accept the loss of all
-              or part of the assets devoted to such strategies.
-            </p>
-          </div>
-
-          <div className="mb-4">
-            <p>
-              Borrowing with securities as collateral involves certain risks,
-              including the possibility that you may need to deposit additional
-              securities and/or cash in the account to meet a maintenance call,
-              and that securities in the account may be sold to meet the
-              maintenance call. Proper management of your account and a thorough
-              understanding of the conditions that may affect your investments
-              will assist you in effectively using the margin lending program.
-            </p>
-          </div>
-
-          <div className="mb-4 font-bold text-gray-800 bg-gray-100 p-3 text-center">
-            <p>
-              INVESTMENT AND INSURANCE PRODUCTS ARE: • NOT FDIC INSURED • NOT
-              INSURED BY ANY FEDERAL GOVERNMENT AGENCY • NOT A DEPOSIT OR OTHER
-              OBLIGATION OF, OR GUARANTEED BY, TRUSTMORE GROUP OR ANY OF ITS
-              AFFILIATES • SUBJECT TO INVESTMENT RISKS, INCLUDING POSSIBLE LOSS
-              OF THE PRINCIPAL AMOUNT INVESTED
-            </p>
-          </div>
-
-          <div className="mb-4">
-            <p>
               Trustmore Group is the parent company of IPRIVE, Escrowpay, REVCO,
               SettleX, ViaJets, and LuxeJoys, offering a comprehensive suite of
               regulated and non-regulated financial, investment, and lifestyle
@@ -283,6 +249,39 @@ export default function Footer() {
               requirements. Trustmore Group and its affiliates do not provide
               tax, legal, or accounting advice. Clients should consult their own
               professional advisors before making financial decisions.
+            </p>
+          </div>
+          <div className="mb-4">
+            <p>
+              Trustmore Group is committed to empowering visionary individuals,
+              families, and their enterprises to preserve, grow, and seamlessly
+              transfer their wealth. Our clients include global entrepreneurs,
+              corporate leaders, family offices, and high-net-worth investors.
+              We deliver tailored solutions—combining wealth management, fintech
+              innovation, and luxury lifestyle services.Investments in
+              alternative investment strategies is speculative, often involves a
+              greater degree of risk than traditional investments including
+              limited liquidity and limited transparency, among other factors
+              and should only be considered by sophisticated investors with the
+              financial capability to accept the loss of all or part of the
+              assets devoted to such strategies. Borrowing with securities as
+              collateral involves certain risks, including the possibility that
+              you may need to deposit additional securities and/or cash in the
+              account to meet a maintenance call, and that securities in the
+              account may be sold to meet the maintenance call. Proper
+              management of your account and a thorough understanding of the
+              conditions that may affect your investments will assist you in
+              effectively using the margin lending program.
+            </p>
+          </div>
+
+          <div className="mb-4 font-bold text-gray-800 bg-gray-100 p-3 text-center">
+            <p>
+              INVESTMENT AND INSURANCE PRODUCTS ARE: • NOT FDIC INSURED • NOT
+              INSURED BY ANY FEDERAL GOVERNMENT AGENCY • NOT A DEPOSIT OR OTHER
+              OBLIGATION OF, OR GUARANTEED BY, TRUSTMORE GROUP OR ANY OF ITS
+              AFFILIATES • SUBJECT TO INVESTMENT RISKS, INCLUDING POSSIBLE LOSS
+              OF THE PRINCIPAL AMOUNT INVESTED
             </p>
           </div>
 
@@ -313,6 +312,7 @@ export default function Footer() {
             © 2025 Trustmore Group and its affiliates. All rights reserved.
             Trustmore, Escrowpay, REVCO, SettleX, IPRIVE, ViaJets, and LuxeJoys
             are trademarks or registered trademarks of Trustmore Group.
+            <br />
             Registered office: Ground Floor, 7A, Standard Chartered Tower, DLF
             Cyber City, DLF Phase 2, Sector 24, Gurugram, Haryana 122001, India.
           </p>
