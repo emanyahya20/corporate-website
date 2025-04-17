@@ -178,7 +178,7 @@ export default function Footer() {
                 { href: "/payments", label: "Payments" },
                 { href: "/wealth-management", label: "Wealth Management" },
                 { href: "/luxejoy", label: "Luxejoy" },
-                { href: "/trustcircle", label: "Trust Circle" },
+                { href: "/investors", label: "Investors" },
               ].map(({ href, label }) => (
                 <li key={href}>
                   <Link
@@ -201,6 +201,7 @@ export default function Footer() {
             </h3>
             <ul className="space-y-1">
               {[
+                { href: "/trustcircle", label: "Trust Circle" },
                 { href: "/careers", label: "Careers" },
                 { href: "/knowledge-center", label: "Knowledge Center" },
                 { href: "/privacy-policy", label: "Privacy Policy" },
