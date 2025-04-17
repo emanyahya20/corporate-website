@@ -83,7 +83,22 @@ export default function Footer() {
                     className="text-gray-600 hover:text-black"
                     aria-label="X (Twitter)"
                   >
-                    <X className="h-5 w-5" />
+                    {/* Custom X Logo SVG */}
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      viewBox="0 0 24 24"
+                      width="20"
+                      height="20"
+                      fill="none"
+                      stroke="currentColor"
+                      className="h-5 w-5"
+                    >
+                      <path
+                        d="M16.99 2H20.298L14.061 9.233L21.573 19H16.27L11.719 13.105L6.489 19H3.179L9.816 11.33L2.612 2H8.04L12.147 7.402L16.99 2ZM17.046 17.317H18.693L7.17 3.597H5.406L17.046 17.317Z"
+                        fill="currentColor"
+                        stroke="none"
+                      />
+                    </svg>
                   </a>
                   <a
                     href="https://www.facebook.com/Trustmorehq?mibextid=ZbWK4v1648226618021!5m2!1sen!2sin"
