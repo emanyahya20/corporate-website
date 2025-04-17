@@ -3,7 +3,7 @@
 import { useState } from "react";
 
 export default function PodcastSection() {
-  const spotifyEpisodeId = "1LQPuJJquEsAWLItl8sbHd";
+  const spotifyEpisodeId = "7wbGdOOrZZKSlKHmAEVAN5";
   const [isModalOpen, setIsModalOpen] = useState(false);
 
   return (
@@ -14,19 +14,19 @@ export default function PodcastSection() {
             Featured Podcast
           </h2>
           <p className="text-sm text-gray-700 max-w-3xl mx-auto">
-            Listen to our latest podcast episode where we discuss wealth
-            management strategies and financial insights.
+            Listen to our latest podcast episode where we discuss strategies and
+            financial insights.
           </p>
         </div>
 
-        <div className="grid md:grid-cols-2 gap-8 items-center">
-          {/* Video Thumbnail - Entire video is clickable */}
+        <div className="flex justify-center">
+          {/* Video Thumbnail - Centered and clickable with original dimensions */}
           <div
-            className="relative w-full h-[450px] rounded-lg overflow-hidden cursor-pointer"
+            className="relative w-full h-[450px] rounded-lg overflow-hidden cursor-pointer md:w-1/2"
             onClick={() => setIsModalOpen(true)}
           >
             <video
-              className="w-full h-full object-cover"
+              className="w-full h-full object-contain"
               autoPlay
               muted
               loop
@@ -36,37 +36,6 @@ export default function PodcastSection() {
               <source src="/videos/podcast1.mp4" type="video/mp4" />
               Your browser does not support the video tag.
             </video>
-          </div>
-
-          {/* Podcast Info */}
-          <div>
-            <h3 className="text-xl font-semibold text-gray-800 mb-3">
-              Wealth Management Insights
-            </h3>
-            <p className="text-sm text-gray-700 mb-4">
-              In this episode, we explore advanced strategies for wealth
-              preservation and growth in uncertain economic times. Our experts
-              share their insights on market trends, investment opportunities,
-              and how to build a resilient financial portfolio.
-            </p>
-            <div className="space-y-2 text-sm">
-              <div className="flex">
-                <span className="font-medium text-gray-800 mr-2">Host:</span>
-                <span className="text-gray-700">Ashwin, Founder & CEO</span>
-              </div>
-              <div className="flex">
-                <span className="font-medium text-gray-800 mr-2">Guests:</span>
-                <span className="text-gray-700">
-                  Industry experts and thought leaders
-                </span>
-              </div>
-              <div className="flex">
-                <span className="font-medium text-gray-800 mr-2">
-                  Duration:
-                </span>
-                <span className="text-gray-700">45 minutes</span>
-              </div>
-            </div>
           </div>
         </div>
       </div>

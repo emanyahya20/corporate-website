@@ -6,9 +6,9 @@ export function BrandShowcase() {
   const brands = [
     {
       id: "payments",
-      title: "Digital Payment",
+      title: "Digital Payments",
       description:
-        "Escrowpay is India’s first and largest digital escrow services platform, built to enable secure, transparent, and efficient transactions for businesses of all sizes.We digitise trust by holding funds safely until both parties meet their agreed conditions. Our platform streamlines complex transactions from equity deals to vendor payments and ESOP liquidity events. With API integrations and a seamless user interface, Escrowpay integrates easily into any business workflow. Trusted by over 100,000+ businesses, we help reduce risk, cost, and disputes in business dealings. Escrowpay is where Digital Trust Meets Business Efficiency.",
+        "Escrowpay is India's first and largest digital escrow services platform, built to enable secure, transparent, and efficient transactions for businesses of all sizes.We digitise trust by holding funds safely until both parties meet their agreed conditions. Our platform streamlines complex transactions from equity deals to vendor payments and ESOP liquidity events. With API integrations and a seamless user interface, Escrowpay integrates easily into any business workflow. Trusted by over 100,000+ businesses, we help reduce risk, cost, and disputes in business dealings. Escrowpay is where Digital Trust Meets Business Efficiency.",
       image: "/escrowpay1.png",
       link: "https://escrowpay.co.in",
       imageOnLeft: true,
@@ -17,7 +17,7 @@ export function BrandShowcase() {
       id: "wealth",
       title: "Digital Wealth Management",
       description:
-        "IPRIVE is a global private wealth advisory platform, dedicated to serving high-net-worth individuals, families, and corporations with discretion and expertise. We curate exclusive investment opportunities across global real estate, private equity, alternative assets, and bespoke financial instruments. Our services extend to high-value insurance solutions, family office structuring, and global mobility through residency and citizenship programs.Every IPRIVE relationship is built on absolute trust, confidentiality, and tailored financial strategies. With a presence in India and Dubai, we bridge wealth, opportunity, and legacy planning across jurisdictions. IPRIVE, Where Global Wealth Meets Timeless Vision.",
+        "IPRIVE is a global private wealth advisory platform, dedicated to serving high-net-worth individuals, families, and corporations with discretion and expertise. We curate exclusive investment opportunities across global real estate, private equity, alternative assets, and bespoke financial instruments. Our services extend to high-value insurance solutions, family office structuring, and global mobility through residency and citizenship programs. Every IPRIVE relationship is built on absolute trust, confidentiality, and tailored financial strategies. With a presence in India and Dubai, we bridge wealth, opportunity, and legacy planning across jurisdictions. IPRIVE, Where Global Wealth Meets Timeless Vision.",
       image: "/iprive1.png",
       link: "https://iprivewealth.com",
       imageOnLeft: false,
@@ -26,7 +26,7 @@ export function BrandShowcase() {
       id: "experiences",
       title: "Luxury Experiences",
       description:
-        "LuxeJoys curates exclusive luxury experiences for the world’s most discerning clients. From private jet charters to bespoke vacation retreats, we specialize in creating unparalleled journeys. Our offerings extend to access to elite events, tailored concierge services, and unforgettable adventures. With a focus on exceeding expectations, we turn dreams into realities for high-net-worth individuals. Operating globally, LuxeJoys connects you to the finest luxury experiences wherever you are. LuxeJoys, Luxury Redefined. Experiences Elevated.",
+        "LuxeJoys curates exclusive luxury experiences for the world's most discerning clients. From private jet charters to bespoke vacation retreats, we specialize in creating unparalleled journeys. Our offerings extend to access to elite events, tailored concierge services, and unforgettable adventures. With a focus on exceeding expectations, we turn dreams into realities for high-net-worth individuals. Operating globally, LuxeJoys connects you to the finest luxury experiences wherever you are. LuxeJoys, Luxury Redefined. Experiences Elevated.",
       image: "/luxejoy1.png",
       link: "https://luxejoys.com",
       imageOnLeft: true,
@@ -45,12 +45,16 @@ export function BrandShowcase() {
           {brands.map((brand) => (
             <div
               key={brand.id}
-              className="grid md:grid-cols-2 gap-8 items-center"
+              className="flex flex-col gap-8 md:grid md:grid-cols-2 md:gap-8 md:items-center"
             >
-              {/* Image */}
-              <div className={`${brand.imageOnLeft ? "order-1" : "order-2"}`}>
+              {/* For mobile: Content always first, image always second */}
+              {/* For desktop: Use the imageOnLeft prop to determine order */}
+              <div
+                className={`${
+                  brand.imageOnLeft ? "md:order-1" : "md:order-2"
+                } order-2`}
+              >
                 <div className="relative h-[350px] w-full">
-                  {/* Removed the Zoom effect */}
                   <Image
                     src={brand.image || "/placeholder.svg"}
                     alt={brand.title}
@@ -61,8 +65,11 @@ export function BrandShowcase() {
                 </div>
               </div>
 
-              {/* Content */}
-              <div className={`${brand.imageOnLeft ? "order-2" : "order-1"}`}>
+              <div
+                className={`${
+                  brand.imageOnLeft ? "md:order-2" : "md:order-1"
+                } order-1`}
+              >
                 <h3 className="text-2xl font-semibold text-gray-800 mb-4">
                   {brand.title}
                 </h3>

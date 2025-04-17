@@ -15,9 +15,9 @@ export default function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
           {/* Company Info */}
           <div>
-            {/* Logo Stack - Made more compact */}
+            {/* Logo Stack - Only Trustmore logo and the golden logo (ft2.png) */}
             <div className="flex flex-col gap-3 mb-4">
-              <div className="flex items-center gap-4">
+              <div className="flex items-center">
                 {/* Trustmore logo clickable */}
                 <div className="h-12 w-auto">
                   <Link href="/">
@@ -28,17 +28,9 @@ export default function Footer() {
                     />
                   </Link>
                 </div>
-                {/* FT1 logo - non-clickable */}
-                <div className="h-10 w-auto">
-                  <img
-                    src="/footerlogo/ft1.png"
-                    alt="Partner Logo"
-                    className="h-full w-auto object-contain max-w-[120px]"
-                  />
-                </div>
               </div>
 
-              <div className="flex items-center gap-2">
+              <div className="flex items-center">
                 {/* Golden logo - non-clickable */}
                 <div className="h-10 w-auto">
                   <img
@@ -50,7 +42,7 @@ export default function Footer() {
               </div>
             </div>
 
-            {/* Company Description - Reduced margin */}
+            {/* Company Description - Keep this text */}
             <div className="mb-4">
               <p className="text-xs text-gray-700 leading-tight">
                 Trustmore Group is a global, technology-led financial
@@ -61,120 +53,71 @@ export default function Footer() {
               </p>
             </div>
 
-            {/* Office Addresses - Made more compact */}
+            {/* Contact Us Section (after company description) */}
             <div>
-              <h4 className="text-xs font-bold text-gray-900 mb-1">
-                Head Office Address
-              </h4>
-              <div className="flex flex-wrap gap-4">
-                <p className="text-gray-700 text-xs">
-                  <strong>India:</strong> One World Center, Lower Parel, Mumbai
-                </p>
-                <p className="text-gray-700 text-xs">
-                  <strong>UAE:</strong> Level 41, Emirates Towers, Sheikh Zayed
-                  Road, Dubai
-                </p>
-              </div>
-            </div>
-          </div>
-
-          {/* Contact Us Section (Before Quick Links) */}
-          <div>
-            <h3 className="text-base font-bold text-gray-900 mb-3">
-              Contact Us
-            </h3>
-            <p className="text-gray-800 font-semibold text-xs mb-3">
-              Hotline: +919810336644
-            </p>
-            {/* Social Media */}
-            <div>
-              <h4 className="text-xs font-bold text-gray-900 mb-1">
-                Follow Us
-              </h4>
-              <div className="flex space-x-3">
-                <a
-                  href="https://www.linkedin.com/company/trustmoretech/"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="text-gray-600 hover:text-black"
-                  aria-label="LinkedIn"
-                >
-                  <Linkedin className="h-5 w-5" />
-                </a>
-                <a
-                  href="https://x.com/i/flow/login?redirect_after_login=%2Ftrustmorehq"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="text-gray-600 hover:text-black"
-                  aria-label="X (Twitter)"
-                >
-                  <Twitter className="h-5 w-5" />
-                </a>
-                <a
-                  href="https://www.facebook.com/Trustmorehq?mibextid=ZbWK4v1648226618021!5m2!1sen!2sin"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="text-gray-600 hover:text-black"
-                  aria-label="Facebook"
-                >
-                  <Facebook className="h-5 w-5" />
-                </a>
-                <a
-                  href="https://www.instagram.com/trustmoregroup/"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="text-gray-600 hover:text-black"
-                  aria-label="Instagram"
-                >
-                  <Instagram className="h-5 w-5" />
-                </a>
-                <a
-                  href="https://www.youtube.com/channel/UCcwBLC05uEbmuFPkNCcDOuw"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="text-gray-600 hover:text-black"
-                  aria-label="YouTube"
-                >
-                  <Youtube className="h-5 w-5" />
-                </a>
-              </div>
-            </div>
-          </div>
-
-          {/* Quick Links Section */}
-          <div className="md:ml-4">
-            <h3 className="text-base font-bold text-gray-900 mb-2">
-              Quick Links
-            </h3>
-            <ul className="space-y-1">
-              {[
-                { href: "/", label: "Home" },
-                { href: "/about", label: "About" },
-                { href: "/payments", label: "Payments" },
-                { href: "/wealth-management", label: "Wealth Management" },
-                { href: "/luxejoy", label: "Luxejoy" },
-                { href: "/trustcircle", label: "Trust Circle" },
-                { href: "/careers", label: "Careers" },
-                { href: "/knowledge-center", label: "Knowledge Center" },
-                { href: "/privacy-policy", label: "Privacy Policy" },
-                { href: "/terms-of-service", label: "Terms of Service" },
-                { href: "/cookies", label: "Cookies Policy" },
-              ].map(({ href, label }) => (
-                <li key={href}>
-                  <Link
-                    href={href}
-                    className={`font-medium text-sm ${
-                      pathname === href ? "text-black" : "text-gray-700"
-                    }`}
+              <h3 className="text-base font-bold text-gray-900 mb-3">
+                Contact Us
+              </h3>
+              <p className="text-gray-800 font-semibold text-xs mb-3">
+                Hotline: +919810336644
+              </p>
+              {/* Social Media */}
+              <div>
+                <h4 className="text-xs font-bold text-gray-900 mb-1">
+                  Follow Us
+                </h4>
+                <div className="flex space-x-3">
+                  <a
+                    href="https://www.linkedin.com/company/trustmoretech/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-gray-600 hover:text-black"
+                    aria-label="LinkedIn"
                   >
-                    {label}
-                  </Link>
-                </li>
-              ))}
-            </ul>
+                    <Linkedin className="h-5 w-5" />
+                  </a>
+                  <a
+                    href="https://x.com/i/flow/login?redirect_after_login=%2Ftrustmorehq"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-gray-600 hover:text-black"
+                    aria-label="X (Twitter)"
+                  >
+                    <Twitter className="h-5 w-5" />
+                  </a>
+                  <a
+                    href="https://www.facebook.com/Trustmorehq?mibextid=ZbWK4v1648226618021!5m2!1sen!2sin"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-gray-600 hover:text-black"
+                    aria-label="Facebook"
+                  >
+                    <Facebook className="h-5 w-5" />
+                  </a>
+                  <a
+                    href="https://www.instagram.com/trustmoregroup/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-gray-600 hover:text-black"
+                    aria-label="Instagram"
+                  >
+                    <Instagram className="h-5 w-5" />
+                  </a>
+                  <a
+                    href="https://www.youtube.com/channel/UCcwBLC05uEbmuFPkNCcDOuw"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-gray-600 hover:text-black"
+                    aria-label="YouTube"
+                  >
+                    <Youtube className="h-5 w-5" />
+                  </a>
+                </div>
+              </div>
+            </div>
           </div>
 
-          {/* Affiliated Platforms Section */}
+          {/* Trustmore Group Sites Section (Before Quick Links) */}
           <div className="md:ml-4">
             <h3 className="text-base font-bold text-gray-900 mb-2">
               Trustmore Group Sites
@@ -187,7 +130,7 @@ export default function Footer() {
                   rel="noopener noreferrer"
                   className="hover:text-black text-sm"
                 >
-                  Escrowpay
+                  ESCROWPAY
                 </a>
               </li>
               <li>
@@ -210,23 +153,77 @@ export default function Footer() {
                   LUXEJOYS
                 </a>
               </li>
+              <li>
+                <a
+                  href="https://www.revco.co.in/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="hover:text-black text-sm"
+                >
+                  REVCO
+                </a>
+              </li>
+            </ul>
+          </div>
+
+          {/* Quick Links Section (First Half) */}
+          <div className="md:ml-4">
+            <h3 className="text-base font-bold text-gray-900 mb-2">
+              Quick Links
+            </h3>
+            <ul className="space-y-1">
+              {[
+                { href: "/", label: "Home" },
+                { href: "/about", label: "About" },
+                { href: "/payments", label: "Payments" },
+                { href: "/wealth-management", label: "Wealth Management" },
+                { href: "/luxejoy", label: "Luxejoy" },
+                { href: "/trustcircle", label: "Trust Circle" },
+              ].map(({ href, label }) => (
+                <li key={href}>
+                  <Link
+                    href={href}
+                    className={`font-medium text-sm ${
+                      pathname === href ? "text-black" : "text-gray-700"
+                    }`}
+                  >
+                    {label}
+                  </Link>
+                </li>
+              ))}
+            </ul>
+          </div>
+
+          {/* Quick Links Section (Second Half) */}
+          <div className="md:ml-4">
+            <h3 className="text-base font-bold text-gray-900 mb-2">
+              More Links
+            </h3>
+            <ul className="space-y-1">
+              {[
+                { href: "/careers", label: "Careers" },
+                { href: "/knowledge-center", label: "Knowledge Center" },
+                { href: "/privacy-policy", label: "Privacy Policy" },
+                { href: "/terms-of-service", label: "Terms of Service" },
+                { href: "/cookies", label: "Cookies Policy" },
+              ].map(({ href, label }) => (
+                <li key={href}>
+                  <Link
+                    href={href}
+                    className={`font-medium text-sm ${
+                      pathname === href ? "text-black" : "text-gray-700"
+                    }`}
+                  >
+                    {label}
+                  </Link>
+                </li>
+              ))}
             </ul>
           </div>
         </div>
 
         {/* Extended Legal Information */}
         <div className="mt-8 pt-6 border-t border-gray-200 text-xs text-gray-600">
-          <div className="mb-4">
-            <p>
-              © 2025 Trustmore Group and its affiliates. All rights reserved.
-              Trustmore, Escrowpay, REVCO, SettleX, IPRIVE, ViaJets, and
-              LuxeJoys are trademarks or registered trademarks of Trustmore
-              Group. Registered office: Ground Floor, 7A, Standard Chartered
-              Tower, DLF Cyber City, DLF Phase 2, Sector 24, Gurugram, Haryana
-              122001, India.
-            </p>
-          </div>
-
           <div className="mb-4">
             <p>
               Trustmore Group is committed to empowering visionary individuals,
@@ -309,21 +306,14 @@ export default function Footer() {
           </div>
         </div>
 
-        {/* Legal Note */}
-        <div className="mt-4 p-2 bg-gray-50 rounded-lg mx-auto text-center">
-          <p className="text-xs text-gray-600">
-            Your Trustmore digital services are provided through licensed
-            financial institutions. We follow necessary security standards and
-            best practices. Trustmore itself is not a bank and doesn't hold or
-            claim to hold a banking license.
-          </p>
-        </div>
-
         {/* Copyright */}
         <div className="border-t border-gray-200 mt-6 pt-4 text-center text-gray-500 text-xs">
           <p>
-            © {new Date().getFullYear()} Trustmore Technologies Private Limited.
-            All rights reserved.
+            © 2025 Trustmore Group and its affiliates. All rights reserved.
+            Trustmore, Escrowpay, REVCO, SettleX, IPRIVE, ViaJets, and LuxeJoys
+            are trademarks or registered trademarks of Trustmore Group.
+            Registered office: Ground Floor, 7A, Standard Chartered Tower, DLF
+            Cyber City, DLF Phase 2, Sector 24, Gurugram, Haryana 122001, India.
           </p>
         </div>
       </div>

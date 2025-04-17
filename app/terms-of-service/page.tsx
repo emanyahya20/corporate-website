@@ -32,16 +32,17 @@ export default function TermsOfServicePage() {
       <section className="py-16 bg-white">
         <div className="container mx-auto px-4 md:px-6 max-w-4xl">
           <div className="prose prose-lg max-w-none">
-            <h2>Terms of Service</h2>
-            <p>
+            <h2 className="text-3xl font-bold mb-6">Terms of Service</h2>
+
+            <p className="mb-8">
               <strong>Effective Date:</strong> Effective & Updated : January 1,
               2025
             </p>
 
-            <p>
-              Welcome to the Trustmore Group website (“Website”). By accessing
+            <p className="mb-8">
+              Welcome to the Trustmore Group website ("Website"). By accessing
               or using this Website, you agree to comply with and be bound by
-              the following terms and conditions (“Terms of Service”). These
+              the following terms and conditions ("Terms of Service"). These
               Terms of Service ("Terms") govern your access to and use of the
               services, including our website, APIs, email notifications,
               applications, buttons, and widgets ("Services"), and any
@@ -50,8 +51,11 @@ export default function TermsOfServicePage() {
               collectively referred to as "Content".
             </p>
 
-            <h3>Use of the Website</h3>
-            <p>
+            <h3 className="text-2xl font-semibold mt-8 mb-4">
+              Use of the Website
+            </h3>
+
+            <p className="mb-8">
               This Website is intended for informational purposes only and does
               not constitute an offer, solicitation, or recommendation to buy or
               sell any financial product or service, or to engage in any
@@ -61,8 +65,11 @@ export default function TermsOfServicePage() {
               without notice.
             </p>
 
-            <h3>No Financial Advice</h3>
-            <p>
+            <h3 className="text-2xl font-semibold mt-8 mb-4">
+              No Financial Advice
+            </h3>
+
+            <p className="mb-8">
               The content on this Website is provided for general information
               purposes only. It does not constitute financial, investment, tax,
               legal, or any other form of professional advice. Please consult
@@ -70,8 +77,9 @@ export default function TermsOfServicePage() {
               making any financial decisions.
             </p>
 
-            <h3>Privacy</h3>
-            <p>
+            <h3 className="text-2xl font-semibold mt-8 mb-4">Privacy</h3>
+
+            <p className="mb-8">
               Our Privacy Policy describes how we handle the information you
               provide to us when you use our Services. You understand that
               through your use of the Services you consent to the collection and
@@ -81,8 +89,11 @@ export default function TermsOfServicePage() {
               data protection laws.
             </p>
 
-            <h3>Intellectual Property</h3>
-            <p>
+            <h3 className="text-2xl font-semibold mt-8 mb-4">
+              Intellectual Property
+            </h3>
+
+            <p className="mb-8">
               All content on this Website, including but not limited to logos,
               images, graphics, text, and downloadable materials, is the
               exclusive property of Trustmore Group and is protected by
@@ -90,14 +101,18 @@ export default function TermsOfServicePage() {
               distribute, or use this content without prior written consent.
             </p>
 
-            <h3>Content on the Services</h3>
-            <p>
+            <h3 className="text-2xl font-semibold mt-8 mb-4">
+              Content on the Services
+            </h3>
+
+            <p className="mb-6">
               You are responsible for your use of the Services and for any
               Content you provide, including compliance with applicable laws,
               rules, and regulations. You should only provide Content that you
               are comfortable sharing with others.
             </p>
-            <p>
+
+            <p className="mb-8">
               Any use or reliance on any Content or materials posted via the
               Services or obtained by you through the Services is at your own
               risk. We do not endorse, support, represent or guarantee the
@@ -106,8 +121,11 @@ export default function TermsOfServicePage() {
               opinions expressed via the Services.
             </p>
 
-            <h3>Limitation of Liability</h3>
-            <p>
+            <h3 className="text-2xl font-semibold mt-8 mb-4">
+              Limitation of Liability
+            </h3>
+
+            <p className="mb-8">
               Trustmore Group and its affiliates, directors, officers, and
               employees are not liable for any direct, indirect, incidental, or
               consequential damages resulting from the use of, or inability to
@@ -115,8 +133,11 @@ export default function TermsOfServicePage() {
               content.
             </p>
 
-            <h3>Using the Services</h3>
-            <p>
+            <h3 className="text-2xl font-semibold mt-8 mb-4">
+              Using the Services
+            </h3>
+
+            <p className="mb-8">
               You may use the Services only in compliance with these Terms and
               all applicable laws, rules and regulations. Our Services evolve
               constantly. As such, the Services may change from time to time, at
@@ -130,8 +151,9 @@ export default function TermsOfServicePage() {
               you.
             </p>
 
-            <h3>Your Account</h3>
-            <p>
+            <h3 className="text-2xl font-semibold mt-8 mb-4">Your Account</h3>
+
+            <p className="mb-8">
               You may need to create an account to use some of our Services. You
               are responsible for safeguarding your account, so use a strong
               password and limit its use to this account. We cannot and will not
@@ -139,16 +161,22 @@ export default function TermsOfServicePage() {
               comply with the above.
             </p>
 
-            <h3>Third-Party Links</h3>
-            <p>
+            <h3 className="text-2xl font-semibold mt-8 mb-4">
+              Third-Party Links
+            </h3>
+
+            <p className="mb-8">
               This Website may contain links to third-party websites for your
               convenience. Trustmore Group does not control, endorse, or take
               responsibility for the content, availability, or practices of such
               external sites.
             </p>
 
-            <h3>Limitations of Liability</h3>
-            <p>
+            <h3 className="text-2xl font-semibold mt-8 mb-4">
+              Limitations of Liability
+            </h3>
+
+            <p className="mb-8">
               By using the Services you agree that Trustmore Technologies (P)
               Limited, its parents, affiliates, related companies, officers,
               directors, employees, agents representatives, partners and
@@ -156,8 +184,9 @@ export default function TermsOfServicePage() {
               in your country of residence.
             </p>
 
-            <h3>General</h3>
-            <p>
+            <h3 className="text-2xl font-semibold mt-8 mb-4">General</h3>
+
+            <p className="mb-8">
               We may revise these Terms from time to time. The changes will not
               be retroactive, and the most current version of the Terms, which
               will always be at www.escrowpayindia.com/terms, will govern our
@@ -168,15 +197,19 @@ export default function TermsOfServicePage() {
               to be bound by the revised Terms.
             </p>
 
-            <h3>Changes to These Terms</h3>
-            <p>
+            <h3 className="text-2xl font-semibold mt-8 mb-4">
+              Changes to These Terms
+            </h3>
+
+            <p className="mb-8">
               Trustmore Group may revise these Terms of Service at any time
               without prior notice. Continued use of the Website following any
               changes constitutes your acceptance of the updated Terms.
             </p>
 
-            <h3>Governing Law</h3>
-            <p>
+            <h3 className="text-2xl font-semibold mt-8 mb-4">Governing Law</h3>
+
+            <p className="mb-8">
               These Terms and any action related thereto will be governed by the
               laws of India without regard to or application of its conflict of
               law provisions or your state or country of residence. All claims,
@@ -186,23 +219,32 @@ export default function TermsOfServicePage() {
               such courts and waive any objection as to inconvenient forum.
             </p>
 
-            <h3>Contact Information</h3>
-            <p>
-              Trustmore Group
-              <br />
-              Corporate Office:
-              <br />
-              Ground Floor, 7A, Standard Chartered Tower, DLF Cyber City, DLF
-              Phase 2, Sector 24, Gurugram, Haryana 122001, India
-              <br />
-              Email:{" "}
-              <a
-                href="mailto:care@itrustmore.com"
-                className="text-blue-600 hover:underline"
-              >
-                care@itrustmore.com
-              </a>
-            </p>
+            <h3 className="text-2xl font-semibold mt-8 mb-4">
+              Contact Information
+            </h3>
+
+            <div className="address-block mb-8">
+              <p className="font-semibold mb-2">Trustmore Group</p>
+              <p className="mb-2">Corporate Office:</p>
+              <address className="not-italic mb-4">
+                Ground Floor, 7A, Standard Chartered Tower,
+                <br />
+                DLF Cyber City, DLF Phase 2,
+                <br />
+                Sector 24, Gurugram,
+                <br />
+                Haryana 122001, India
+              </address>
+              <p>
+                Email:{" "}
+                <a
+                  href="mailto:care@itrustmore.com"
+                  className="text-blue-600 hover:underline"
+                >
+                  care@itrustmore.com
+                </a>
+              </p>
+            </div>
           </div>
         </div>
       </section>

@@ -12,6 +12,7 @@ import {
   ChevronRight,
 } from "lucide-react";
 import { useState } from "react";
+import Link from "next/link"; // Add this import
 
 export default function KnowledgeCenterPage() {
   const [activeFilter, setActiveFilter] = useState("all");
@@ -386,9 +387,11 @@ export default function KnowledgeCenterPage() {
             Need specific market intelligence? Our research team can prepare
             bespoke reports tailored to your requirements.
           </p>
-          <button className="px-6 py-2 bg-black text-white rounded-full font-medium hover:bg-gray-900 transition-colors">
-            Contact Our Experts
-          </button>
+          <Link href="/contact" passHref>
+            <button className="px-6 py-2 bg-black text-white rounded-full font-medium hover:bg-gray-900 transition-colors">
+              Contact Our Experts
+            </button>
+          </Link>
         </div>
       </section>
     </div>

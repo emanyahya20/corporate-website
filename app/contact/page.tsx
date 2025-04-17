@@ -6,21 +6,23 @@ import { MapPin, Phone, Mail } from "lucide-react";
 export default function ContactPage() {
   const offices = [
     {
+      name: "India Office",
+      icon: <MapPin className="w-5 h-5 text-black mt-1" />,
+      details: [
+        "1617 & 1618, Level 16, Emaar Digital Greens",
+        "Sector 61, Gurugram 122002, Haryana",
+      ],
+      mapUrl:
+        "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3508.073981346786!2d77.0918133150786!3d28.44985898248704!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x390d18f5f5e5e5e5%3A0x5e5e5e5e5e5e5e5!2sEmaar%20Digital%20Greens%2C%20Sector%2061%2C%20Gurugram%2C%20Haryana%20122002!5e0!3m2!1sen!2sin",
+      phone: "+919810336644",
+      email: "care@itrustmore.com",
+    },
+    {
       name: "Dubai Office",
       icon: <MapPin className="w-5 h-5 text-black mt-1" />,
       details: ["Level 41, Emirates Towers", "Sheikh Zayed Road, Dubai"],
       mapUrl:
         "https://maps.google.com/maps?q=Emirates+Towers+Dubai&output=embed",
-      phone: "‪+919810336644‬",
-      email: "care@itrustmore.com",
-    },
-    {
-      name: "Mumbai Office",
-      icon: <MapPin className="w-5 h-5 text-black mt-1" />,
-      details: ["One World Center, Lower Parel", "Mumbai, India"],
-      mapUrl:
-        "https://maps.google.com/maps?q=One+World+Center+Mumbai&output=embed",
-      phone: "‪+919810336644‬",
       email: "care@itrustmore.com",
     },
   ];
@@ -72,7 +74,7 @@ export default function ContactPage() {
                       htmlFor="first-name"
                       className="text-sm font-medium text-gray-700"
                     >
-                      First Name
+                      First Name *
                     </label>
                     <Input
                       id="first-name"
@@ -86,7 +88,7 @@ export default function ContactPage() {
                       htmlFor="last-name"
                       className="text-sm font-medium text-gray-700"
                     >
-                      Last Name
+                      Last Name *
                     </label>
                     <Input
                       id="last-name"
@@ -102,7 +104,7 @@ export default function ContactPage() {
                     htmlFor="email"
                     className="text-sm font-medium text-gray-700"
                   >
-                    Email
+                    Email *
                   </label>
                   <Input
                     id="email"
@@ -118,11 +120,12 @@ export default function ContactPage() {
                     htmlFor="phone"
                     className="text-sm font-medium text-gray-700"
                   >
-                    Phone
+                    Phone *
                   </label>
                   <Input
                     id="phone"
                     placeholder="+1 (234) 567-890"
+                    required
                     className="rounded-none h-12"
                   />
                 </div>
@@ -137,7 +140,6 @@ export default function ContactPage() {
                   <Input
                     id="subject"
                     placeholder="Private Wealth Consultation"
-                    required
                     className="rounded-none h-12"
                   />
                 </div>
@@ -147,7 +149,7 @@ export default function ContactPage() {
                     htmlFor="message"
                     className="text-sm font-medium text-gray-700"
                   >
-                    Message
+                    Message *
                   </label>
                   <Textarea
                     id="message"
@@ -204,10 +206,14 @@ export default function ContactPage() {
                           ))}
                         </div>
                       </div>
-                      <div className="flex items-start gap-3">
-                        <Phone className="w-5 h-5 text-black mt-1" />
-                        <p className="text-lg text-gray-600">{office.phone}</p>
-                      </div>
+                      {office.phone && (
+                        <div className="flex items-start gap-3">
+                          <Phone className="w-5 h-5 text-black mt-1" />
+                          <p className="text-lg text-gray-600">
+                            {office.phone}
+                          </p>
+                        </div>
+                      )}
                       <div className="flex items-start gap-3">
                         <Mail className="w-5 h-5 text-black mt-1" />
                         <p className="text-lg text-gray-600">{office.email}</p>

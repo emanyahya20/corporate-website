@@ -32,26 +32,37 @@ export default function TermsOfServicePage() {
       <section className="py-16 bg-white">
         <div className="container mx-auto px-4 md:px-6 max-w-4xl">
           <div className="prose prose-lg max-w-none">
-            <p>
+            <h1 className="text-3xl font-bold mb-8">Privacy Policy</h1>
+
+            <p className="mb-6">
               This is the official Privacy Policy ("Policy") of Trustmore
-              Technologies (P) Limited ("Escrowpay") which forms a part of your
-              legal agreement with us. The terms "WE", "OUR" and "US" (refer to
-              "Escrowpay") and the terms "YOU", "YOUR" "I" and "USER" (refer to
-              as "User"), as a User of Escrowpay. Please read this Policy
-              carefully to be sure that you understand how we collect and use
-              your information shared with us and under what circumstances we
-              share your information, with any third parties. The information
-              shared by the Users shall be processed in accordance with the
-              terms and conditions agreed under this Privacy Policy and other
-              related policies of the Company such as Terms of Services,
-              Disclaimer etc. as mentioned on www.escrowpayindia.com
+              Technologies (P) Limited ("Escrowpay") ("itrustmore") which forms
+              a part of your legal agreement with us. The terms "WE", "OUR" and
+              "US" (refer to "Escrowpay") and the terms "YOU", "YOUR" "I" and
+              "USER" (refer to as "User"), as a User of Escrowpay. Please read
+              this Policy carefully to be sure that you understand how we
+              collect and use your information shared with us and under what
+              circumstances we share your information, with any third parties.
+            </p>
+
+            <p className="mb-6">
+              The information shared by the Users shall be processed in
+              accordance with the terms and conditions agreed under this Privacy
+              Policy and other related policies of the Company such as Terms of
+              Services, Disclaimer etc. as mentioned on{" "}
+              <a
+                href="https://www.escrowpayindia.com"
+                className="text-blue-600 hover:underline"
+              >
+                www.escrowpayindia.com
+              </a>
               (hereinafter referred to as the "Website"). Personal information
               of the Users shall be processed subject to their consent, which
               shall be deemed when the Users upload/provide their documents for
               completing the transaction on the Website.
             </p>
 
-            <p>
+            <p className="mb-6">
               The term "PERSONAL INFORMATION" means any information that you
               provide to us which personally identifies you to be contacted or
               identified, such as your name, address, phone number, email
@@ -61,7 +72,7 @@ export default function TermsOfServicePage() {
               in order to ensure safe usage of the Website for Users.
             </p>
 
-            <p>
+            <p className="mb-6">
               We have implemented reasonable security practices and measures
               that are proportional with the information being protected and
               with the nature of our business. While we try our best to provide
@@ -71,7 +82,7 @@ export default function TermsOfServicePage() {
               being transmitted to us by you.
             </p>
 
-            <p>
+            <p className="mb-8">
               By visiting the Website, You agree and acknowledge to be bound by
               this Privacy Policy and hereby consent that we will collect, use,
               process and share your Personal Information in the manner set out
@@ -79,10 +90,11 @@ export default function TermsOfServicePage() {
               Website.
             </p>
 
-            <h2 className="text-2xl font-semibold mt-8 mb-4">
-              WHAT TYPE OF INFORMATION DO WE COLLECT AND HOW WE USE IT
+            <h2 className="text-2xl font-semibold my-6">
+              What Type Of Information Do We Collect And How We Use It
             </h2>
-            <p>
+
+            <p className="mb-6">
               We respect the privacy of our Users and are committed to protect
               it in all respects from any unlawful or illegal disclosure. With a
               view to offer most enriching and holistic experience of
@@ -92,57 +104,58 @@ export default function TermsOfServicePage() {
               individual.
             </p>
 
-            <p>
+            <p className="mb-4">
               The information about the User as collected by us shall comprise
               of:
             </p>
 
-            <ul>
-              <li>information supplied by the Users</li>
+            <ul className="list-disc pl-8 mb-8 space-y-2">
+              <li>Information supplied by the Users</li>
               <li>Escrow account opening and Identity related information</li>
               <li>Contact Information</li>
               <li>Usage Based and Technical information</li>
               <li>Financial Information</li>
-              <li>information automatically tracked while navigation</li>
+              <li>Information automatically tracked while navigation</li>
               <li>Information of User(s)</li>
-              <li>
-                and any third party information supplied to us by the user
-              </li>
+              <li>Any third party information supplied to us by the user</li>
             </ul>
 
-            <h2 className="text-2xl font-semibold mt-8 mb-4">
-              FOR WHAT PURPOSE THE INFORMATION WILL BE USED
+            <h2 className="text-2xl font-semibold my-6">
+              For What Purpose The Information Will Be Used
             </h2>
-            <p>
+
+            <p className="mb-6">
               To avail the services on our Website, Users are required to
               provide information related to/for registration and transactions
               which may comprise of but not limited to names, addresses, email
               addresses, KYC details, credit / debit card details, bank details
               etc. The Information, as supplied by the Users, enables us to
-              improve our website and provide youwith the most user-friendly
+              improve our website and provide you with the most user-friendly
               experience.
             </p>
-            <p>
+
+            <p className="mb-6">
               All uploaded and required information is service dependent and the
-              Escrowpay may use the above said User information to, maintain,
+              Escrowpay may use the above said User information to maintain,
               protect, and improve its services (including advertising services)
               and shall retain the data uploaded by the Users on the Website for
               its record keeping purposes.
             </p>
-            <p>
-              The informationused may comprise of documents for KYC verification
-              which shall include, but not limited to, Credit Bureau records,
-              Aadhar data, PAN data, Bank Statements, Cancelled Cheque, copies
-              of Agreements or Deeds executed in the past or to be executed in
-              furtherance of the transactions facilitated by us through our
-              Website, chat support messages, emails, contact numbers, SMS, etc.
+
+            <p className="mb-8">
+              The information used may comprise of documents for KYC
+              verification which shall include, but not limited to, Credit
+              Bureau records, Aadhar data, PAN data, Bank Statements, Cancelled
+              Cheque, copies of Agreements or Deeds executed in the past or to
+              be executed in furtherance of the transactions facilitated by us
+              through our Website, chat support messages, emails, contact
+              numbers, SMS, etc.
             </p>
 
-            <h3 className="text-xl font-semibold mt-6 mb-3">
-              For General Purpose
-            </h3>
-            <ul>
-              <li>help us to provide personalized features for our Users;</li>
+            <h3 className="text-xl font-semibold mb-4">For General Purpose</h3>
+
+            <ul className="list-disc pl-8 mb-8 space-y-2">
+              <li>Help us to provide personalized features for our Users</li>
               <li>To manage our day to day Business operations</li>
               <li>To improve our services and business strategies</li>
               <li>
@@ -156,100 +169,100 @@ export default function TermsOfServicePage() {
               <li>
                 For conducting Risk analysis, Anti Money Laundering analysis or
                 any such checks or analysis as prescribed by the regulatory
-                authorities from time to time.
+                authorities from time to time
               </li>
               <li>
-                to operate, maintain, and improve our websites, products and
+                To operate, maintain, and improve our websites, products and
                 services – this may include contacting the Users to assist in
                 enforcing our policies, resolving complaints, and ensuring the
-                best possible service according to User's interest;
+                best possible service according to User's interest
               </li>
               <li>
-                to get in touch in the case of password retrieval and policy
-                changes;
+                To get in touch in the case of password retrieval and policy
+                changes
               </li>
               <li>
-                to preserve social history as governed by existing laws or
-                policy.
+                To preserve social history as governed by existing laws or
+                policy
               </li>
               <li>
-                to respond to comments and questions and provide customer
-                service;
+                To respond to comments and questions and provide customer
+                service
               </li>
               <li>
-                to send information including confirmations, invoices, technical
+                To send information including confirmations, invoices, technical
                 notices, updates, security alerts and support and administrative
-                messages;
+                messages
               </li>
               <li>
-                to communicate about promotions, upcoming events, and other news
+                To communicate about promotions, upcoming events, and other news
                 about products and services offered by Escrowpay or its Partners
-                and Vendors.
+                and Vendors
               </li>
             </ul>
 
-            <h3 className="text-xl font-semibold mt-6 mb-3">
-              For Internal Purpose
-            </h3>
-            <ul>
-              <li>direct our efforts for product and services improvement;</li>
-              <li>contact Users as a survey respondent;</li>
-              <li>any contestrelated information;</li>
+            <h3 className="text-xl font-semibold mb-4">For Internal Purpose</h3>
+
+            <ul className="list-disc pl-8 mb-8 space-y-2">
+              <li>Direct our efforts for product and services improvement</li>
+              <li>Contact Users as a survey respondent</li>
+              <li>Any contest related information</li>
               <li>
-                sending promotional materials from our partners, vendors,
-                sponsors or advertisers.
+                Sending promotional materials from our partners, vendors,
+                sponsors or advertisers
               </li>
-              <li>For password reminder and registration confirmation;</li>
+              <li>For password reminder and registration confirmation</li>
               <li>
                 For regular updates regarding new services, newsletter, special
-                offer and any other related information.
+                offer and any other related information
               </li>
-              <li>changes in any Policies or Terms of Use;</li>
+              <li>Changes in any Policies or Terms of Use</li>
               <li>
-                event based communications such as order information, renewal
+                Event based communications such as order information, renewal
                 notices, invites, reminders etc.
               </li>
             </ul>
 
-            <p className="italic">
+            <p className="italic mb-8">
               Note: We send Users login details, newsletters and updates upon
               registration. We also send regular newsletters and/or promotional
               emails for ourselves or on behalf of our partners, vendors and
               advertisers directly or through our third party vendors.
             </p>
 
-            <h3 className="text-xl font-semibold mt-6 mb-3">Other Usage</h3>
-            <p>
+            <h3 className="text-xl font-semibold mb-4">Other Usage</h3>
+
+            <p className="mb-4">
               We may use User's information for our legal requirements, which
               are as follows:
             </p>
-            <ul>
-              <li>to meet any applicable law, regulation or legal process;</li>
+
+            <ul className="list-disc pl-8 mb-8 space-y-2">
+              <li>To meet any applicable law, regulation or legal process</li>
               <li>
-                in response to law enforcement authority or other governmental
-                official request;
+                In response to law enforcement authority or other governmental
+                official request
               </li>
               <li>
-                to enforce applicable Terms of Service, including investigation
-                of potential violations;
+                To enforce applicable Terms of Service, including investigation
+                of potential violations
               </li>
               <li>
-                for detection and prevention offrauds, errors, security or
-                technical issues;
+                For detection and prevention of frauds, errors, security or
+                technical issues
               </li>
               <li>
-                to protect rightsagainst harmful acts , property or safety of
-                company, our users or the public as required or permitted by
-                law; and
+                To protect rights against harmful acts, property or safety of
+                company, our users or the public as required or permitted by law
               </li>
               <li>
-                for disclosure relating to Merger, Acquisitions, Demerger and
-                other corporate reconstructing methods , audits or to
-                investigate a complaint or security threat.
+                For disclosure relating to Merger, Acquisitions, Demerger and
+                other corporate reconstructing methods, audits or to investigate
+                a complaint or security threat
               </li>
             </ul>
 
-            <p>
+            <p className="mb-6">
               Escrowpay hereby explicitly informs the User that any information
               uploaded, shared or put on the Website by the Users shall be
               viewable and accessible for the scrutiny, analysis and
@@ -261,58 +274,30 @@ export default function TermsOfServicePage() {
               of the same.
             </p>
 
-            <p>
+            <p className="mb-6">
               Any information shared by the Users shall be stored in our
               databases, servers and other record keeping portal for a minimum
               period of 2 years. The Users shall have the right to request for
               removal of any information uploaded, stored or entered on Website
-              of the company by making a formal request on email at
-              care@escrowpayindia.com
+              of the company by making a formal request on email at:
             </p>
 
-            <p className="italic">
+            <p className="text-blue-600 font-medium mb-6">
+              care@itrustmore.com
+            </p>
+
+            <p className="italic mb-8">
               Note: Such information will not be considered as sensitive, if it
               is freely available and accessible in the public domain or is
               furnished under the Right to Information Act, 2005 or any other
               law for the time being in force.
             </p>
 
-            <h2 className="text-2xl font-semibold mt-8 mb-4">COOKIES</h2>
-            <p>
-              We send cookies to your computer in order to uniquely identify
-              your browser and improve the quality of our services. The term
-              "cookies" refers to small pieces of information that a website
-              sends to your computer's hard drive while you are viewing the
-              site. They help our website remember information about your visit,
-              which can both make it easier to visit the site again and make the
-              site more useful to you.
-            </p>
-            <p>
-              Users may stop or restrict cookies on their computer, laptops or
-              any other electronic system/deviceused for accessing and making
-              use of the Website or purge them from the browser by adjusting web
-              browser preferences and shall consult the operating instructions
-              that apply to the browser for instructions should the Users wish
-              to do so and in general to determine how best to configure the
-              browser setting to meet their requirements. Upon any purge,
-              disabling or turn off pertaining to the cookies, it may be
-              possible that Users may not be able to use all of the features,
-              functions or services available on the Website.
-            </p>
-            <p>
-              We use this information to analyzeand determine Service usage,
-              diagnose service or technical problems, maintain security,
-              personalize content, remember information for efficient access of
-              the account, monitor aggregate metrics such as total number of
-              visitors, traffic, and demographic patterns, and track User
-              content and users as necessary to comply with Information
-              Technology Act 2000, and other applicable laws of India.
-            </p>
-
-            <h2 className="text-2xl font-semibold mt-8 mb-4">
-              TRANSFER OF INFORMATION
+            <h2 className="text-2xl font-semibold my-6">
+              Transfer Of Information
             </h2>
-            <p>
+
+            <p className="mb-6">
               We do not share your Personal Information with any third party
               apart from financial institutions such as banks, trustees, payment
               gateways or other regulatory agencies such as RBI, SEBI, KRA's
@@ -325,7 +310,7 @@ export default function TermsOfServicePage() {
               other than to provide the services requested by you.
             </p>
 
-            <p>
+            <p className="mb-6">
               We may share your Personal Information with our partners, joint
               ventures, or other companies under a common control (collectively,
               the "AFFILIATES") that we may have now or in the future, in which
@@ -342,15 +327,16 @@ export default function TermsOfServicePage() {
               similar governmental request or orders that we receive.
             </p>
 
-            <p>
+            <p className="mb-8">
               We may disclose information in the aggregate to third parties
               relating to User behavior in connection with actual or prospective
               business relationship with those third parties, such as
               advertisers and content distributors.
             </p>
 
-            <h2 className="text-2xl font-semibold mt-8 mb-4">ACTIVITY</h2>
-            <p>
+            <h2 className="text-2xl font-semibold my-6">Activity</h2>
+
+            <p className="mb-8">
               We record information relating to your use of our services, such
               as the searches you undertake, the pages you view, your browser
               type, IP address, location, requested URL, referring URL, and date
@@ -359,10 +345,11 @@ export default function TermsOfServicePage() {
               security and service to you.
             </p>
 
-            <h2 className="text-2xl font-semibold mt-8 mb-4">
-              INTELLECTUAL PROPERTY RIGHTS
+            <h2 className="text-2xl font-semibold my-6">
+              Intellectual Property Rights
             </h2>
-            <p>
+
+            <p className="mb-6">
               We own all the intellectual property rights ("IP") associated with
               the Website and its content. No right, title or interest in any
               downloaded material is transferred to you as a result of any such
@@ -372,7 +359,7 @@ export default function TermsOfServicePage() {
               pursuant to applicable law.
             </p>
 
-            <p>
+            <p className="mb-8">
               Our logos, product and service marks and/ or names, trademarks,
               copyrights and other intellectual property, whether registered or
               not ("OUR IP") are exclusively owned by us. Without our prior
@@ -383,10 +370,11 @@ export default function TermsOfServicePage() {
               without our express written permission.
             </p>
 
-            <h2 className="text-2xl font-semibold mt-8 mb-4">
-              ADVERTISERS, CO-SPONSORS AND LINKS TO OTHERS
+            <h2 className="text-2xl font-semibold my-6">
+              Advertisers, Co-Sponsers And Links To Others
             </h2>
-            <p>
+
+            <p className="mb-6">
               The Website may contain or display information from partners,
               vendors, sponsors, co-sponsors, advertisers, operational service
               providers, or others that offer information, products and/or
@@ -396,7 +384,7 @@ export default function TermsOfServicePage() {
               or organizations.
             </p>
 
-            <p>
+            <p className="mb-6">
               We encourage the Users to be aware when to leave the Website or
               take advantage of advertised offers, links or other references,
               many of which may direct the Users to internet browser, websites
@@ -408,7 +396,7 @@ export default function TermsOfServicePage() {
               when you are using / not using the Website.
             </p>
 
-            <p>
+            <p className="mb-8">
               If we use operational service providers to serve advertisements
               when you visit the Website, the operational service provider, in
               connection with the Website, may use information about your visit
@@ -418,10 +406,11 @@ export default function TermsOfServicePage() {
               providers may use cookies and other technologies.
             </p>
 
-            <h2 className="text-2xl font-semibold mt-8 mb-4">
-              INFORMATION SECURITY
+            <h2 className="text-2xl font-semibold my-6">
+              Information Security
             </h2>
-            <p>
+
+            <p className="mb-6">
               We take appropriate security measures to protect the user's
               information against any unauthorized or unlawful access or
               unauthorized alteration, modification, disclosure or destruction
@@ -432,7 +421,7 @@ export default function TermsOfServicePage() {
               systems where we store personal data.
             </p>
 
-            <p>
+            <p className="mb-6">
               All information gathered on the Website is securely stored within
               the company's controlled database. The database is stored on
               servers well secured behind a firewall; access to these servers is
@@ -445,7 +434,7 @@ export default function TermsOfServicePage() {
               areas is available in public domain with accessibility.
             </p>
 
-            <p>
+            <p className="mb-8">
               The internet is an ever evolving medium. We may change our Privacy
               Policy from time to time without any notice to incorporate
               necessary future changes. The changes made will be from immediate
@@ -456,7 +445,7 @@ export default function TermsOfServicePage() {
               new policy may be.
             </p>
 
-            <p>
+            <p className="mb-8">
               We use third-party advertising companies to serve ads when Users
               visit our Website. These companies may use personal information
               and information about your visits to this and other Websites in
@@ -467,15 +456,19 @@ export default function TermsOfServicePage() {
               designated Grievance Officer as mentioned below.
             </p>
 
-            <h2 className="text-2xl font-semibold mt-8 mb-4">
-              GRIEVANCE REDRESSAL
+            <h2 className="text-2xl font-semibold my-6">
+              Grievance RedressalL
             </h2>
-            <p>
+
+            <p className="mb-6">
               Any complaints, questions, feedback, abuse or concerns with
               regards to content and or comment or breach of these terms shall
               be immediately informed to the designated Grievance Officer as
               mentioned below via in writing or through email signed with the
-              electronic signature to the Grievance Officer at
+              electronic signature to the Grievance Officer at:
+            </p>
+
+            <p className="text-blue-600 font-medium mb-8">
               care@escrowpayindia.com
             </p>
           </div>

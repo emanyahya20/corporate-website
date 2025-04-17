@@ -7,13 +7,13 @@ import { ChevronLeft, ChevronRight } from "lucide-react";
 
 export default function AboutPage() {
   const executiveScrollRef = useRef(null);
-  const [currentPage, setCurrentPage] = useState(0);
+  const [currentPage, setCurrentPage] = useState(1); // Start at 1 to account for prepended items
   const [totalPages, setTotalPages] = useState(0);
   const [cardsPerPage, setCardsPerPage] = useState(3);
   const [isMobile, setIsMobile] = useState(false);
 
-  // Executive team data
-  const executiveTeam = [
+  // Original executive team data
+  const originalExecutiveTeam = [
     {
       name: "Gajendra Arya",
       position: "Chief Technology Officer",
@@ -51,6 +51,13 @@ export default function AboutPage() {
     },
   ];
 
+  // Create infinite loop by cloning items
+  const executiveTeam = [
+    ...originalExecutiveTeam.slice(-cardsPerPage), // Clone last items to prepend
+    ...originalExecutiveTeam, // Original items
+    ...originalExecutiveTeam.slice(0, cardsPerPage), // Clone first items to append
+  ];
+
   // Advisory council data
   const advisoryCouncil = [
     {
@@ -72,13 +79,9 @@ export default function AboutPage() {
 
   useEffect(() => {
     const handleResize = () => {
-      // Get current window width
       const width = window.innerWidth;
-
-      // Set isMobile state
       setIsMobile(width < 768);
 
-      // Adjust cardsPerPage based on screen width
       if (width < 640) {
         setCardsPerPage(1);
       } else if (width < 1024) {
@@ -88,24 +91,25 @@ export default function AboutPage() {
       }
     };
 
-    // Initial call
     handleResize();
-
-    // Recalculate total pages whenever cardsPerPage changes
-    setTotalPages(Math.ceil(executiveTeam.length / cardsPerPage));
-
-    // Set up resize listener
     window.addEventListener("resize", handleResize);
-    return () => {
-      window.removeEventListener("resize", handleResize);
-    };
-  }, [executiveTeam.length, cardsPerPage]);
+    return () => window.removeEventListener("resize", handleResize);
+  }, []);
+
+  useEffect(() => {
+    // Calculate total pages based on original team length plus cloned items
+    setTotalPages(Math.ceil(originalExecutiveTeam.length / cardsPerPage) + 2);
+  }, [originalExecutiveTeam.length, cardsPerPage]);
 
   const goToPage = (pageIndex) => {
-    if (executiveScrollRef.current) {
-      // Ensure pageIndex is within bounds
-      const boundedPageIndex = Math.max(0, Math.min(pageIndex, totalPages - 1));
-      setCurrentPage(boundedPageIndex);
+    if (pageIndex === 0) {
+      // If going to first page (prepended clone), jump to real last page
+      setCurrentPage(totalPages - 2);
+    } else if (pageIndex >= totalPages - 1) {
+      // If going to last page (appended clone), jump to real first page
+      setCurrentPage(1);
+    } else {
+      setCurrentPage(pageIndex);
     }
   };
 
@@ -137,11 +141,15 @@ export default function AboutPage() {
     </div>
   );
 
-  // Helper to chunk the executive team into pages
+  // Helper to get the current page items
   const getTeamByPage = (page) => {
     const start = page * cardsPerPage;
     return executiveTeam.slice(start, start + cardsPerPage);
   };
+
+  // Calculate the real page index for pagination dots
+  const realPageIndex =
+    ((currentPage - 1 + (totalPages - 2)) % (totalPages - 2)) + 1;
 
   return (
     <div className="flex flex-col min-h-screen">
@@ -158,11 +166,10 @@ export default function AboutPage() {
           <source src="/videos/aboutus.mp4" type="video/mp4" />
           Your browser does not support the video tag.
         </video>
-
         <div className="absolute inset-0 bg-black/30 z-10" />
         <div className="container mx-auto px-4 md:px-6 max-w-5xl relative z-20 text-center">
           <div className="max-w-4xl mx-auto">
-            <h1 className="text-3xl sm:text-5xl md:text-5xl font-semibold text-white mb-3 sm:mb-4 leading-tight [text-shadow:_0_2px_4px_rgba(0,0,0,0.5)]">
+            <h1 className="text-3xl sm:text-5xl md:text-5xl font-semibold text-white mb-3 sm:mb-4 leading-tight">
               About Trustmore
             </h1>
             <p className="text-lg md:text-2xl text-white/90 mb-10">
@@ -256,6 +263,7 @@ export default function AboutPage() {
               </p>
             </div>
           </div>
+
           {/* Board Members Section */}
           <div id="board-members" className="mb-16 md:mb-24">
             <h3 className="text-3xl md:text-3xl font-semibold text-gray-800 mb-8 md:mb-12 text-center">
@@ -303,25 +311,20 @@ export default function AboutPage() {
               </div>
             </div>
           </div>
-          {/* Executive Team Section - Mobile Responsive Carousel */}
+
+          {/* Executive Team Section - Infinite Carousel */}
           <div id="executive-team" className="mb-16 md:mb-24">
             <h3 className="text-3xl md:text-3xl font-semibold text-gray-800 mb-8 md:mb-12 text-center">
               Executive Team
             </h3>
 
             <div className="relative px-4 md:px-8">
-              {/* Navigation buttons positioned based on screen size */}
+              {/* Navigation buttons */}
               <button
                 onClick={prevPage}
-                disabled={currentPage === 0}
                 className={`absolute left-0 top-1/2 -translate-y-1/2 z-10 bg-white/80 hover:bg-white p-2 rounded-full shadow-md ${
                   isMobile ? "ml-0" : "-ml-10"
-                } 
-                  ${
-                    currentPage === 0
-                      ? "opacity-50 cursor-not-allowed"
-                      : "cursor-pointer"
-                  }`}
+                }`}
                 aria-label="Previous page"
               >
                 <ChevronLeft size={20} />
@@ -329,15 +332,9 @@ export default function AboutPage() {
 
               <button
                 onClick={nextPage}
-                disabled={currentPage >= totalPages - 1}
                 className={`absolute right-0 top-1/2 -translate-y-1/2 z-10 bg-white/80 hover:bg-white p-2 rounded-full shadow-md ${
                   isMobile ? "mr-0" : "-mr-10"
-                } 
-                  ${
-                    currentPage >= totalPages - 1
-                      ? "opacity-50 cursor-not-allowed"
-                      : "cursor-pointer"
-                  }`}
+                }`}
                 aria-label="Next page"
               >
                 <ChevronRight size={20} />
@@ -348,7 +345,9 @@ export default function AboutPage() {
                 <div
                   ref={executiveScrollRef}
                   className="flex transition-all duration-500"
-                  style={{ transform: `translateX(-${currentPage * 100}%)` }}
+                  style={{
+                    transform: `translateX(-${currentPage * 100}%)`,
+                  }}
                 >
                   {Array.from({ length: totalPages }).map((_, pageIndex) => (
                     <div
@@ -363,14 +362,16 @@ export default function AboutPage() {
                 </div>
               </div>
 
-              {/* Pagination dots for mobile */}
+              {/* Pagination dots */}
               <div className="flex justify-center mt-6 gap-2">
-                {Array.from({ length: totalPages }).map((_, index) => (
+                {Array.from({ length: totalPages - 2 }).map((_, index) => (
                   <button
                     key={index}
-                    onClick={() => goToPage(index)}
+                    onClick={() => goToPage(index + 1)}
                     className={`h-2 rounded-full transition-all ${
-                      currentPage === index ? "w-6 bg-black" : "w-2 bg-gray-800"
+                      realPageIndex === index + 1
+                        ? "w-6 bg-black"
+                        : "w-2 bg-gray-800"
                     }`}
                     aria-label={`Go to page ${index + 1}`}
                   />
@@ -379,7 +380,7 @@ export default function AboutPage() {
             </div>
           </div>
 
-          {/* Advisory Council Section - Mobile responsive */}
+          {/* Advisory Council Section */}
           <div id="advisory-council" className="mt-16 md:mt-24">
             <h3 className="text-3xl md:text-3xl font-semibold text-gray-800 mb-8 md:mb-12 text-center">
               Advisory Council
@@ -398,6 +399,32 @@ export default function AboutPage() {
           </div>
         </div>
       </section>
+      {/* Awards Section */}
+      <div className="bg-gray-100 py-6 mt-6" id="awards-section">
+        <div className="text-center">
+          <h2 className="text-3xl font-semibold text-gray-800 mb-2">
+            Investors
+          </h2>
+          <div className="flex justify-center items-center flex-wrap">
+            {[6, 7, 8].map((awardNum) => (
+              <img
+                key={awardNum}
+                src={`/award${awardNum}.png`}
+                alt={`Award ${awardNum}`}
+                className="h-32 w-[150px] object-contain px-6"
+              />
+            ))}
+            {[9, 10, 11].map((awardNum) => (
+              <img
+                key={awardNum}
+                src={`/award${awardNum}.png`}
+                alt={`Award ${awardNum}`}
+                className="h-24 w-[150px] object-contain px-6"
+              />
+            ))}
+          </div>
+        </div>
+      </div>
     </div>
   );
 }

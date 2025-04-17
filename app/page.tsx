@@ -50,7 +50,7 @@ export default function Home() {
         <div className="absolute inset-0 flex items-center justify-center z-10 px-4 sm:px-6 lg:px-8 text-center">
           <div className="max-w-2xl">
             <h1 className="text-3xl sm:text-5xl md:text-5xl font-semibold text-white mb-4 leading-tight [text-shadow:_0_2px_4px_rgba(0,0,0,0.5)]">
-              Welcome to Trustmore Group
+              Trustmore Group
             </h1>
             <p className="text-xl md:text-2xl text-white/90 mb-0">
               Connecting the World's Money Flows with Trust, Transparency, and
@@ -63,7 +63,7 @@ export default function Home() {
             {/* Play Button - Made thinner */}
             <button
               onClick={() => setIsModalOpen(true)}
-              className="inline-flex items-center justify-center rounded-full border border-white/30 bg-white/10 hover:bg-white/20 backdrop-blur-sm px-4 py-2 transition duration-300"
+              className="inline-flex items-center justify-center rounded-full border border-white/30 bg-black hover:bg-gray-700 backdrop-blur-sm px-4 py-2 transition duration-300"
             >
               <Play className="w-5 h-5 text-white" />
             </button>
@@ -185,11 +185,11 @@ export default function Home() {
       <section className="py-32 bg-white">
         <div className="container mx-auto px-4 md:px-6 max-w-5xl text-center">
           <h2 className="text-3xl md:text-3xl font-semibold text-gray-800 mb-8">
-            Ready to Elevate Your Wealth Journey?
+            Ready to Elevate Your Journey?
           </h2>
           <p className="text-xl text-gray-700 mb-12 max-w-3xl mx-auto">
-            Schedule a private consultation with our wealth experts and discover
-            how we can help you build, protect, and enjoy your legacy.
+            Schedule a private consultation with our experts and discover how we
+            can help you build, protect, and enjoy your legacy.
           </p>
           <Link href="/contact" passHref>
             <Button className="bg-black text-white border border-black rounded-full px-8 py-6 text-lg transition-all duration-200 hover:bg-white hover:text-black hover:shadow-lg hover:scale-105">
@@ -210,47 +210,21 @@ export default function Home() {
       </section>
 
       {/* Awards Section */}
-      <div className="bg-gray-100 py-10 mt-10" id="awards-section">
+      <div className="bg-gray-100 py-6 mt-6" id="awards-section">
         <div className="text-center">
-          <h2 className="text-3xl font-semibold text-gray-800 mb-6">
+          <h2 className="text-3xl font-semibold text-gray-800 mb-2">
             Setting The Benchmark With Industry Awards
           </h2>
-          <div className="flex justify-center flex-wrap items-center gap-4">
-            <div className="h-28 w-auto">
-              <img
-                src="/award1.png"
-                alt="Award 1"
-                className="h-full w-auto object-contain max-w-[200px]"
-              />
-            </div>
-            <div className="h-28 w-auto">
-              <img
-                src="/award2.png"
-                alt="Award 2"
-                className="h-full w-auto object-contain max-w-[200px]"
-              />
-            </div>
-            <div className="h-28 w-auto">
-              <img
-                src="/award3.png"
-                alt="Award 3"
-                className="h-full w-auto object-contain max-w-[200px]"
-              />
-            </div>
-            <div className="h-28 w-auto">
-              <img
-                src="/award4.png"
-                alt="Award 4"
-                className="h-full w-auto object-contain max-w-[200px]"
-              />
-            </div>
-            <div className="h-28 w-auto">
-              <img
-                src="/award5.png"
-                alt="Award 4"
-                className="h-full w-auto object-contain max-w-[200px]"
-              />
-            </div>
+          <div className="flex justify-center flex-wrap gap-0">
+            {[1, 2, 3, 4, 5].map((awardNum) => (
+              <div key={awardNum} className="h-24 w-[150px]">
+                <img
+                  src={`/award${awardNum}.png`}
+                  alt={`Award ${awardNum}`}
+                  className="h-full w-full object-contain"
+                />
+              </div>
+            ))}
           </div>
         </div>
       </div>

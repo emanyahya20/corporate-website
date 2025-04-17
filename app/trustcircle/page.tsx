@@ -22,7 +22,7 @@ import {
 export default function TrustCirclePage() {
   return (
     <div className="flex flex-col min-h-screen">
-      {/* Hero Video Banner - UNCHANGED FROM ORIGINAL */}
+      {/* Hero Video Banner */}
       <section className="relative w-full h-screen overflow-hidden">
         <video
           className="absolute inset-0 w-full h-full object-cover"
@@ -36,13 +36,13 @@ export default function TrustCirclePage() {
           Your browser does not support the video tag.
         </video>
 
-        {/* Text Overlay */}
-        <div className="absolute inset-0 bg-black/30 flex items-center justify-center z-10 px-4 sm:px-6 lg:px-8 text-center">
-          <div className="max-w-4xl">
-            <h1 className="text-3xl sm:text-5xl md:text-5xl font-semibold text-white mb-4 leading-tight [text-shadow:_0_2px_4px_rgba(0,0,0,0.5)]">
-              Trust Circle, Powered by Trustmore Group
+        {/* Welcome Message */}
+        <div className="absolute inset-0 flex items-center justify-center z-10 px-4 sm:px-6 lg:px-8 text-center">
+          <div className="max-w-3xl">
+            <h1 className="whitespace-nowrap text-3xl sm:text-5xl md:text-5xl font-semibold text-white mb-4 leading-tight [text-shadow:_0_2px_4px_rgba(0,0,0,0.5)]">
+              Trust Circle, Powered by Trustmore
             </h1>
-            <p className="text-xl md:text-2xl text-white/90 mb-6 [text-shadow:_0_1px_2px_rgba(0,0,0,0.4)]">
+            <p className="text-xl md:text-2xl text-white/90 mb-10">
               Your Network. Your Opportunity. Your Global Advantage.
             </p>
           </div>
@@ -52,6 +52,15 @@ export default function TrustCirclePage() {
       {/* Our Services Section */}
       <section className="py-16 bg-gray-50">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+          {/* Added Logo Here */}
+          <div className="flex justify-center mb-8">
+            <img
+              src="/footerlogo/tclogo.png"
+              alt="Trust Circle Logo"
+              className="h-32 w-auto"
+            />
+          </div>
+
           <div className="text-center mb-12">
             <h2 className="text-3xl font-semibold text-gray-800 mb-4">
               Why Join Trust Circle?

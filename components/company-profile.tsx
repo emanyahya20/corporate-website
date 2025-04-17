@@ -31,7 +31,7 @@ export default function CompanyProfile() {
             forward our nation’s spirit of resilience, enterprise, and global
             ambition. Trustmore Group remains dedicated to fostering financial
             freedom, safeguarding wealth, and redefining what’s possible for the
-            next generation of wealth creators. Trust More. Do More.
+            next generation of wealth creators.
           </p>
         </div>
       </div>

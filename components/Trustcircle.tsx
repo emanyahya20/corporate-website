@@ -8,14 +8,20 @@ import {
   ArrowRight,
   ChevronRight,
 } from "lucide-react";
-
+import Link from "next/link"; // Add this import
 export default function TrustCircleSection() {
   return (
     <section className="bg-white text-gray-800 py-20 px-6 md:px-24">
       <div className="max-w-6xl mx-auto space-y-12">
-        {/* Header with improved visual hierarchy */}
+        {/* Header with logo instead of text heading */}
         <div className="text-center space-y-6">
-          <h2 className="text-3xl md:text-4xl font-semibold">Trust Circle</h2>
+          <div className="flex justify-center mb-6">
+            <img
+              src="/footerlogo/tclogo.png"
+              alt="Trust Circle Logo"
+              className="h-32 w-auto"
+            />
+          </div>
           <p className="text-xl font-medium">
             Your Network. Your Opportunity. Your Global Advantage.
           </p>
@@ -26,14 +32,12 @@ export default function TrustCircleSection() {
             connections into rewarding, recurring income.
           </p>
           <div className="mt-8 space-y-4">
-            <p className="font-semibold text-lg bg-gray-100 inline-block px-6 py-2 rounded-lg">
-              Annual Enrolment: <span className="text-gray-800">₹59,000</span>{" "}
-              <span className="text-gray-500 text-sm">+ Taxes</span>
-            </p>
             <div>
-              <button className="bg-black text-white px-8 py-3 rounded-xl hover:bg-black hover:text-white transition active:scale-95 focus:outline-none focus:ring-2 focus:ring-black/30 shadow-lg hover:shadow-xl flex items-center mx-auto gap-2">
-                Join Now <ArrowRight className="w-4 h-4" />
-              </button>
+              <Link href="/contact" passHref>
+                <button className="bg-black text-white px-8 py-3 rounded-xl hover:bg-black hover:text-white transition active:scale-95 focus:outline-none focus:ring-2 focus:ring-black/30 shadow-lg hover:shadow-xl flex items-center mx-auto gap-2">
+                  Join Now <ArrowRight className="w-4 h-4" />
+                </button>
+              </Link>
             </div>
           </div>
         </div>

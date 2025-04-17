@@ -15,12 +15,17 @@ import {
   Eye,
   Clock,
   Target,
+  Calendar,
+  Star,
+  Sailboat,
+  Users2,
 } from "lucide-react";
+import Link from "next/link"; // Add this import
 
-export default function WealthManagementPage() {
+export default function LuxejoysPage() {
   return (
     <div className="relative w-full overflow-hidden">
-      {/* Your existing hero video section */}
+      {/* Hero video section */}
       <section className="relative w-full h-screen flex items-center justify-center overflow-hidden">
         <video
           className="absolute inset-0 w-full h-full object-cover"
@@ -37,9 +42,9 @@ export default function WealthManagementPage() {
         <div className="container mx-auto px-4 sm:px-6 lg:px-8 h-full flex items-center relative z-10">
           <div className="w-full max-w-4xl mx-auto lg:mx-0">
             <div className="text-center lg:text-left px-4 sm:px-0">
-              <h1 className="text-3xl sm:text-5xl md:text-6xl font-semibold text-white mb-3 sm:mb-4 leading-tight [text-shadow:_0_2px_4px_rgba(0,0,0,0.5)]">
+              <h1 className="text-3xl sm:text-5xl md:text-5xl font-semibold text-white mb-3 sm:mb-4 leading-tight [text-shadow:_0_2px_4px_rgba(0,0,0,0.5)]">
                 <span className="block whitespace-normal">
-                  Welcome to LUXEJOYS
+                  Welcome to LuxeJoy
                 </span>
                 <span className="block text-2xl sm:text-3xl md:text-4xl font-medium mt-3 sm:mt-4 text-white [text-shadow:_0_2px_4px_rgba(0,0,0,0.5)]">
                   Your Wealth, Privately Empowered.
@@ -72,205 +77,106 @@ export default function WealthManagementPage() {
         </div>
       </section>
 
-      {/* Highlights Section */}
+      {/* Introduction Section */}
       <section className="py-12 bg-white">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="max-w-5xl mx-auto">
             <h2 className="text-3xl font-semibold text-gray-800 mb-6 text-center">
-              Highlights
+              About LUXEJOYS
             </h2>
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
-              <div className="flex flex-col items-center p-4 rounded-lg bg-gray-100">
-                <Users className="h-8 w-8 text-black mb-3" />
-                <p className="text-gray-800 text-center text-sm">
-                  Exclusive wealth advisory for ultra-high-net-worth individuals
-                  and families
-                </p>
-              </div>
-              <div className="flex flex-col items-center p-4 rounded-lg bg-gray-100">
-                <Globe className="h-8 w-8 text-black mb-3" />
-                <p className="text-gray-800 text-center text-sm">
-                  Global investment opportunities, private equity, and
-                  alternative asset access
-                </p>
-              </div>
-              <div className="flex flex-col items-center p-4 rounded-lg bg-gray-100">
-                <Clock className="h-8 w-8 text-black mb-3" />
-                <p className="text-gray-800 text-center text-sm">
-                  Legacy planning, global mobility, and bespoke insurance
-                  solutions
-                </p>
-              </div>
-              <div className="flex flex-col items-center p-4 rounded-lg bg-gray-100">
-                <Lock className="h-8 w-8 text-black mb-3" />
-                <p className="text-gray-800 text-center text-sm">
-                  Private, secure, and technology-driven portfolio management
-                </p>
-              </div>
-            </div>
-            <div className="mt-8 text-center">
-              <Button className="bg-black hover:bg-gray-800 text-white rounded-lg px-5 py-2 font-medium">
-                Explore Our Private Advisory{" "}
-                <ArrowRight className="ml-2 h-4 w-4" />
-              </Button>
+            <div className="text-center mb-8">
+              <p className="text-gray-800 mb-6 max-w-4xl mx-auto">
+                LUXEJOYS is the exclusive luxury lifestyle and experiences
+                division of Trustmore Group, thoughtfully designed for
+                discerning individuals, families, and corporate clients seeking
+                the extraordinary. Positioned as a gateway to the world's most
+                coveted experiences, LUXEJOYS blends privacy, privilege, and
+                perfection in every offering. Our services redefine what it
+                means to live well, travel beautifully, and celebrate life's
+                most memorable moments with unparalleled style.
+              </p>
             </div>
           </div>
         </div>
       </section>
 
-      {/* About Us Section */}
-      <section className="py-12 bg-gray-100">
-        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="max-w-5xl mx-auto">
-            <h2 className="text-3xl font-semibold text-gray-800 mb-6 text-center">
-              About Us
-            </h2>
-            <div className="mb-8 text-center max-w-3xl mx-auto">
-              <p className="text-xl font-medium text-gray-800 mb-3">
-                IPRIVE Global Private Wealth Management
-              </p>
-              <p className="text-gray-800 text-sm">
-                stands as a beacon for discerning clients who value trust,
-                discretion, and expertise. With decades of collective global
-                experience, our advisory ecosystem connects wealth to
-                meaningful, strategic outcomes — safeguarding legacies and
-                growing wealth across generations.
-              </p>
-            </div>
-
-            <div className="bg-white rounded-lg p-6 shadow-sm">
-              <h3 className="text-2xl font-medium text-gray-800 mb-4 text-center">
-                Our Philosophy
-              </h3>
-              <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
-                <div className="flex flex-col items-center text-center p-3">
-                  <Lock className="h-6 w-6 text-black mb-2" />
-                  <p className="font-medium text-gray-800 text-sm">
-                    Confidential. Connected. Global.
-                  </p>
-                </div>
-                <div className="flex flex-col items-center text-center p-3">
-                  <Users className="h-6 w-6 text-black mb-2" />
-                  <p className="font-medium text-gray-800 text-sm">
-                    Relationships over transactions
-                  </p>
-                </div>
-                <div className="flex flex-col items-center text-center p-3">
-                  <Eye className="h-6 w-6 text-black mb-2" />
-                  <p className="font-medium text-gray-800 text-sm">
-                    Vision-driven wealth creation
-                  </p>
-                </div>
-                <div className="flex flex-col items-center text-center p-3">
-                  <Target className="h-6 w-6 text-black mb-2" />
-                  <p className="font-medium text-gray-800 text-sm">
-                    True alignment with your aspirations
-                  </p>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Services Section */}
+      {/* Services Section - Now matching the Our Services section from Wealth Management */}
       <section className="py-12 bg-white">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="max-w-5xl mx-auto">
             <h2 className="text-3xl font-semibold text-gray-800 mb-8 text-center">
-              Our Services
+              Our Exclusive Service Portfolio
             </h2>
 
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
               <div className="p-4 bg-gray-100 rounded-lg">
                 <div className="flex items-center mb-2">
-                  <BarChart4 className="h-5 w-5 text-black mr-2" />
-                  <h3 className="text-lg font-medium text-gray-800">
-                    Global Investment Advisory
-                  </h3>
-                </div>
-                <p className="text-gray-800 text-sm">
-                  Access world-class opportunities in private equity, real
-                  estate, venture capital, and bespoke structured products
-                  tailored to your appetite and vision.
-                </p>
-              </div>
-
-              <div className="p-4 bg-gray-100 rounded-lg">
-                <div className="flex items-center mb-2">
-                  <Landmark className="h-5 w-5 text-black mr-2" />
-                  <h3 className="text-lg font-medium text-gray-800">
-                    Private Banking Relationships
-                  </h3>
-                </div>
-                <p className="text-gray-800 text-sm">
-                  Global multi-currency accounts, credit lines, bespoke lending,
-                  and treasury management through world-class institutions.
-                </p>
-              </div>
-
-              <div className="p-4 bg-gray-100 rounded-lg">
-                <div className="flex items-center mb-2">
-                  <Clock className="h-5 w-5 text-black mr-2" />
-                  <h3 className="text-lg font-medium text-gray-800">
-                    Legacy & Succession Planning
-                  </h3>
-                </div>
-                <p className="text-gray-800 text-sm">
-                  Multi-jurisdictional trusts, private family offices, offshore
-                  structures, and family governance strategies.
-                </p>
-              </div>
-
-              <div className="p-4 bg-gray-100 rounded-lg">
-                <div className="flex items-center mb-2">
                   <Plane className="h-5 w-5 text-black mr-2" />
                   <h3 className="text-lg font-medium text-gray-800">
-                    Global Mobility & Citizenship
+                    Via Jets - Private Jet Charters
                   </h3>
                 </div>
                 <p className="text-gray-800 text-sm">
-                  Residency and citizenship-by-investment programs in the
-                  world's most prestigious destinations.
+                  Take to the skies with absolute discretion through our global
+                  private jet charter services. Whether it's business or
+                  leisure, Via Jets offers on-demand access to a world-class
+                  fleet.
                 </p>
               </div>
 
               <div className="p-4 bg-gray-100 rounded-lg">
                 <div className="flex items-center mb-2">
-                  <Shield className="h-5 w-5 text-black mr-2" />
+                  <Calendar className="h-5 w-5 text-black mr-2" />
                   <h3 className="text-lg font-medium text-gray-800">
-                    High-Value Insurance Solutions
+                    Exclusive Invitations & Events
                   </h3>
                 </div>
                 <p className="text-gray-800 text-sm">
-                  Specialist coverage for estate protection, wealth transfer,
-                  and family succession.
+                  Join an elite circle at invitation-only gatherings, luxury
+                  product launches, global summits, fashion weeks, charity
+                  galas, and other high-society affairs.
                 </p>
               </div>
 
               <div className="p-4 bg-gray-100 rounded-lg">
                 <div className="flex items-center mb-2">
-                  <Layers className="h-5 w-5 text-black mr-2" />
+                  <Building className="h-5 w-5 text-black mr-2" />
                   <h3 className="text-lg font-medium text-gray-800">
-                    Alternative Asset Management
+                    Luxury Getaways & Resorts
                   </h3>
                 </div>
                 <p className="text-gray-800 text-sm">
-                  Rare collectibles, art, wine, aviation, and luxury investments
-                  curated for capital preservation and growth.
+                  Indulge in curated escapes to the world's finest destinations,
+                  where privacy meets luxury. From secluded island retreats to
+                  iconic urban penthouses.
                 </p>
               </div>
 
               <div className="p-4 bg-gray-100 rounded-lg">
                 <div className="flex items-center mb-2">
-                  <Wine className="h-5 w-5 text-black mr-2" />
+                  <Star className="h-5 w-5 text-black mr-2" />
                   <h3 className="text-lg font-medium text-gray-800">
-                    Lifestyle Advisory (through LuxeJoys)
+                    Celebrity Travel & Experiences
                   </h3>
                 </div>
                 <p className="text-gray-800 text-sm">
-                  Access to curated global experiences, private charters, fine
-                  estates, and member-only privileges.
+                  Gain unprecedented access to celebrity-hosted events,
+                  backstage passes, private meet-and-greets, and experiences
+                  with globally recognized personalities.
+                </p>
+              </div>
+
+              <div className="p-4 bg-gray-100 rounded-lg">
+                <div className="flex items-center mb-2">
+                  <Sailboat className="h-5 w-5 text-black mr-2" />
+                  <h3 className="text-lg font-medium text-gray-800">
+                    Bespoke Yacht Charters
+                  </h3>
+                </div>
+                <p className="text-gray-800 text-sm">
+                  Set sail on crystal-clear waters aboard private yachts and
+                  superyachts with fully crewed charters for Mediterranean
+                  summers, Dubai marinas, or the Maldives.
                 </p>
               </div>
             </div>
@@ -278,24 +184,25 @@ export default function WealthManagementPage() {
         </div>
       </section>
 
-      {/* Why IPRIVE Section */}
+      {/* Why Choose Section - Matching the Why IPRIVE design */}
       <section className="py-12 bg-gray-100">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="max-w-5xl mx-auto">
             <h2 className="text-3xl font-semibold text-gray-800 mb-8 text-center">
-              Why IPRIVE?
+              Why LUXEJOYS?
             </h2>
 
             <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
               <div className="p-4 bg-white rounded-lg shadow-sm">
                 <div className="flex flex-col items-center text-center">
-                  <Network className="h-8 w-8 text-black mb-3" />
+                  <Globe className="h-8 w-8 text-black mb-3" />
                   <h3 className="text-lg font-medium text-gray-800 mb-2">
-                    Global Network
+                    Global Reach, Local Touch
                   </h3>
                   <p className="text-gray-800 text-sm">
-                    Access to rare opportunities in markets like India, Dubai,
-                    Monaco, London, Singapore, and New York.
+                    Direct access to exclusive partners and providers in over 30
+                    countries, backed by the credibility and trust of Trustmore
+                    Group.
                   </p>
                 </div>
               </div>
@@ -304,11 +211,11 @@ export default function WealthManagementPage() {
                 <div className="flex flex-col items-center text-center">
                   <Lock className="h-8 w-8 text-black mb-3" />
                   <h3 className="text-lg font-medium text-gray-800 mb-2">
-                    Discretion First
+                    Discreet, Private, and Tailored
                   </h3>
                   <p className="text-gray-800 text-sm">
-                    Your identity, intent, and assets are protected with utmost
-                    confidentiality.
+                    Every experience is crafted around you — your tastes, your
+                    privacy, your world.
                   </p>
                 </div>
               </div>
@@ -317,11 +224,12 @@ export default function WealthManagementPage() {
                 <div className="flex flex-col items-center text-center">
                   <Users className="h-8 w-8 text-black mb-3" />
                   <h3 className="text-lg font-medium text-gray-800 mb-2">
-                    Legacy Partners
+                    Trusted by High Net-Worth Families
                   </h3>
                   <p className="text-gray-800 text-sm">
-                    We work with you, your heirs, and trusted advisors to shape
-                    a legacy beyond wealth.
+                    Our clientele includes celebrated entrepreneurs, investors
+                    and celebrities who rely on LUXEJOYS for life's most
+                    significant occasions.
                   </p>
                 </div>
               </div>
@@ -339,17 +247,14 @@ export default function WealthManagementPage() {
             </h2>
             <p className="text-gray-800 mb-6">
               Discreet consultations by appointment only. Global Offices: Dubai
-              | India
+              | London | Monaco
             </p>
-
-            <Button className="bg-black hover:bg-gray-800 text-white rounded-lg px-5 py-2 font-medium">
-              Book a Private Consultation{" "}
-              <ArrowRight className="ml-2 h-4 w-4" />
-            </Button>
-
-            <p className="mt-8 text-lg font-medium text-gray-800">
-              Global Wealth. Personal Purpose.
-            </p>
+            <Link href="/contact" passHref>
+              <Button className="bg-black hover:bg-gray-800 text-white rounded-lg px-5 py-2 font-medium">
+                Book a Private Consultation{" "}
+                <ArrowRight className="ml-2 h-4 w-4" />
+              </Button>
+            </Link>
           </div>
         </div>
       </section>
