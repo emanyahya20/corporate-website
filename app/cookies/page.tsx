@@ -31,12 +31,10 @@ export default function CookiesPage() {
       {/* Cookies Policy Content */}
       <section className="py-12 px-4 sm:px-6 lg:px-8 bg-white">
         <div className="max-w-4xl mx-auto">
-          <h2 className="text-3xl font-bold text-gray-900 mb-6">
-            Cookies Policy
-          </h2>
+          <h2 className="text-3xl font-bold text-black mb-6">Cookies Policy</h2>
           <p className="text-sm text-gray-600 mb-6">Last updated: March 2025</p>
 
-          <div className="prose prose-lg max-w-none text-gray-700">
+          <div className="prose prose-lg max-w-none text-black">
             <p>
               This Cookies Policy explains how cookies are used on this website
               and other digital platforms operated by{" "}
@@ -53,7 +51,9 @@ export default function CookiesPage() {
 
             <p className="font-bold">&nbsp;</p>
 
-            <h3 className="text-xl font-semibold mb-4">What Are Cookies?</h3>
+            <h3 className="text-xl font-semibold text-black mb-4">
+              What Are Cookies?
+            </h3>
             <p>
               Cookies are small text files that are placed on your device
               (computer, smartphone, or tablet) when you visit a website. They
@@ -65,10 +65,10 @@ export default function CookiesPage() {
 
             <p className="font-bold">&nbsp;</p>
 
-            <h3 className="text-xl font-semibold mb-4">
+            <h3 className="text-xl font-semibold text-black mb-4">
               Types of Cookies We Use
             </h3>
-            <p className="font-medium">Strictly Necessary Cookies</p>
+            <p className="font-medium text-black">Strictly Necessary Cookies</p>
             <p>
               These cookies are essential for the technical operation of our
               websites and digital services. They enable navigation, access to
@@ -77,7 +77,7 @@ export default function CookiesPage() {
               features.
             </p>
 
-            <p className="font-medium mt-4">Performance Cookies</p>
+            <p className="font-medium text-black mt-4">Performance Cookies</p>
             <p>
               These cookies collect data on how visitors use our site, such as
               which pages are visited most frequently or if certain pages return
@@ -85,14 +85,14 @@ export default function CookiesPage() {
               of our platforms.
             </p>
 
-            <p className="font-medium mt-4">Analytics Cookies</p>
+            <p className="font-medium text-black mt-4">Analytics Cookies</p>
             <p>
               We use these cookies to gather insights into user behavior,
               helping us better understand our audience and deliver more
               relevant content and experiences.
             </p>
 
-            <p className="font-medium mt-4">Marketing Cookies</p>
+            <p className="font-medium text-black mt-4">Marketing Cookies</p>
             <p>
               These cookies support our digital marketing efforts by helping us
               measure the effectiveness of campaigns and deliver more targeted
@@ -100,9 +100,9 @@ export default function CookiesPage() {
               as IP addresses or interaction history.
             </p>
 
-            <p className="font-bold mt-4">&nbsp;</p>
+            <p className="font-bold text-black mt-4">&nbsp;</p>
 
-            <h3 className="text-xl font-semibold mb-4">
+            <h3 className="text-xl font-semibold text-black mb-4">
               First-Party and Third-Party Cookies
             </h3>
             <p>
@@ -118,7 +118,7 @@ export default function CookiesPage() {
 
             <p className="font-bold">&nbsp;</p>
 
-            <h3 className="text-xl font-semibold mb-4">
+            <h3 className="text-xl font-semibold text-black mb-4">
               Cookies and Personal Data
             </h3>
             <p>
@@ -132,7 +132,7 @@ export default function CookiesPage() {
 
             <p className="font-bold mt-4">&nbsp;</p>
 
-            <h3 className="text-xl font-semibold mb-4">
+            <h3 className="text-xl font-semibold text-black mb-4">
               Managing Cookies and Your Rights
             </h3>
             <p>
