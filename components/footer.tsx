@@ -158,7 +158,7 @@ export default function Footer() {
                 { href: "/knowledge-center", label: "Knowledge Center" },
                 { href: "/privacy-policy", label: "Privacy Policy" },
                 { href: "/terms-of-service", label: "Terms of Service" },
-                { href: "/cookies", label: "Cookie Policy" },
+                { href: "/cookies", label: "Cookies Policy" },
               ].map(({ href, label }) => (
                 <li key={href}>
                   <Link
