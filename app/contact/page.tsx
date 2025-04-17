@@ -30,13 +30,13 @@ export default function ContactPage() {
   return (
     <div className="flex flex-col min-h-screen">
       {/* Hero Video Banner */}
-      <section className="relative w-full h-screen flex items-center justify-center overflow-hidden">
+      <section className="relative h-screen md:h-[110vh] min-h-[500px] md:min-h-[700px] overflow-hidden">
         <video
-          className="absolute inset-0 w-full h-full object-cover"
           autoPlay
-          muted
           loop
+          muted
           playsInline
+          className="absolute inset-0 w-full h-full object-cover"
           poster="/placeholder.svg?height=1080&width=1920"
         >
           <source src="/videos/contact.mp4" type="video/mp4" />
@@ -44,16 +44,18 @@ export default function ContactPage() {
         </video>
 
         <div className="absolute inset-0 bg-black/30 z-10" />
-        <div className="container mx-auto px-4 md:px-6 max-w-5xl relative z-20 text-center">
-          <div className="max-w-4xl mx-auto">
-            <h1 className="text-3xl sm:text-5xl md:text-5xl font-semibold text-white mb-3 sm:mb-4 leading-tight [text-shadow:_0_2px_4px_rgba(0,0,0,0.5)]">
-              Get in Touch with us
-            </h1>
-            <p className="text-lg md:text-2xl text-white/90 mb-10">
-              We'd love to hear from you.
-              <br />
-              Reach out to our team with any questions or inquiries.
-            </p>
+        <div className="absolute inset-0 flex items-center justify-center z-20">
+          <div className="container mx-auto px-4 md:px-6 max-w-5xl text-center">
+            <div className="max-w-4xl mx-auto">
+              <h1 className="text-3xl sm:text-5xl md:text-5xl font-semibold text-white mb-3 sm:mb-4 leading-tight [text-shadow:_0_2px_4px_rgba(0,0,0,0.5)]">
+                Get in Touch with us
+              </h1>
+              <p className="text-lg md:text-2xl text-white/90 mb-10">
+                We'd love to hear from you.
+                <br />
+                Reach out to our team with any questions or inquiries.
+              </p>
+            </div>
           </div>
         </div>
       </section>

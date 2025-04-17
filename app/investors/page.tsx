@@ -21,13 +21,13 @@ export default function InvestorsPage() {
   return (
     <div className="relative w-full overflow-hidden">
       {/* Hero video section */}
-      <section className="relative w-full h-screen flex items-center justify-center overflow-hidden">
+      <section className="relative h-screen md:h-[110vh] min-h-[500px] md:min-h-[700px] overflow-hidden">
         <video
-          className="absolute inset-0 w-full h-full object-cover"
           autoPlay
-          muted
           loop
+          muted
           playsInline
+          className="absolute inset-0 w-full h-full object-cover"
           poster="/placeholder.svg?height=1080&width=1920"
         >
           <source src="/videos/ir.mp4" type="video/mp4" />

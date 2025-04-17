@@ -26,13 +26,13 @@ export default function LuxejoysPage() {
   return (
     <div className="relative w-full overflow-hidden">
       {/* Hero video section */}
-      <section className="relative w-full h-screen flex items-center justify-center overflow-hidden">
+      <section className="relative h-screen md:h-[110vh] min-h-[500px] md:min-h-[700px] overflow-hidden">
         <video
-          className="absolute inset-0 w-full h-full object-cover"
           autoPlay
-          muted
           loop
+          muted
           playsInline
+          className="absolute inset-0 w-full h-full object-cover"
           poster="/placeholder.svg?height=1080&width=1920"
         >
           <source src="/videos/luxejoy.mp4" type="video/mp4" />
@@ -44,7 +44,7 @@ export default function LuxejoysPage() {
             <div className="text-center lg:text-left px-4 sm:px-0">
               <h1 className="text-3xl sm:text-5xl md:text-5xl font-semibold text-white mb-3 sm:mb-4 leading-tight [text-shadow:_0_2px_4px_rgba(0,0,0,0.5)]">
                 <span className="block whitespace-normal">
-                  Welcome to LuxeJoy
+                  Welcome to LuxeJoys
                 </span>
                 <span className="block text-2xl sm:text-3xl md:text-4xl font-medium mt-3 sm:mt-4 text-white [text-shadow:_0_2px_4px_rgba(0,0,0,0.5)]">
                   Your Wealth, Privately Empowered.

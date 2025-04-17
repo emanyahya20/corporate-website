@@ -1,10 +1,12 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useEffect } from "react";
 
 export default function PodcastSection() {
   const spotifyEpisodeId = "7wbGdOOrZZKSlKHmAEVAN5";
   const [isModalOpen, setIsModalOpen] = useState(false);
+  const [videoLoaded, setVideoLoaded] = useState(false);
+  const [videoError, setVideoError] = useState(false);
 
   return (
     <section className="py-10 bg-gray-100">
@@ -25,15 +27,56 @@ export default function PodcastSection() {
             className="relative w-full h-[450px] rounded-lg overflow-hidden cursor-pointer md:w-1/2"
             onClick={() => setIsModalOpen(true)}
           >
+            {/* Loading indicator shown until video loads */}
+            {!videoLoaded && !videoError && (
+              <div className="absolute inset-0 flex items-center justify-center bg-gray-200">
+                <div className="text-center">
+                  <div className="inline-block animate-spin rounded-full h-8 w-8 border-4 border-gray-500 border-t-blue-500 mb-2"></div>
+                  <p className="text-gray-600">Loading video...</p>
+                </div>
+              </div>
+            )}
+
+            {/* Fallback when video fails to load */}
+            {videoError && (
+              <div className="absolute inset-0 flex items-center justify-center bg-gray-100">
+                <div className="text-center p-4">
+                  <svg
+                    className="w-12 h-12 mx-auto text-gray-500 mb-2"
+                    fill="none"
+                    stroke="currentColor"
+                    viewBox="0 0 24 24"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      strokeWidth="2"
+                      d="M12 8v4m0 4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"
+                    ></path>
+                  </svg>
+                  <p className="text-gray-700">Tap to listen to the podcast</p>
+                </div>
+              </div>
+            )}
+
             <video
               className="w-full h-full object-contain"
               autoPlay
               muted
               loop
               playsInline
+              preload="auto"
+              disablePictureInPicture
+              disableRemotePlayback
+              controlsList="nodownload nofullscreen noremoteplayback noplaybackrate"
               poster="/placeholder.svg?height=1080&width=1920"
+              onLoadedData={() => setVideoLoaded(true)}
+              onError={() => setVideoError(true)}
             >
+              {/* Provide multiple source formats for better compatibility */}
               <source src="/videos/podcast1.mp4" type="video/mp4" />
+              <source src="/videos/podcast1.webm" type="video/webm" />
               Your browser does not support the video tag.
             </video>
           </div>

@@ -42,7 +42,7 @@ export default function Header() {
     { href: "/about", label: "About" },
     { href: "/payments", label: "Payments" },
     { href: "/wealth-management", label: "Wealth" },
-    { href: "/luxejoy", label: "LuxeJoy" },
+    { href: "/luxejoy", label: "LuxeJoys" },
     { href: "/trustcircle", label: "Trust Circle" },
     { href: "/careers", label: "Careers" },
     { href: "/knowledge-center", label: "Knowledge Center" },

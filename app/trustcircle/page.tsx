@@ -23,13 +23,13 @@ export default function TrustCirclePage() {
   return (
     <div className="flex flex-col min-h-screen">
       {/* Hero Video Banner */}
-      <section className="relative w-full h-screen overflow-hidden">
+      <section className="relative h-screen md:h-[110vh] min-h-[500px] md:min-h-[700px] overflow-hidden">
         <video
-          className="absolute inset-0 w-full h-full object-cover"
           autoPlay
-          muted
           loop
+          muted
           playsInline
+          className="absolute inset-0 w-full h-full object-cover"
           poster="/placeholder.svg?height=1080&width=1920"
         >
           <source src="/videos/tc.mp4" type="video/mp4" />
@@ -37,14 +37,18 @@ export default function TrustCirclePage() {
         </video>
 
         {/* Welcome Message */}
-        <div className="absolute inset-0 flex items-center justify-center z-10 px-4 sm:px-6 lg:px-8 text-center">
-          <div className="max-w-3xl">
-            <h1 className="whitespace-nowrap text-3xl sm:text-5xl md:text-5xl font-semibold text-white mb-4 leading-tight [text-shadow:_0_2px_4px_rgba(0,0,0,0.5)]">
-              Trust Circle, Powered by Trustmore
-            </h1>
-            <p className="text-xl md:text-2xl text-white/90 mb-10">
-              Your Network. Your Opportunity. Your Global Advantage.
-            </p>
+        <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-black/40 flex items-center justify-center">
+          <div className="container mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-center relative z-10">
+            <div className="w-full max-w-4xl">
+              <div className="text-center px-2 sm:px-0">
+                <h1 className="text-3xl sm:text-5xl md:text-5xl font-semibold text-white mb-4 leading-tight [text-shadow:_0_2px_4px_rgba(0,0,0,0.5)]">
+                  Trust Circle, Powered by Trustmore
+                </h1>
+                <p className="text-xl md:text-2xl text-white/90 mb-10">
+                  Your Network. Your Opportunity. Your Global Advantage.
+                </p>
+              </div>
+            </div>
           </div>
         </div>
       </section>

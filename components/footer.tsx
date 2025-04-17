@@ -202,7 +202,7 @@ export default function Footer() {
                 { href: "/about", label: "About" },
                 { href: "/payments", label: "Payments" },
                 { href: "/wealth-management", label: "Wealth Management" },
-                { href: "/luxejoy", label: "Luxejoy" },
+                { href: "/luxejoy", label: "Luxejoys" },
                 { href: "/investors", label: "Investor Relations" },
               ].map(({ href, label }) => (
                 <li key={href}>
