@@ -63,12 +63,12 @@ export default function AboutPage() {
     {
       name: "Subhrangshu Neogi",
       position: "Strategic Advisor",
-      image: "/advisor.jpeg",
+      image: "/ExecutiveDirector.png",
     },
     {
       name: "Sanjoy Paul",
       position: "Executive Director - TCG Group",
-      image: "/ExecutiveDirector.png",
+      image: "/advisor.jpeg",
     },
     {
       name: "Saurabh Chawla",
