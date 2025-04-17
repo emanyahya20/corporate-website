@@ -32,7 +32,12 @@ export default function TermsOfServicePage() {
       <section className="py-16 bg-white">
         <div className="container mx-auto px-4 md:px-6 max-w-4xl">
           <div className="prose prose-lg max-w-none">
-            <h1 className="text-3xl font-bold mb-8">Privacy Policy</h1>
+            <h2 className="text-3xl font-bold text-gray-900 mb-6">
+              Privacy Policy
+            </h2>
+            <p className="text-sm text-gray-600 mb-6">
+              Last updated: March 2025
+            </p>
 
             <p className="mb-6">
               This is the official Privacy Policy ("Policy") of Trustmore

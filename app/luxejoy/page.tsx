@@ -80,6 +80,14 @@ export default function LuxejoysPage() {
       {/* Introduction Section */}
       <section className="py-12 bg-white">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+          {/* Added Logo Here */}
+          <div className="flex justify-center mb-8">
+            <img
+              src="/footerlogo/luxejoy.png"
+              alt="Trust Circle Logo"
+              className="h-32 w-auto"
+            />
+          </div>
           <div className="max-w-5xl mx-auto">
             <h2 className="text-3xl font-semibold text-gray-800 mb-6 text-center">
               About LUXEJOYS

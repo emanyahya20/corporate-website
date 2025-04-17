@@ -32,11 +32,11 @@ export default function TermsOfServicePage() {
       <section className="py-16 bg-white">
         <div className="container mx-auto px-4 md:px-6 max-w-4xl">
           <div className="prose prose-lg max-w-none">
-            <h2 className="text-3xl font-bold mb-6">Terms of Service</h2>
-
-            <p className="mb-8">
-              <strong>Effective Date:</strong> Effective & Updated : January 1,
-              2025
+            <h2 className="text-3xl font-bold text-gray-900 mb-6">
+              Terms of Service
+            </h2>
+            <p className="text-sm text-gray-600 mb-6">
+              Last updated: March 2025
             </p>
 
             <p className="mb-8">
