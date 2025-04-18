@@ -12,6 +12,7 @@ export function BrandShowcase() {
       image: "/escrowpay1.png",
       link: "https://escrowpay.co.in",
       imageOnLeft: true,
+      isExternal: true,
     },
     {
       id: "wealth",
@@ -20,7 +21,8 @@ export function BrandShowcase() {
         "IPRIVE is a global private wealth advisory platform, dedicated to serving high-net-worth individuals, families, and corporations with discretion and expertise. We curate exclusive investment opportunities across global real estate, private equity, alternative assets, and bespoke financial instruments. Our services extend to high-value insurance solutions, family office structuring, and global mobility through residency and citizenship programs. Every IPRIVE relationship is built on absolute trust, confidentiality, and tailored financial strategies. With a presence in India and Dubai, we bridge wealth, opportunity, and legacy planning across jurisdictions. IPRIVE, Where Global Wealth Meets Timeless Vision.",
       image: "/iprive1.png",
       imageOnLeft: false,
-      link: "/wealth-management", // Added proper link property instead of embedded Link component
+      link: "/wealth-management",
+      isExternal: false,
     },
     {
       id: "experiences",
@@ -30,6 +32,7 @@ export function BrandShowcase() {
       image: "/luxejoy1.png",
       imageOnLeft: true,
       link: "/luxejoy",
+      isExternal: false,
     },
   ];
 
@@ -78,8 +81,8 @@ export function BrandShowcase() {
                 </p>
                 <Link
                   href={brand.link}
-                  target="_blank"
-                  rel="noopener noreferrer"
+                  target={brand.isExternal ? "_blank" : "_self"}
+                  rel={brand.isExternal ? "noopener noreferrer" : ""}
                   className="inline-flex items-center bg-black text-white px-4 py-2 rounded-sm transition-all duration-200 hover:bg-white hover:text-black hover:border hover:border-black hover:shadow-lg hover:scale-105"
                 >
                   <span>More</span>

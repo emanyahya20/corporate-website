@@ -56,7 +56,7 @@ export default function Home() {
               Technology
             </h1>
             <p className="text-xl md:text-2xl font-bold text-white mt-0 mb-3">
-              Trustmore. Do More.
+              TrustMore. Do More.
             </p>
             {/* Play Button - Made thinner */}
             <button
