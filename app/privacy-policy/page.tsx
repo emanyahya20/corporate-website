@@ -463,9 +463,7 @@ export default function TermsOfServicePage() {
               designated Grievance Officer as mentioned below.
             </p>
 
-            <h2 className="text-2xl font-semibold my-6">
-              Grievance RedressalL
-            </h2>
+            <h2 className="text-2xl font-semibold my-6">Grievance Redressal</h2>
 
             <p className="mb-6">
               Any complaints, questions, feedback, abuse or concerns with
@@ -475,9 +473,32 @@ export default function TermsOfServicePage() {
               electronic signature to the Grievance Officer at:
             </p>
 
-            <p className="text-blue-600 font-medium mb-8">
-              care@itrustmore.com
-            </p>
+            <h3 className="text-2xl font-semibold mt-8 mb-4">
+              Contact Information
+            </h3>
+
+            <div className="address-block mb-8">
+              <p className="font-semibold mb-2">Trustmore Group</p>
+              <p className="mb-2">Corporate Office:</p>
+              <address className="not-italic mb-4">
+                Ground Floor, 7A, Standard Chartered Tower,
+                <br />
+                DLF Cyber City, DLF Phase 2,
+                <br />
+                Sector 24, Gurugram,
+                <br />
+                Haryana 122001, India
+              </address>
+              <p>
+                Email:{" "}
+                <a
+                  href="mailto:care@itrustmore.com"
+                  className="text-blue-600 hover:underline"
+                >
+                  care@itrustmore.com
+                </a>
+              </p>
+            </div>
           </div>
         </div>
       </section>
