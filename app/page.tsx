@@ -53,18 +53,18 @@ export default function Home() {
           <div className="w-full">
             <h1 className="text-center w-full text-[10px] xs:text-xs sm:text-sm md:text-lg lg:text-2xl xl:text-3xl font-semibold text-white mb-3 sm:mb-4 leading-tight whitespace-nowrap">
               Connecting the World's Money Flows with Trust, Transparency, and
-              Technology.
+              Technology
             </h1>
 
-            <p className="text-xl md:text-2xl text-white/90 mt-0 mb-3">
+            <p className="text-xl md:text-2xl font-bold text-white/90 mt-0 mb-3">
               Trustmore. Do More.
             </p>
             {/* Play Button - Made thinner */}
             <button
               onClick={() => setIsModalOpen(true)}
-              className="inline-flex items-center justify-center rounded-full border border-white/30 bg-black hover:bg-gray-700 backdrop-blur-sm px-4 py-2 transition duration-300"
+              className="inline-flex items-center justify-center rounded-full border border-white/30 bg-black hover:bg-gray-700 backdrop-blur-sm px-6 py-3 transition duration-300"
             >
-              <Play className="w-5 h-5 text-white" />
+              <Play className="w-6 h-6 text-white" />
             </button>
           </div>
         </div>

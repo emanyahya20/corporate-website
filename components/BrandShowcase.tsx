@@ -19,8 +19,8 @@ export function BrandShowcase() {
       description:
         "IPRIVE is a global private wealth advisory platform, dedicated to serving high-net-worth individuals, families, and corporations with discretion and expertise. We curate exclusive investment opportunities across global real estate, private equity, alternative assets, and bespoke financial instruments. Our services extend to high-value insurance solutions, family office structuring, and global mobility through residency and citizenship programs. Every IPRIVE relationship is built on absolute trust, confidentiality, and tailored financial strategies. With a presence in India and Dubai, we bridge wealth, opportunity, and legacy planning across jurisdictions. IPRIVE, Where Global Wealth Meets Timeless Vision.",
       image: "/iprive1.png",
-      link: "https://iprivewealth.com",
       imageOnLeft: false,
+      link: "/wealth-management", // Added proper link property instead of embedded Link component
     },
     {
       id: "experiences",
@@ -28,8 +28,8 @@ export function BrandShowcase() {
       description:
         "LuxeJoys curates exclusive luxury experiences for the world's most discerning clients. From private jet charters to bespoke vacation retreats, we specialize in creating unparalleled journeys. Our offerings extend to access to elite events, tailored concierge services, and unforgettable adventures. With a focus on exceeding expectations, we turn dreams into realities for high-net-worth individuals. Operating globally, LuxeJoys connects you to the finest luxury experiences wherever you are. LuxeJoys, Luxury Redefined. Experiences Elevated.",
       image: "/luxejoy1.png",
-      link: "https://luxejoys.com",
       imageOnLeft: true,
+      link: "/luxejoy",
     },
   ];
 

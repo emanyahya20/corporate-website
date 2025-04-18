@@ -125,12 +125,7 @@ export default function WealthManagementPage() {
                 </p>
               </div>
             </div>
-            <div className="mt-8 text-center">
-              <Button className="bg-black hover:bg-gray-800 text-white rounded-lg px-5 py-2 font-medium">
-                Explore Our Private Advisory{" "}
-                <ArrowRight className="ml-2 h-4 w-4" />
-              </Button>
-            </div>
+            <div className="mt-8 text-center"></div>
           </div>
         </div>
       </section>

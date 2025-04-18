@@ -302,9 +302,11 @@ export default function TrustCirclePage() {
             Refer & Earn. Grow Your Network. Build Resilience.
           </p>
           <div className="flex flex-col sm:flex-row justify-center gap-2">
-            <button className="bg-black text-white px-8 py-3 rounded-xl hover:bg-black hover:text-white transition active:scale-95 focus:outline-none focus:ring-2 focus:ring-black/30 shadow-lg hover:shadow-xl flex items-center gap-2">
-              Join Trust Circle Now
-            </button>
+            <Link href="/contact" passHref>
+              <button className="bg-black text-white px-8 py-3 rounded-xl hover:bg-black hover:text-white transition active:scale-95 focus:outline-none focus:ring-2 focus:ring-black/30 shadow-lg hover:shadow-xl flex items-center gap-2">
+                Join Trust Circle Now
+              </button>
+            </Link>
             <button className="bg-white text-black px-6 py-3 rounded-xl border-2 border-black hover:bg-gray-200 transition active:scale-95 focus:outline-none focus:ring-0 text-base font-semibold shadow-sm">
               Learn More
             </button>
