@@ -78,7 +78,7 @@ export default function InvestorsPage() {
       <div className="bg-gray-100 py-6 mt-6" id="awards-section">
         <div className="text-center">
           <h2 className="text-3xl font-semibold text-gray-800 mb-2">
-            Investors
+            Backed by Premier Investors
           </h2>
           <div className="flex justify-center items-center flex-wrap">
             {/* First three logos - stretched */}

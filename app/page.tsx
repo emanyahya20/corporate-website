@@ -52,7 +52,7 @@ export default function Home() {
         <div className="absolute inset-0 flex items-center justify-center z-10 px-4 sm:px-6 lg:px-8 text-center">
           <div className="w-full">
             <h1 className="text-center w-full text-[10px] xs:text-xs sm:text-sm md:text-lg lg:text-2xl xl:text-3xl font-semibold text-white mb-3 sm:mb-4 leading-tight whitespace-nowrap">
-              Connecting the World's Money Flows with Trust, Transparency, and
+              Connecting the Global Money Flows with Trust, Transparency, and
               Technology
             </h1>
 
