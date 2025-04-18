@@ -42,7 +42,7 @@ export default function PaymentPage() {
           className="absolute inset-0 w-full h-full object-cover"
           poster="/placeholder.svg?height=1080&width=1920"
         >
-          <source src="/videos/vid.mp4" type="video/mp4" />
+          <source src="/payments.mp4" type="video/mp4" />
           Your browser does not support the video tag.
         </video>
 
