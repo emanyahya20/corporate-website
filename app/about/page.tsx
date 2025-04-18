@@ -243,8 +243,8 @@ export default function AboutPage() {
               <h3 className="text-2xl md:text-3xl font-semibold text-gray-800 mb-3 md:mb-4">
                 Ashwin Chawwla
               </h3>
-              <p className="text-blue-600 text-lg md:text-xl mb-4 md:mb-6">
-                Founder & CEO
+              <p className="text-gray-800 text-lg md:text-xl mb-4 md:mb-6">
+                Chairman, Trustmore Group
               </p>
               <p className="text-gray-600 text-base md:text-lg mb-4">
                 Ashwin Chawwla is the visionary Chairman and Founder of

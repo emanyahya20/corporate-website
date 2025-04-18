@@ -82,15 +82,16 @@ export default function LuxejoysPage() {
       {/* Introduction Section */}
       <section className="bg-white text-gray-800 py-0 px-6 md:px-24">
         <div className="max-w-6xl mx-auto">
-          {/* Added Logo Here */}
-          <div className="flex justify-center mb-6">
+          {/* Logo with no bottom margin */}
+          <div className="flex justify-center mb-0">
             <img
               src="/footerlogo/luxejoy.png"
               alt="Trust Circle Logo"
               className="h-96 w-auto"
             />
           </div>
-          <div className="max-w-5xl mx-auto">
+          {/* Strong negative margin to pull content up into/near logo */}
+          <div className="max-w-5xl mx-auto -mt-16">
             <h2 className="text-3xl font-semibold text-gray-800 mb-6 text-center">
               About LUXEJOYS
             </h2>

@@ -1,3 +1,5 @@
+"use client";
+
 import { Button } from "@/components/ui/button";
 import {
   ArrowRight,
@@ -16,7 +18,7 @@ import {
   Clock,
   Target,
 } from "lucide-react";
-import Link from "next/link"; // Add this import
+import Link from "next/link";
 
 export default function WealthManagementPage() {
   return (
@@ -76,11 +78,10 @@ export default function WealthManagementPage() {
 
       <section className="bg-white text-gray-800 py-0 px-6 md:px-24">
         <div className="max-w-6xl mx-auto">
-          {/* Header with logo instead of text heading */}
           <div className="text-center">
-            <div className="flex justify-center -mb-6">
+            <div className="flex justify-center">
               <img
-                src="/footerlogo/iprive logo.png"
+                src="/footerlogo/iprive logoo.png"
                 alt="Trust Circle Logo"
                 className="h-96 w-auto"
               />
@@ -88,8 +89,8 @@ export default function WealthManagementPage() {
           </div>
         </div>
       </section>
-      {/* Highlights Section */}
-      <section className="py-12 bg-white">
+
+      <section className="pt-0 pb-12 bg-white mt-[-6rem]">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="max-w-5xl mx-auto">
             <h2 className="text-3xl font-semibold text-gray-800 mb-6 text-center">
@@ -357,7 +358,7 @@ export default function WealthManagementPage() {
               Discreet consultations by appointment only. Global Offices: Dubai
               | India
             </p>
-            <Link href="/contact" passHref>
+            <Link href="/contact">
               <Button className="bg-black hover:bg-gray-800 text-white rounded-lg px-5 py-2 font-medium">
                 Book a Private Consultation{" "}
                 <ArrowRight className="ml-2 h-4 w-4" />

@@ -122,15 +122,17 @@ const historyData: HistoryItem[] = [
 ];
 
 export default function ExactAntGroupStyleTimeline() {
+  // Start with the first item (2001) by default
   const [currentIndex, setCurrentIndex] = useState(0);
   const scrollRef = useRef<HTMLDivElement>(null);
 
-  // Flatten the timeline - consider each history item separately
-  // This way we don't group by year anymore
-  const allTimelineItems = historyData.map((item, index) => ({
-    ...item,
-    id: index, // Add an ID for easier tracking
-  }));
+  // Ensure timeline items are sorted chronologically
+  const allTimelineItems = historyData
+    .map((item, index) => ({
+      ...item,
+      id: index, // Add an ID for easier tracking
+    }))
+    .sort((a, b) => a.year - b.year);
 
   const handlePrev = () => {
     if (currentIndex > 0) {
@@ -168,6 +170,20 @@ export default function ExactAntGroupStyleTimeline() {
   };
 
   const visibleItems = getVisibleItems();
+
+  // Fix for the calculation of actualIndex
+  const getActualIndex = (idx: number) => {
+    const visibleCount = Math.min(11, visibleItems.length);
+    const halfVisible = Math.floor(visibleCount / 2);
+
+    if (currentIndex < halfVisible) {
+      return idx;
+    } else if (currentIndex > allTimelineItems.length - halfVisible - 1) {
+      return allTimelineItems.length - visibleCount + idx;
+    } else {
+      return currentIndex - halfVisible + idx;
+    }
+  };
 
   return (
     <section className="py-12 bg-white">
@@ -219,7 +235,12 @@ export default function ExactAntGroupStyleTimeline() {
                     {currentItem.date}
                   </p>
                   <p className="text-gray-800 leading-relaxed">
-                    {currentItem.text}
+                    {currentItem.text.split("\n").map((line, i) => (
+                      <span key={i}>
+                        {line}
+                        {i < currentItem.text.split("\n").length - 1 && <br />}
+                      </span>
+                    ))}
                   </p>
                 </div>
               </div>
@@ -243,17 +264,12 @@ export default function ExactAntGroupStyleTimeline() {
             className="flex items-center overflow-x-auto scrollbar-hide mx-4 space-x-8"
           >
             {visibleItems.map((item, idx) => {
-              const actualIndex =
-                currentIndex -
-                (visibleItems.length > 11
-                  ? 5
-                  : Math.floor(visibleItems.length / 2)) +
-                idx;
+              const actualIndex = getActualIndex(idx);
               const isActive = actualIndex === currentIndex;
 
               return (
                 <div
-                  key={`year-${item.year}-${idx}`}
+                  key={`year-${item.year}-${item.id}`}
                   className="flex flex-col items-center"
                 >
                   {isActive && (
