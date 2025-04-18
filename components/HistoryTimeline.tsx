@@ -27,7 +27,7 @@ const historyData: HistoryItem[] = [
     year: 2005,
     date: "Creating Record",
     image: "/history3.png",
-    text: "He managed to sell over 1000 apartments to his wealth clients in one single project in NCR. ",
+    text: "Sold over 1000 apartments to wealth clients in a single project in NCR region. ",
   },
   {
     year: 2007,
