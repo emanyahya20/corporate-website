@@ -177,7 +177,7 @@ export default function TrustCirclePage() {
         <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-2xl">
           <div className="bg-white p-6 rounded-xl shadow-sm hover:shadow-md transition border border-gray-100">
             <h3 className="text-2xl font-bold text-gray-800 mb-5 text-center">
-              What's Included in ₹59,000/Year
+              What's Included in Membership
             </h3>
 
             <div className="bg-black text-white p-3 rounded-lg mb-5">
@@ -186,7 +186,6 @@ export default function TrustCirclePage() {
                   <Clock className="w-4 h-4 text-white" />
                   <span className="font-medium">Annual Membership</span>
                 </div>
-                <span className="text-xl font-bold">₹59,000</span>
               </div>
             </div>
 

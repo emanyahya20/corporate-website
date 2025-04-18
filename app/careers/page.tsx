@@ -63,25 +63,24 @@ export default function CareersPage() {
           <h3 className="text-2xl font-semibold mb-6">Why Join Us</h3>
           <ul className="space-y-4 text-lg list-disc list-inside">
             <li>
-              <strong>Legacy of Leadership:</strong> Be part of a trusted name
-              with 25+ years of global financial expertise
+              Legacy of Leadership: Be part of a trusted name with 25+ years of
+              global financial expertise
             </li>
             <li>
-              <strong>Work With Visionaries:</strong> Collaborate with
-              thought-leaders and forward-thinking teams in India, Dubai, and
-              global markets
+              Work With Visionaries: Collaborate with thought-leaders and
+              forward-thinking teams in India, Dubai, and global markets
             </li>
             <li>
-              <strong>Grow Beyond Boundaries:</strong> Learn, lead, and shape
-              new frontiers in fintech, private wealth, and luxury experiences
+              Grow Beyond Boundaries: Learn, lead, and shape new frontiers in
+              fintech, private wealth, and luxury experiences
             </li>
             <li>
-              <strong>Purpose-Driven Culture:</strong> Work in an environment
-              that values integrity, trust, and people over everything else
+              Purpose-Driven Culture: Work in an environment that values
+              integrity, trust, and people over everything else
             </li>
             <li>
-              <strong>Do More, Achieve More:</strong> Build a career that grows
-              with you — with real impact, opportunity, and global recognition
+              Do More, Achieve More: Build a career that grows with you — with
+              real impact, opportunity, and global recognition
             </li>
           </ul>
         </div>

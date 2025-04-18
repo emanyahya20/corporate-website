@@ -94,17 +94,20 @@ export default function Header() {
             ))}
           </nav>
 
-          {/* Get Started Button */}
           <div className="hidden md:flex items-center">
-            <Button
-              className={`${
-                isTransparent
-                  ? "bg-white text-gray-800 hover:bg-white/90"
-                  : "bg-black text-white hover:bg-black/80"
-              } rounded-full text-sm px-4 py-2 transition-all duration-200 hover:shadow-md hover:scale-105`}
-            >
-              Get Started
-            </Button>
+            <Link href="/contact">
+              {" "}
+              {/* Path to your contact page */}
+              <Button
+                className={`${
+                  isTransparent
+                    ? "bg-white text-gray-800 hover:bg-white/90"
+                    : "bg-black text-white hover:bg-black/80"
+                } rounded-full text-sm px-4 py-2 transition-all duration-200 hover:shadow-md hover:scale-105`}
+              >
+                Get Started
+              </Button>
+            </Link>
           </div>
 
           {/* Mobile Menu Button */}

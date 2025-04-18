@@ -35,7 +35,7 @@ export default function TrustCircleSection() {
             </p>
             <div className="mt-4 space-y-4">
               <div>
-                <Link href="/contact" passHref>
+                <Link href="/trustcircle" passHref>
                   <button className="bg-black text-white px-8 py-3 rounded-xl hover:bg-black hover:text-white transition active:scale-95 focus:outline-none focus:ring-2 focus:ring-black/30 shadow-lg hover:shadow-xl flex items-center mx-auto gap-2">
                     Join Now <ArrowRight className="w-4 h-4" />
                   </button>

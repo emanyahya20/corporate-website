@@ -238,8 +238,8 @@ export default function ContactPage() {
             Ready to Connect?
           </h2>
           <p className="text-xl text-gray-700 mb-12 max-w-3xl mx-auto">
-            Schedule a private consultation with our wealth experts and discover
-            how we can help you build, protect, and enjoy your legacy.
+            Schedule a private consultation with our experts and discover how we
+            can help you build, protect, and enjoy your legacy.
           </p>
           <Button className="bg-black text-white hover:bg-black hover:text-white rounded-xl px-8 py-6 text-lg transition active:scale-95 focus:outline-none focus:ring-2 focus:ring-black/30">
             Request Consultation
