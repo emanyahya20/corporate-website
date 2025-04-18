@@ -28,6 +28,7 @@ export default function LuxejoysPage() {
       {/* Hero video section */}
       <section className="relative h-screen md:h-[110vh] min-h-[500px] md:min-h-[700px] overflow-hidden">
         <video
+          preload="auto"
           autoPlay
           loop
           muted

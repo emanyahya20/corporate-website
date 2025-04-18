@@ -31,6 +31,7 @@ export default function KnowledgeCenterPage() {
       {/* Hero Video Banner - Now full viewport height like Careers page */}
       <section className="relative h-screen md:h-[110vh] min-h-[500px] md:min-h-[700px] overflow-hidden">
         <video
+          preload="auto"
           autoPlay
           loop
           muted
