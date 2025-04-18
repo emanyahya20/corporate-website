@@ -85,7 +85,7 @@ export default function Footer() {
 
                   {/* X (Twitter) */}
                   <a
-                    href="https://x.com/i/flow/login?redirect_after_login=%2Ftrustmorehq"
+                    href="https://x.com/Trustmorehq"
                     target="_blank"
                     rel="noopener noreferrer"
                     className="text-gray-600 hover:text-[oklch(0.257_0.09_281.288)]"
