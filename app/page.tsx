@@ -35,13 +35,13 @@ export default function Home() {
       {/* Hero Video Banner */}
       <section className="relative h-screen md:h-[110vh] min-h-[500px] md:min-h-[700px] overflow-hidden">
         <video
-          preload="auto"
           autoPlay
           loop
           muted
           playsInline
+          preload="none"
           className="absolute inset-0 w-full h-full object-cover"
-          poster="/placeholder.svg?height=1080&width=1920"
+          poster="/placeholder.svg"
         >
           <source src="/homepage.mp4" type="video/mp4" />
           Your browser does not support the video tag.
