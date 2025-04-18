@@ -1,7 +1,7 @@
-let userConfig = undefined
+let userConfig = undefined;
 try {
   // try to import ESM first
-  userConfig = await import('./v0-user-next.config.mjs')
+  userConfig = await import("./v0-user-next.config.mjs");
 } catch (e) {
   try {
     // fallback to CJS import
@@ -27,25 +27,40 @@ const nextConfig = {
     parallelServerBuildTraces: true,
     parallelServerCompiles: true,
   },
-}
+  async headers() {
+    return [
+      {
+        source: "/videos/:path*",
+        headers: [
+          {
+            key: "Cache-Control",
+            value: "public, max-age=31536000, immutable",
+          },
+          {
+            key: "Content-Type",
+            value: "video/mp4",
+          },
+        ],
+      },
+    ];
+  },
+};
 
 if (userConfig) {
-  // ESM imports will have a "default" property
-  const config = userConfig.default || userConfig
-
+  const config = userConfig.default || userConfig;
   for (const key in config) {
     if (
-      typeof nextConfig[key] === 'object' &&
+      typeof nextConfig[key] === "object" &&
       !Array.isArray(nextConfig[key])
     ) {
       nextConfig[key] = {
         ...nextConfig[key],
         ...config[key],
-      }
+      };
     } else {
-      nextConfig[key] = config[key]
+      nextConfig[key] = config[key];
     }
   }
 }
 
-export default nextConfig
+export default nextConfig;
